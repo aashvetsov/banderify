@@ -21,7 +21,7 @@ extension FileFinder {
     }
 }
 
-extension String {
+fileprivate extension String {
 
     var fileName: String? {
         URL(string: self)?.lastPathComponent
