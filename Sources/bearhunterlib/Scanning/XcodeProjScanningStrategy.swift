@@ -17,7 +17,7 @@ extension XcodeProjScanningStrategy: ConfigScanning {
         let repositories = project.pbxproj.projects
             .flatMap(\.packages)
             .compactMap(repository(from:))
-        
+
         return Set(repositories)
     }
 }
