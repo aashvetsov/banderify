@@ -23,4 +23,4 @@ struct ConfigFile: Hashable {
     var url: URL?
 }
 
-typealias ConfigFilesSet = Set<ConfigFile>
+typealias ConfigFiles = Set<ConfigFile>

@@ -17,7 +17,7 @@ public extension Bearhunter {
 
 fileprivate extension Bearhunter {
 
-    static func locateConfigFiles(at path: String) -> ConfigFilesSet {
+    static func locateConfigFiles(at path: String) -> ConfigFiles {
         print("***************** BEARHUNTER STEP1 ******************".level1)
         print("Started analysis of directory: \(path)".level2)
 
@@ -33,7 +33,7 @@ fileprivate extension Bearhunter {
         return files
     }
 
-    static func scanRepositories(at files: ConfigFilesSet) -> Repositories {
+    static func scanRepositories(at files: ConfigFiles) -> Repositories {
         print("***************** BEARHUNTER STEP2 ******************".level1)
         print("Started analysis of config files".level2)
 
