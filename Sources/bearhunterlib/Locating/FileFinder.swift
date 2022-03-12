@@ -15,9 +15,15 @@ extension FileFinder {
             return []
         }
 
-        return allFiles.filter {
-            guard let fileName = URL(string: $0)?.lastPathComponent else { return false }
-            return FileDescriptor(string: fileName) =~ descriptor
-        }
+        return allFiles
+            .compactMap(\.fileName)
+            .filter { FileDescriptor(string: $0) =~ descriptor }
+    }
+}
+
+extension String {
+
+    var fileName: String? {
+        URL(string: self)?.lastPathComponent
     }
 }

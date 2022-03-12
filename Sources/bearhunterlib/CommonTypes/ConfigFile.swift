@@ -3,10 +3,12 @@ import Foundation
 struct ConfigFile: Hashable {
 
     let identity: String
+
     let name: String
     let directory: String
-    let type: DMType
     let url: URL
+
+    let type: DMType
 
     init?(
         name: String,
