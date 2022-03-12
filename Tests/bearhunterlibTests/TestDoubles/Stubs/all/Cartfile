@@ -1,0 +1,3 @@
+github "Alamofire/Alamofire" ~> 5.5
+git "https://github.com/Carthage/Carthage.git" ~> 5.1
+git "https://gitlab.com/Carthage/Carthage.git" ~> 5.0

@@ -1,0 +1,1314 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		"bearhunter::bearhunterPackageTests::ProductTarget" /* bearhunterPackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_879 /* Build configuration list for PBXAggregateTarget "bearhunterPackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_882 /* PBXTargetDependency */,
+				OBJ_884 /* PBXTargetDependency */,
+			);
+			name = bearhunterPackageTests;
+			productName = bearhunterPackageTests;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		2EA9846627DCA49F00166E8A /* TestDoubles in Resources */ = {isa = PBXBuildFile; fileRef = 2EA9845827DCA22700166E8A /* TestDoubles */; };
+		2EA9846827DCA4B700166E8A /* TestDoubles in Resources */ = {isa = PBXBuildFile; fileRef = 2EA9845927DCA23300166E8A /* TestDoubles */; };
+		2EA9846927DCA55D00166E8A /* BearhunterScanCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* BearhunterScanCommand.swift */; };
+		2EA9846A27DCA55F00166E8A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* main.swift */; };
+		2EA9846F27DCA58800166E8A /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 2EA9846E27DCA58800166E8A /* ArgumentParser */; };
+		2EDD1F2927DC9BA500D90C6E /* XcodeProj in Frameworks */ = {isa = PBXBuildFile; productRef = 2EDD1F2827DC9BA500D90C6E /* XcodeProj */; };
+		2EDD1F2C27DC9C5F00D90C6E /* CarthageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2EDD1F2B27DC9C5F00D90C6E /* CarthageKit */; };
+		2EDD1F2F27DC9C7F00D90C6E /* Rainbow in Frameworks */ = {isa = PBXBuildFile; productRef = 2EDD1F2E27DC9C7F00D90C6E /* Rainbow */; };
+		2EDD1F3227DC9C9400D90C6E /* SwiftShell in Frameworks */ = {isa = PBXBuildFile; productRef = 2EDD1F3127DC9C9400D90C6E /* SwiftShell */; };
+		2EDD1F3527DC9CC700D90C6E /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 2EDD1F3427DC9CC700D90C6E /* ArgumentParser */; };
+		OBJ_1027 /* BearhunterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* BearhunterTests.swift */; };
+		OBJ_1028 /* ConfigLocatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* ConfigLocatorsTests.swift */; };
+		OBJ_1029 /* ConfigScannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_50 /* ConfigScannerTests.swift */; };
+		OBJ_1030 /* FileFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_51 /* FileFinderTests.swift */; };
+		OBJ_1032 /* testsCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "bearhunter::testsCommon::Product" /* testsCommon.framework */; };
+		OBJ_1033 /* bearhunterlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "bearhunter::bearhunterlib::Product" /* bearhunterlib.framework */; };
+		OBJ_1072 /* Bundle+Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* Bundle+Resources.swift */; };
+		OBJ_1073 /* Bundle+TestPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* Bundle+TestPaths.swift */; };
+		OBJ_891 /* BearhunterScanCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* BearhunterScanCommand.swift */; };
+		OBJ_892 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* main.swift */; };
+		OBJ_896 /* bearhunterlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "bearhunter::bearhunterlib::Product" /* bearhunterlib.framework */; };
+		OBJ_931 /* BearhunterScanCommandNegativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* BearhunterScanCommandNegativeTests.swift */; };
+		OBJ_932 /* BearhunterScanCommandPositiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* BearhunterScanCommandPositiveTests.swift */; };
+		OBJ_950 /* testsCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "bearhunter::testsCommon::Product" /* testsCommon.framework */; };
+		OBJ_974 /* Bearhunter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Bearhunter.swift */; };
+		OBJ_975 /* ConfigFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* ConfigFile.swift */; };
+		OBJ_976 /* DMType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* DMType.swift */; };
+		OBJ_977 /* ByBlockListDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* ByBlockListDetector.swift */; };
+		OBJ_978 /* ByEmailDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* ByEmailDetector.swift */; };
+		OBJ_979 /* SoftwareType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* SoftwareType.swift */; };
+		OBJ_980 /* SoftwareTypeDetecting.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* SoftwareTypeDetecting.swift */; };
+		OBJ_981 /* Set+ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* Set+ConsoleOutput.swift */; };
+		OBJ_982 /* Set+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* Set+Map.swift */; };
+		OBJ_983 /* String+ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* String+ConsoleOutput.swift */; };
+		OBJ_984 /* ConfigLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* ConfigLocator.swift */; };
+		OBJ_985 /* FileDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* FileDescriptor.swift */; };
+		OBJ_986 /* FileFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* FileFinder.swift */; };
+		OBJ_987 /* CarthageScanningStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* CarthageScanningStrategy.swift */; };
+		OBJ_988 /* CocoapodsScanningStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* CocoapodsScanningStrategy.swift */; };
+		OBJ_989 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* Component.swift */; };
+		OBJ_990 /* ConfigScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* ConfigScanner.swift */; };
+		OBJ_991 /* ConfigScanning.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* ConfigScanning.swift */; };
+		OBJ_992 /* GitSubmodulesScanningStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* GitSubmodulesScanningStrategy.swift */; };
+		OBJ_993 /* GitSubtreeScanningStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* GitSubtreeScanningStrategy.swift */; };
+		OBJ_994 /* SPMScanningStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* SPMScanningStrategy.swift */; };
+		OBJ_995 /* XcodeProjScanningStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* XcodeProjScanningStrategy.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2EDD1EFF27DC9A9E00D90C6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "bearhunter::bearhuntercli";
+			remoteInfo = bearhuntercli;
+		};
+		2EDD1F1027DC9A9E00D90C6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "bearhunter::testsCommon";
+			remoteInfo = testsCommon;
+		};
+		2EDD1F1127DC9A9E00D90C6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "bearhunter::testsCommon";
+			remoteInfo = testsCommon;
+		};
+		2EDD1F1227DC9A9E00D90C6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "bearhunter::bearhunterlib";
+			remoteInfo = bearhunterlib;
+		};
+		2EDD1F2027DC9A9E00D90C6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "bearhunter::bearhunterlibTests";
+			remoteInfo = bearhunterlibTests;
+		};
+		2EDD1F2127DC9A9E00D90C6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "bearhunter::bearhuntercliTests";
+			remoteInfo = bearhuntercliTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2EA9845427DC9FC100166E8A /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
+		2EA9845827DCA22700166E8A /* TestDoubles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestDoubles; sourceTree = "<group>"; };
+		2EA9845927DCA23300166E8A /* TestDoubles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestDoubles; sourceTree = "<group>"; };
+		2EA9846427DCA41000166E8A /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_10 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		OBJ_12 /* Bearhunter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearhunter.swift; sourceTree = "<group>"; };
+		OBJ_14 /* ConfigFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigFile.swift; sourceTree = "<group>"; };
+		OBJ_15 /* DMType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMType.swift; sourceTree = "<group>"; };
+		OBJ_17 /* ByBlockListDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByBlockListDetector.swift; sourceTree = "<group>"; };
+		OBJ_18 /* ByEmailDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByEmailDetector.swift; sourceTree = "<group>"; };
+		OBJ_19 /* SoftwareType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftwareType.swift; sourceTree = "<group>"; };
+		OBJ_20 /* SoftwareTypeDetecting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftwareTypeDetecting.swift; sourceTree = "<group>"; };
+		OBJ_22 /* Set+ConsoleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+ConsoleOutput.swift"; sourceTree = "<group>"; };
+		OBJ_23 /* Set+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Map.swift"; sourceTree = "<group>"; };
+		OBJ_24 /* String+ConsoleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ConsoleOutput.swift"; sourceTree = "<group>"; };
+		OBJ_26 /* ConfigLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigLocator.swift; sourceTree = "<group>"; };
+		OBJ_27 /* FileDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDescriptor.swift; sourceTree = "<group>"; };
+		OBJ_28 /* FileFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFinder.swift; sourceTree = "<group>"; };
+		OBJ_30 /* CarthageScanningStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarthageScanningStrategy.swift; sourceTree = "<group>"; };
+		OBJ_31 /* CocoapodsScanningStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoapodsScanningStrategy.swift; sourceTree = "<group>"; };
+		OBJ_32 /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		OBJ_33 /* ConfigScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigScanner.swift; sourceTree = "<group>"; };
+		OBJ_34 /* ConfigScanning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigScanning.swift; sourceTree = "<group>"; };
+		OBJ_35 /* GitSubmodulesScanningStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitSubmodulesScanningStrategy.swift; sourceTree = "<group>"; };
+		OBJ_36 /* GitSubtreeScanningStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitSubtreeScanningStrategy.swift; sourceTree = "<group>"; };
+		OBJ_37 /* SPMScanningStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPMScanningStrategy.swift; sourceTree = "<group>"; };
+		OBJ_38 /* XcodeProjScanningStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeProjScanningStrategy.swift; sourceTree = "<group>"; };
+		OBJ_403 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		OBJ_404 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		OBJ_405 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		OBJ_41 /* Bundle+Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Resources.swift"; sourceTree = "<group>"; };
+		OBJ_42 /* Bundle+TestPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+TestPaths.swift"; sourceTree = "<group>"; };
+		OBJ_45 /* BearhunterScanCommandNegativeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearhunterScanCommandNegativeTests.swift; sourceTree = "<group>"; };
+		OBJ_46 /* BearhunterScanCommandPositiveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearhunterScanCommandPositiveTests.swift; sourceTree = "<group>"; };
+		OBJ_48 /* BearhunterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearhunterTests.swift; sourceTree = "<group>"; };
+		OBJ_49 /* ConfigLocatorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigLocatorsTests.swift; sourceTree = "<group>"; };
+		OBJ_50 /* ConfigScannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigScannerTests.swift; sourceTree = "<group>"; };
+		OBJ_51 /* FileFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFinderTests.swift; sourceTree = "<group>"; };
+		OBJ_9 /* BearhunterScanCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BearhunterScanCommand.swift; sourceTree = "<group>"; };
+		"bearhunter::bearhuntercli::Product" /* bearhuntercli */ = {isa = PBXFileReference; lastKnownFileType = text; path = bearhuntercli; sourceTree = BUILT_PRODUCTS_DIR; };
+		"bearhunter::bearhuntercliTests::Product" /* bearhuntercliTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = bearhuntercliTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"bearhunter::bearhunterlib::Product" /* bearhunterlib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = bearhunterlib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"bearhunter::bearhunterlibTests::Product" /* bearhunterlibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = bearhunterlibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"bearhunter::testsCommon::Product" /* testsCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = testsCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_1031 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_1032 /* testsCommon.framework in Frameworks */,
+				OBJ_1033 /* bearhunterlib.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_1074 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_893 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				2EDD1F3527DC9CC700D90C6E /* ArgumentParser in Frameworks */,
+				OBJ_896 /* bearhunterlib.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_933 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				2EA9846F27DCA58800166E8A /* ArgumentParser in Frameworks */,
+				OBJ_950 /* testsCommon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_996 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				2EDD1F2F27DC9C7F00D90C6E /* Rainbow in Frameworks */,
+				2EDD1F2C27DC9C5F00D90C6E /* CarthageKit in Frameworks */,
+				2EDD1F2927DC9BA500D90C6E /* XcodeProj in Frameworks */,
+				2EDD1F3227DC9C9400D90C6E /* SwiftShell in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2EA9846D27DCA58800166E8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		OBJ_11 /* bearhunterlib */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_12 /* Bearhunter.swift */,
+				OBJ_13 /* CommonTypes */,
+				OBJ_16 /* Detecting */,
+				OBJ_21 /* Extensions */,
+				OBJ_25 /* Locating */,
+				OBJ_29 /* Scanning */,
+			);
+			name = bearhunterlib;
+			path = Sources/bearhunterlib;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_13 /* CommonTypes */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_14 /* ConfigFile.swift */,
+				OBJ_15 /* DMType.swift */,
+			);
+			path = CommonTypes;
+			sourceTree = "<group>";
+		};
+		OBJ_16 /* Detecting */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_17 /* ByBlockListDetector.swift */,
+				OBJ_18 /* ByEmailDetector.swift */,
+				OBJ_19 /* SoftwareType.swift */,
+				OBJ_20 /* SoftwareTypeDetecting.swift */,
+			);
+			path = Detecting;
+			sourceTree = "<group>";
+		};
+		OBJ_21 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_22 /* Set+ConsoleOutput.swift */,
+				OBJ_23 /* Set+Map.swift */,
+				OBJ_24 /* String+ConsoleOutput.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		OBJ_25 /* Locating */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_26 /* ConfigLocator.swift */,
+				OBJ_27 /* FileDescriptor.swift */,
+				OBJ_28 /* FileFinder.swift */,
+			);
+			path = Locating;
+			sourceTree = "<group>";
+		};
+		OBJ_29 /* Scanning */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_30 /* CarthageScanningStrategy.swift */,
+				OBJ_31 /* CocoapodsScanningStrategy.swift */,
+				OBJ_32 /* Component.swift */,
+				OBJ_33 /* ConfigScanner.swift */,
+				OBJ_34 /* ConfigScanning.swift */,
+				OBJ_35 /* GitSubmodulesScanningStrategy.swift */,
+				OBJ_36 /* GitSubtreeScanningStrategy.swift */,
+				OBJ_37 /* SPMScanningStrategy.swift */,
+				OBJ_38 /* XcodeProjScanningStrategy.swift */,
+			);
+			path = Scanning;
+			sourceTree = "<group>";
+		};
+		OBJ_381 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"bearhunter::bearhuntercli::Product" /* bearhuntercli */,
+				"bearhunter::bearhuntercliTests::Product" /* bearhuntercliTests.xctest */,
+				"bearhunter::bearhunterlib::Product" /* bearhunterlib.framework */,
+				"bearhunter::bearhunterlibTests::Product" /* bearhunterlibTests.xctest */,
+				"bearhunter::testsCommon::Product" /* testsCommon.framework */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_39 /* testsCommon */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_40 /* Extensions */,
+			);
+			name = testsCommon;
+			path = Sources/testsCommon;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_40 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_41 /* Bundle+Resources.swift */,
+				OBJ_42 /* Bundle+TestPaths.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		OBJ_43 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_44 /* bearhuntercliTests */,
+				OBJ_47 /* bearhunterlibTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_44 /* bearhuntercliTests */ = {
+			isa = PBXGroup;
+			children = (
+				2EA9845827DCA22700166E8A /* TestDoubles */,
+				OBJ_45 /* BearhunterScanCommandNegativeTests.swift */,
+				OBJ_46 /* BearhunterScanCommandPositiveTests.swift */,
+			);
+			name = bearhuntercliTests;
+			path = Tests/bearhuntercliTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_47 /* bearhunterlibTests */ = {
+			isa = PBXGroup;
+			children = (
+				2EA9845927DCA23300166E8A /* TestDoubles */,
+				OBJ_48 /* BearhunterTests.swift */,
+				OBJ_49 /* ConfigLocatorsTests.swift */,
+				OBJ_50 /* ConfigScannerTests.swift */,
+				OBJ_51 /* FileFinderTests.swift */,
+			);
+			name = bearhunterlibTests;
+			path = Tests/bearhunterlibTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_5 = {
+			isa = PBXGroup;
+			children = (
+				2EA9846427DCA41000166E8A /* Package.swift */,
+				2EA9845427DC9FC100166E8A /* scripts */,
+				OBJ_7 /* Sources */,
+				OBJ_43 /* Tests */,
+				OBJ_381 /* Products */,
+				OBJ_403 /* LICENSE */,
+				OBJ_404 /* Makefile */,
+				OBJ_405 /* README.md */,
+				2EA9846D27DCA58800166E8A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* bearhuntercli */,
+				OBJ_11 /* bearhunterlib */,
+				OBJ_39 /* testsCommon */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* bearhuntercli */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_9 /* BearhunterScanCommand.swift */,
+				OBJ_10 /* main.swift */,
+			);
+			name = bearhuntercli;
+			path = Sources/bearhuntercli;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"bearhunter::SwiftPMPackageDescription" /* bearhunterPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_873 /* Build configuration list for PBXNativeTarget "bearhunterPackageDescription" */;
+			buildPhases = (
+				OBJ_876 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = bearhunterPackageDescription;
+			packageProductDependencies = (
+				2EDD1F2627DC9B5A00D90C6E /* SwiftShell */,
+			);
+			productName = bearhunterPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		"bearhunter::bearhuntercli" /* bearhuntercli */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_887 /* Build configuration list for PBXNativeTarget "bearhuntercli" */;
+			buildPhases = (
+				OBJ_890 /* Sources */,
+				OBJ_893 /* Frameworks */,
+				2EA9845627DCA01F00166E8A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = bearhuntercli;
+			packageProductDependencies = (
+				2EDD1F3427DC9CC700D90C6E /* ArgumentParser */,
+			);
+			productName = bearhuntercli;
+			productReference = "bearhunter::bearhuntercli::Product" /* bearhuntercli */;
+			productType = "com.apple.product-type.tool";
+		};
+		"bearhunter::bearhuntercliTests" /* bearhuntercliTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_927 /* Build configuration list for PBXNativeTarget "bearhuntercliTests" */;
+			buildPhases = (
+				OBJ_930 /* Sources */,
+				OBJ_933 /* Frameworks */,
+				2EA9846527DCA49800166E8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2EA9846C27DCA58000166E8A /* PBXTargetDependency */,
+				OBJ_951 /* PBXTargetDependency */,
+				OBJ_968 /* PBXTargetDependency */,
+			);
+			name = bearhuntercliTests;
+			packageProductDependencies = (
+				2EA9846E27DCA58800166E8A /* ArgumentParser */,
+			);
+			productName = bearhuntercliTests;
+			productReference = "bearhunter::bearhuntercliTests::Product" /* bearhuntercliTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		"bearhunter::bearhunterlib" /* bearhunterlib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_970 /* Build configuration list for PBXNativeTarget "bearhunterlib" */;
+			buildPhases = (
+				OBJ_973 /* Sources */,
+				OBJ_996 /* Frameworks */,
+				2EA9845527DC9FF100166E8A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = bearhunterlib;
+			packageProductDependencies = (
+				2EDD1F2827DC9BA500D90C6E /* XcodeProj */,
+				2EDD1F2B27DC9C5F00D90C6E /* CarthageKit */,
+				2EDD1F2E27DC9C7F00D90C6E /* Rainbow */,
+				2EDD1F3127DC9C9400D90C6E /* SwiftShell */,
+			);
+			productName = bearhunterlib;
+			productReference = "bearhunter::bearhunterlib::Product" /* bearhunterlib.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"bearhunter::bearhunterlibTests" /* bearhunterlibTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_1023 /* Build configuration list for PBXNativeTarget "bearhunterlibTests" */;
+			buildPhases = (
+				OBJ_1026 /* Sources */,
+				OBJ_1031 /* Frameworks */,
+				2EA9846727DCA4A700166E8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_1047 /* PBXTargetDependency */,
+				OBJ_1048 /* PBXTargetDependency */,
+			);
+			name = bearhunterlibTests;
+			productName = bearhunterlibTests;
+			productReference = "bearhunter::bearhunterlibTests::Product" /* bearhunterlibTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		"bearhunter::testsCommon" /* testsCommon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_1068 /* Build configuration list for PBXNativeTarget "testsCommon" */;
+			buildPhases = (
+				OBJ_1071 /* Sources */,
+				OBJ_1074 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = testsCommon;
+			productName = testsCommon;
+			productReference = "bearhunter::testsCommon::Product" /* testsCommon.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 9999;
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "bearhunter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5;
+			packageReferences = (
+				2EDD1F2527DC9B5A00D90C6E /* XCRemoteSwiftPackageReference "SwiftShell" */,
+				2EDD1F2727DC9BA500D90C6E /* XCRemoteSwiftPackageReference "xcodeproj" */,
+				2EDD1F2A27DC9C5F00D90C6E /* XCRemoteSwiftPackageReference "Carthage" */,
+				2EDD1F2D27DC9C7F00D90C6E /* XCRemoteSwiftPackageReference "Rainbow" */,
+				2EDD1F3327DC9CC700D90C6E /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+			);
+			productRefGroup = OBJ_381 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"bearhunter::SwiftPMPackageDescription" /* bearhunterPackageDescription */,
+				"bearhunter::bearhunterPackageTests::ProductTarget" /* bearhunterPackageTests */,
+				"bearhunter::bearhuntercli" /* bearhuntercli */,
+				"bearhunter::bearhuntercliTests" /* bearhuntercliTests */,
+				"bearhunter::bearhunterlib" /* bearhunterlib */,
+				"bearhunter::bearhunterlibTests" /* bearhunterlibTests */,
+				"bearhunter::testsCommon" /* testsCommon */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2EA9846527DCA49800166E8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EA9846627DCA49F00166E8A /* TestDoubles in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EA9846727DCA4A700166E8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EA9846827DCA4B700166E8A /* TestDoubles in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2EA9845527DC9FF100166E8A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PROJECT_DIR\"/scripts/lint.sh\n";
+		};
+		2EA9845627DCA01F00166E8A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PROJECT_DIR\"/scripts/lint.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_1026 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_1027 /* BearhunterTests.swift in Sources */,
+				OBJ_1028 /* ConfigLocatorsTests.swift in Sources */,
+				OBJ_1029 /* ConfigScannerTests.swift in Sources */,
+				OBJ_1030 /* FileFinderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_1071 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_1072 /* Bundle+Resources.swift in Sources */,
+				OBJ_1073 /* Bundle+TestPaths.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_876 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_890 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_891 /* BearhunterScanCommand.swift in Sources */,
+				OBJ_892 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_930 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_931 /* BearhunterScanCommandNegativeTests.swift in Sources */,
+				OBJ_932 /* BearhunterScanCommandPositiveTests.swift in Sources */,
+				2EA9846A27DCA55F00166E8A /* main.swift in Sources */,
+				2EA9846927DCA55D00166E8A /* BearhunterScanCommand.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_973 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_974 /* Bearhunter.swift in Sources */,
+				OBJ_975 /* ConfigFile.swift in Sources */,
+				OBJ_976 /* DMType.swift in Sources */,
+				OBJ_977 /* ByBlockListDetector.swift in Sources */,
+				OBJ_978 /* ByEmailDetector.swift in Sources */,
+				OBJ_979 /* SoftwareType.swift in Sources */,
+				OBJ_980 /* SoftwareTypeDetecting.swift in Sources */,
+				OBJ_981 /* Set+ConsoleOutput.swift in Sources */,
+				OBJ_982 /* Set+Map.swift in Sources */,
+				OBJ_983 /* String+ConsoleOutput.swift in Sources */,
+				OBJ_984 /* ConfigLocator.swift in Sources */,
+				OBJ_985 /* FileDescriptor.swift in Sources */,
+				OBJ_986 /* FileFinder.swift in Sources */,
+				OBJ_987 /* CarthageScanningStrategy.swift in Sources */,
+				OBJ_988 /* CocoapodsScanningStrategy.swift in Sources */,
+				OBJ_989 /* Component.swift in Sources */,
+				OBJ_990 /* ConfigScanner.swift in Sources */,
+				OBJ_991 /* ConfigScanning.swift in Sources */,
+				OBJ_992 /* GitSubmodulesScanningStrategy.swift in Sources */,
+				OBJ_993 /* GitSubtreeScanningStrategy.swift in Sources */,
+				OBJ_994 /* SPMScanningStrategy.swift in Sources */,
+				OBJ_995 /* XcodeProjScanningStrategy.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2EA9846C27DCA58000166E8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 2EA9846B27DCA58000166E8A /* ArgumentParser */;
+		};
+		OBJ_1047 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "bearhunter::testsCommon" /* testsCommon */;
+			targetProxy = 2EDD1F1127DC9A9E00D90C6E /* PBXContainerItemProxy */;
+		};
+		OBJ_1048 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "bearhunter::bearhunterlib" /* bearhunterlib */;
+			targetProxy = 2EDD1F1227DC9A9E00D90C6E /* PBXContainerItemProxy */;
+		};
+		OBJ_882 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "bearhunter::bearhunterlibTests" /* bearhunterlibTests */;
+			targetProxy = 2EDD1F2027DC9A9E00D90C6E /* PBXContainerItemProxy */;
+		};
+		OBJ_884 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "bearhunter::bearhuntercliTests" /* bearhuntercliTests */;
+			targetProxy = 2EDD1F2127DC9A9E00D90C6E /* PBXContainerItemProxy */;
+		};
+		OBJ_951 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "bearhunter::bearhuntercli" /* bearhuntercli */;
+			targetProxy = 2EDD1EFF27DC9A9E00D90C6E /* PBXContainerItemProxy */;
+		};
+		OBJ_968 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "bearhunter::testsCommon" /* testsCommon */;
+			targetProxy = 2EDD1F1027DC9A9E00D90C6E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_1024 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/XcodeProjCExt/Sources/XcodeProjCExt/include",
+				);
+				INFOPLIST_FILE = bearhunter.xcodeproj/bearhunterlibTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@loader_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = bearhunterlibTests;
+				TVOS_DEPLOYMENT_TARGET = 14.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+		OBJ_1025 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/XcodeProjCExt/Sources/XcodeProjCExt/include",
+				);
+				INFOPLIST_FILE = bearhunter.xcodeproj/bearhunterlibTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@loader_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = bearhunterlibTests;
+				TVOS_DEPLOYMENT_TARGET = 14.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Release;
+		};
+		OBJ_1069 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = bearhunter.xcodeproj/testsCommon_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = testsCommon;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = testsCommon;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_1070 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = bearhunter.xcodeproj/testsCommon_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = testsCommon;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = testsCommon;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+					"DEBUG=1",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "$(AVAILABLE_PLATFORMS)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "$(AVAILABLE_PLATFORMS)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_874 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/ManifestAPI -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -package-description-version 5.5.0";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		OBJ_875 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/ManifestAPI -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -package-description-version 5.5.0";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		OBJ_880 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_881 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_888 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/XcodeProjCExt/Sources/XcodeProjCExt/include",
+				);
+				INFOPLIST_FILE = bearhunter.xcodeproj/bearhuntercli_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+					"@executable_path",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
+				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = bearhuntercli;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_889 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/XcodeProjCExt/Sources/XcodeProjCExt/include",
+				);
+				INFOPLIST_FILE = bearhunter.xcodeproj/bearhuntercli_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+					"@executable_path",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
+				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = bearhuntercli;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_928 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/XcodeProjCExt/Sources/XcodeProjCExt/include",
+				);
+				INFOPLIST_FILE = bearhunter.xcodeproj/bearhuntercliTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@loader_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = bearhuntercliTests;
+				TVOS_DEPLOYMENT_TARGET = 14.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+		OBJ_929 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/XcodeProjCExt/Sources/XcodeProjCExt/include",
+				);
+				INFOPLIST_FILE = bearhunter.xcodeproj/bearhuntercliTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@loader_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = bearhuntercliTests;
+				TVOS_DEPLOYMENT_TARGET = 14.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Release;
+		};
+		OBJ_971 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/XcodeProjCExt/Sources/XcodeProjCExt/include",
+				);
+				INFOPLIST_FILE = bearhunter.xcodeproj/bearhunterlib_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = bearhunterlib;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = bearhunterlib;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_972 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/.build/checkouts/XcodeProjCExt/Sources/XcodeProjCExt/include",
+				);
+				INFOPLIST_FILE = bearhunter.xcodeproj/bearhunterlib_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = bearhunterlib;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = bearhunterlib;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_1023 /* Build configuration list for PBXNativeTarget "bearhunterlibTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_1024 /* Debug */,
+				OBJ_1025 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_1068 /* Build configuration list for PBXNativeTarget "testsCommon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_1069 /* Debug */,
+				OBJ_1070 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_2 /* Build configuration list for PBXProject "bearhunter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_873 /* Build configuration list for PBXNativeTarget "bearhunterPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_874 /* Debug */,
+				OBJ_875 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_879 /* Build configuration list for PBXAggregateTarget "bearhunterPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_880 /* Debug */,
+				OBJ_881 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_887 /* Build configuration list for PBXNativeTarget "bearhuntercli" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_888 /* Debug */,
+				OBJ_889 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_927 /* Build configuration list for PBXNativeTarget "bearhuntercliTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_928 /* Debug */,
+				OBJ_929 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_970 /* Build configuration list for PBXNativeTarget "bearhunterlib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_971 /* Debug */,
+				OBJ_972 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2EDD1F2527DC9B5A00D90C6E /* XCRemoteSwiftPackageReference "SwiftShell" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kareman/SwiftShell.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		2EDD1F2727DC9BA500D90C6E /* XCRemoteSwiftPackageReference "xcodeproj" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tuist/xcodeproj.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+		2EDD1F2A27DC9C5F00D90C6E /* XCRemoteSwiftPackageReference "Carthage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Carthage/Carthage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.4;
+			};
+		};
+		2EDD1F2D27DC9C7F00D90C6E /* XCRemoteSwiftPackageReference "Rainbow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Rainbow";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		2EDD1F3327DC9CC700D90C6E /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2EA9846B27DCA58000166E8A /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EDD1F3327DC9CC700D90C6E /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+		2EA9846E27DCA58800166E8A /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EDD1F3327DC9CC700D90C6E /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+		2EDD1F2627DC9B5A00D90C6E /* SwiftShell */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EDD1F2527DC9B5A00D90C6E /* XCRemoteSwiftPackageReference "SwiftShell" */;
+			productName = SwiftShell;
+		};
+		2EDD1F2827DC9BA500D90C6E /* XcodeProj */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EDD1F2727DC9BA500D90C6E /* XCRemoteSwiftPackageReference "xcodeproj" */;
+			productName = XcodeProj;
+		};
+		2EDD1F2B27DC9C5F00D90C6E /* CarthageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EDD1F2A27DC9C5F00D90C6E /* XCRemoteSwiftPackageReference "Carthage" */;
+			productName = CarthageKit;
+		};
+		2EDD1F2E27DC9C7F00D90C6E /* Rainbow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EDD1F2D27DC9C7F00D90C6E /* XCRemoteSwiftPackageReference "Rainbow" */;
+			productName = Rainbow;
+		};
+		2EDD1F3127DC9C9400D90C6E /* SwiftShell */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EDD1F2527DC9B5A00D90C6E /* XCRemoteSwiftPackageReference "SwiftShell" */;
+			productName = SwiftShell;
+		};
+		2EDD1F3427DC9CC700D90C6E /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2EDD1F3327DC9CC700D90C6E /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}

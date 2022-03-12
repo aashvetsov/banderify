@@ -1,0 +1,353 @@
+#RULES STATE
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - .swiftpm
+  - .build
+
+disabled_rules:
+ - inclusive_language
+ - private_unit_test # tests_only
+ - unused_capture_list
+
+opt_in_rules:
+  - array_init
+  - attributes
+  - closure_body_length
+  - closure_end_indentation
+  - closure_spacing
+  - collection_alignment
+  - conditional_returns_on_newline
+  - contains_over_filter_count
+  - contains_over_filter_is_empty
+  - contains_over_first_not_nil
+  - contains_over_range_nil_comparison
+  - convenience_type
+  - discarded_notification_center_observer
+  - discouraged_assert
+  - discouraged_object_literal
+  - discouraged_optional_boolean
+  - empty_collection_literal
+  - empty_count
+  - enum_case_associated_values_count
+  - explicit_init
+  - extension_access_modifier
+  - empty_string
+  - fallthrough
+  - fatal_error_message
+  - file_name
+  - file_name_no_space
+  - first_where
+  - flatmap_over_map_reduce
+  - force_unwrapping
+  - identical_operands
+  - implicitly_unwrapped_optional
+  - inert_defer
+  - joined_default_parameter
+  - last_where
+  - legacy_objc_type
+  - legacy_multiple
+  - legacy_random
+  - literal_expression_end_indentation
+  - lower_acl_than_parent
+  - modifier_order
+  - multiline_arguments
+  - multiline_arguments_brackets
+  - multiline_function_chains
+  - multiline_literal_brackets
+  - multiline_parameters
+  - multiline_parameters_brackets
+  - number_separator
+  - operator_usage_whitespace
+  - optional_enum_case_matching
+  - overridden_super_call
+  - pattern_matching_keywords
+  - prefer_self_type_over_type_of_self
+  - prefer_zero_over_explicit_init
+  - private_subject
+  - prohibited_interface_builder
+  - reduce_into
+  - redundant_nil_coalescing
+  - sorted_first_last
+  - sorted_imports
+  - test_case_accessibility # tests_only
+  - toggle_bool
+  - unavailable_function
+  - unneeded_parentheses_in_closure_argument
+  - untyped_error_in_catch # prod_only
+  - unused_declaration
+  - unused_import
+  - vertical_parameter_alignment_on_call
+  - vertical_whitespace_closing_braces
+  - xct_specific_matcher # tests_only
+  - yoda_condition
+
+custom_rules:
+  private_state_and_state_object:
+    included: ".*\\.swift"
+    name: "private_state_and_state_object"
+    regex: "(@State|@StateObject)\\b(?! +private\\b) +var\\b"
+    message: "'@State' and '@StateObject' property wrappers should be followed by a 'private' keyword"
+    severity: error
+
+  single_vertical_whitespace_in_class_and_struct:
+    included: ".*\\.swift"
+    name: "single_vertical_whitespace_in_class_and_struct"
+    regex: "\\b(struct|class) +\\w+\\b[^\\n]*\\{ *\\n(?! *\\n)"
+    message: "'class' and 'struct' declarations should have a single empty line after the opening brace"
+    severity: error
+
+  no_vertical_whitespace_in_func:
+    included: ".*\\.swift"
+    name: "no_vertical_whitespace_in_func"
+    regex: "\\b(func \\w+|init)\\b[^\\n]*\\((?s)[^\\{\\}]*?\\)[ \\n]*\\{\\n *\\n"
+    message: "'func' and 'init' declarations should not have an empty line after the opening brace"
+    severity: error
+
+  no_vertical_whitespace_in_enum:
+    included: ".*\\.swift"
+    name: "no_vertical_whitespace_in_enum"
+    regex: "\\benum +\\w+\\b[^\\n]*\\{\\n *\\n"
+    message: "'enum' declarations should not have an empty line after the opening brace"
+    severity: error
+
+  test_data_usage_in_preview:
+    included: ".*\\.swift"
+    name: "test_data_usage_in_preview"
+    regex: "\\bstruct +\\w+ *: *PreviewProvider *\\{([^\\n]|\\n(?!\\}))*?(Dummy|Stub|Spy|Mock|Fake)"
+    message: "You should not use any test doubles in Swift UI previews. Use PreviewFixture suffix instead"
+    severity: warning
+
+  multiline_when_section_in_test:
+    included: ".*Tests\\.swift"
+    name: "multiline_when_section_in_test"
+    regex: "// when\\n[^\\n](?![^\\n]*\\n\\n +// then)"
+    message: "The when-section should preferably consist of a single line"
+    severity: warning
+
+# #RULES CONFIG
+
+#Style
+attributes:
+  severity: error
+  always_on_line_above:
+    - "@main"
+    - "@dynamicMemberLookup"
+    - "@dynamicCallable"
+    - "@discardableResult"
+    - "@available(*, unavailable)"
+  always_on_same_line:
+    - "@objc"
+    - "@nonobjc"
+closing_brace: error
+closure_end_indentation: error
+closure_parameter_position: error
+closure_spacing: error
+collection_alignment:
+  severity: error
+  flexible_right_spacing: false
+  apply_to_dictionaries: true
+colon: 
+  severity: error
+comma: error
+computed_accessors_order:
+  severity: error
+  order: get_set
+conditional_returns_on_newline:
+  severity: error
+  if_only: true
+control_statement: error
+empty_enum_arguments: error
+empty_parameters: error
+empty_parentheses_with_trailing_closure: error
+implicit_getter: error
+implicitly_unwrapped_optional:
+  severity: error
+leading_whitespace: error
+literal_expression_end_indentation: error
+modifier_order:
+  severity: error
+multiline_arguments:
+  severity: error
+multiline_arguments_brackets: error
+multiline_function_chains: error
+multiline_literal_brackets: error
+multiline_parameters:
+  severity: error
+multiline_parameters_brackets: error
+multiple_closures_with_trailing_closure: error
+no_space_in_method_call: error
+number_separator:
+  severity: error
+opening_brace:
+  severity: error
+operator_usage_whitespace:
+  severity: error
+operator_whitespace: error
+prefer_self_type_over_type_of_self: error
+protocol_property_accessors_order: error
+redundant_discardable_let: error
+return_arrow_whitespace: error
+shorthand_operator: error
+sorted_imports: error
+statement_position:
+  severity: error
+switch_case_alignment:
+  severity: error
+trailing_comma:
+  severity: error
+  mandatory_comma: false
+trailing_newline: error
+trailing_whitespace:
+  severity: error
+  ignores_empty_lines: false
+  ignores_comments: false
+unneeded_parentheses_in_closure_argument: error
+unused_optional_binding:
+  severity: error
+vertical_parameter_alignment: error
+vertical_parameter_alignment_on_call: error
+vertical_whitespace:
+  severity: error
+  max_empty_lines: 1
+void_return: error
+
+#Lint
+array_init: error
+class_delegate_protocol: error
+comment_spacing: error
+compiler_protocol_init: error
+deployment_target:
+  severity: error
+discarded_notification_center_observer: error
+discouraged_direct_init:
+  severity: error
+duplicate_enum_cases: error
+dynamic_inline: error
+identical_operands: error
+inert_defer: error
+lower_acl_than_parent: error
+mark: error
+notification_center_detachment: error
+overridden_super_call:
+  severity: error
+  excluded: []
+  included: [“*”]
+private_subject: error
+prohibited_interface_builder: error
+unused_closure_parameter: error
+unused_control_flow_label: error
+unused_import:
+  severity: error
+unused_setter_value: error
+yoda_condition: error
+nesting:
+    type_level: 4
+
+#Metrics
+closure_body_length:
+  error: 20
+cyclomatic_complexity:
+  error: 4
+  ignores_case_statements: true
+enum_case_associated_values_count:
+    error: 4
+file_length: # different for tests
+  warning: 150
+  ignore_comment_only_lines: true  
+function_body_length:
+  error: 20
+function_parameter_count:
+  error: 7
+  warning: 7
+  ignores_default_parameters: false
+identifier_name:
+  min_length:
+    error: 3
+  max_length:
+    error: 40
+  excluded:
+    - cg
+    - id
+    - ok
+    - os
+    - ui
+    - x
+    - y
+large_tuple:
+  error: 3  
+line_length:
+  error: 120
+  ignores_comments: true
+type_body_length:
+  error: 130
+type_name:
+  min_length: 2
+  max_length:
+    error: 40
+
+#Performance
+contains_over_filter_count: error
+contains_over_filter_is_empty: error
+contains_over_first_not_nil: error
+contains_over_range_nil_comparison: error
+empty_collection_literal: error
+empty_count:
+  severity: error
+empty_string: error
+first_where: error
+flatmap_over_map_reduce: error
+last_where: error
+reduce_boolean: error
+reduce_into: error
+sorted_first_last: error
+
+#Idiomatic
+block_based_kvo: error
+convenience_type: error
+discouraged_assert: error
+discouraged_object_literal:
+  severity: error
+discouraged_optional_boolean: error
+duplicate_imports: error
+explicit_init: error
+extension_access_modifier: error
+fallthrough: error
+fatal_error_message: error
+file_name:
+  severity: warning
+  excluded: ["main.swift"]
+file_name_no_space:
+  severity: error
+for_where: error
+force_cast: error
+force_try: error # prod_only
+force_unwrapping: error # prod_only
+generic_type_name:
+  severity: error
+is_disjoint: error
+joined_default_parameter: error
+legacy_cggeometry_functions: error
+legacy_constant: error
+legacy_constructor: error
+legacy_hashing: error
+legacy_multiple: error
+legacy_nsgeometry_functions: error
+legacy_objc_type: error
+legacy_random: error
+pattern_matching_keywords: error
+prefer_zero_over_explicit_init: error
+redundant_nil_coalescing: error
+redundant_objc_attribute: error
+redundant_optional_initialization: error
+redundant_set_access_control: error
+redundant_string_enum_value: error
+redundant_void_return: error
+toggle_bool: error
+trailing_semicolon: error
+unavailable_function: error
+unneeded_break_in_switch: error
+untyped_error_in_catch: error # prod_only
+unused_enumerated: error
+xct_specific_matcher: error # tests_only
+xctfail_message: error # tests_only
+
+reporter: "xcode"
