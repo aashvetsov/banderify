@@ -223,10 +223,10 @@
 			children = (
 				OBJ_12 /* Bearhunter.swift */,
 				OBJ_13 /* CommonTypes */,
-				OBJ_16 /* Detecting */,
-				OBJ_21 /* Extensions */,
 				OBJ_25 /* Locating */,
 				OBJ_29 /* Scanning */,
+				OBJ_16 /* Detecting */,
+				OBJ_21 /* Extensions */,
 			);
 			name = bearhunterlib;
 			path = Sources/bearhunterlib;
