@@ -18,7 +18,7 @@ extension FileFinder {
         return Set(
             allFiles.filter {
                 guard let fileName = URL(string: $0)?.lastPathComponent else { return false }
-                return FileDescriptor(string: fileName) ~ descriptor
+                return FileDescriptor(string: fileName) =~ descriptor
             }
         )
     }

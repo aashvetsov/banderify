@@ -40,7 +40,7 @@ final class FileFinderTests: XCTestCase {
         let expectedResult = configuration.2
 
         // when
-        let result = left ~ right
+        let result = left =~ right
 
         // then
         XCTAssertEqual(result, expectedResult)

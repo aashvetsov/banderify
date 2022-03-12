@@ -14,8 +14,8 @@ struct FileDescriptor: Equatable {
     }
 }
 
-infix operator ~
-func ~ (
+infix operator =~
+func =~ (
     left: FileDescriptor?,
     right: FileDescriptor?
 ) -> Bool {
