@@ -9,9 +9,9 @@ final class ConfigScannerTests: XCTestCase {
         .spm: 1,
         .xcodeproj: 3,
         .carthage: 3,
-        .gitSubmodules: 0, // TODO: change when implement corresponding scanneer
-        .gitSubtree: 0, // TODO: change when implement corresponding scanneer
-        .cocoapods: 0 // TODO: change when implement corresponding scanneer
+        .gitSubmodules: 0, // TODO: change when implement corresponding scanner
+        .gitSubtree: 0, // TODO: change when implement corresponding scanner
+        .cocoapods: 0 // TODO: change when implement corresponding scanner
     ]}
 
     private var type: DMType!
