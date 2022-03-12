@@ -4,48 +4,48 @@ import XCTest
 
 final class BearhunterTests: XCTestCase {
 
-    func test_givenAllDMsPath_whenCallScan_thenComponentsIsEmptyFalseAndErrorIsNil() {
+    func test_givenAllDMsPath_whenCallScan_thenRepositoriesIsEmptyFalseAndErrorIsNil() {
         var testError: Error?
-        var components: ComponentsSet = []
+        var repositories: Repositories = []
 
         // given
         let path = Bundle.allDMsPath
 
         // when
-        do { components = try Bearhunter.scan(path) } catch { testError = error }
+        do { repositories = try Bearhunter.scan(path) } catch { testError = error }
 
         // then
-        XCTAssertFalse(components.isEmpty)
+        XCTAssertFalse(repositories.isEmpty)
         XCTAssertNil(testError)
     }
 
-    func test_givenNotExistingPath_whenCallScan_thenComponentsIsEmptyAndErrorIsNotNil() {
+    func test_givenNotExistingPath_whenCallScan_thenRepositoriesIsEmptyAndErrorIsNotNil() {
         var testError: Error?
-        var components: ComponentsSet = []
+        var repositories: Repositories = []
 
         // given
         let path = Bundle.notExistingPath
 
         // when
-        do { components = try Bearhunter.scan(path) } catch { testError = error }
+        do { repositories = try Bearhunter.scan(path) } catch { testError = error }
 
         // then
-        XCTAssertTrue(components.isEmpty)
+        XCTAssertTrue(repositories.isEmpty)
         XCTAssertNotNil(testError)
     }
 
-    func test_givenNoConfigFilesPath_whenCallScan_thenComponentsIsEmptyAndErrorIsNil() {
+    func test_givenNoConfigFilesPath_whenCallScan_thenRepositoriesIsEmptyAndErrorIsNil() {
         var testError: Error?
-        var components: ComponentsSet = []
+        var repositories: Repositories = []
 
         // given
         let path = Bundle.noConfigFilesPath
 
         // when
-        do { components = try Bearhunter.scan(path) } catch { testError = error }
+        do { repositories = try Bearhunter.scan(path) } catch { testError = error }
 
         // then
-        XCTAssertTrue(components.isEmpty)
+        XCTAssertTrue(repositories.isEmpty)
         XCTAssertNil(testError)
     }
 }

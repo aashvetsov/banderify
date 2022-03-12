@@ -28,43 +28,43 @@ final class ConfigScannerTests: XCTestCase {
         super.tearDown()
     }
 
-    func test_givenLocatorForAllDMsPath_whenScanComponents_thenComponentsCountEqualExpectations() {
+    func test_givenLocatorForAllDMsPath_whenScanRepositories_thenRepositoriesCountEqualExpectations() {
         // given
         let locator = ConfigLocator(directory: Bundle.allDMsPath, type: type)
 
         // when
-        let components = locator.configFiles.flatMap(components(from:))
+        let repositories = locator.configFiles.flatMap(repositories(from:))
 
         // then
-        XCTAssertEqual(components.count, expectations[type])
+        XCTAssertEqual(repositories.count, expectations[type])
     }
 
-    func test_givenLocatorForNotExistingPath_whenScanComponents_thenComponentsIsEmpty() {
+    func test_givenLocatorForNotExistingPath_whenScanRepositories_thenRepositoriesIsEmpty() {
         // given
         let locator = ConfigLocator(directory: Bundle.notExistingPath, type: type)
 
         // when
-        let components = locator.configFiles.flatMap(components(from:))
+        let repositories = locator.configFiles.flatMap(repositories(from:))
 
         // then
-        XCTAssertTrue(components.isEmpty)
+        XCTAssertTrue(repositories.isEmpty)
     }
 
-    func test_givenLocatorForNoConfigFilesPath_whenScanComponents_thenComponentsIsEmpty() {
+    func test_givenLocatorForNoConfigFilesPath_whenScanRepositories_thenRepositoriesIsEmpty() {
         // given
         let locator = ConfigLocator(directory: Bundle.noConfigFilesPath, type: type)
 
         // when
-        let components = locator.configFiles.flatMap(components(from:))
+        let repositories = locator.configFiles.flatMap(repositories(from:))
 
         // then
-        XCTAssertTrue(components.isEmpty)
+        XCTAssertTrue(repositories.isEmpty)
     }
 }
 
 fileprivate extension ConfigScannerTests {
 
-    func components(from file: ConfigFile) -> ComponentsSet {
-        ConfigScanner(file: file).components
+    func repositories(from file: ConfigFile) -> Repositories {
+        ConfigScanner(file: file).repositories
     }
 }

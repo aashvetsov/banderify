@@ -1,4 +1,4 @@
-public struct Component: Hashable {
+public struct Repository: Hashable {
 
     let name: String?
     let url: String
@@ -9,4 +9,4 @@ public struct Component: Hashable {
     }
 }
 
-public typealias ComponentsSet = Set<Component>
+public typealias Repositories = Set<Repository>

@@ -61,7 +61,7 @@
 		OBJ_986 /* FileFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* FileFinder.swift */; };
 		OBJ_987 /* CarthageScanningStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* CarthageScanningStrategy.swift */; };
 		OBJ_988 /* CocoapodsScanningStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* CocoapodsScanningStrategy.swift */; };
-		OBJ_989 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* Component.swift */; };
+		OBJ_989 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* Repository.swift */; };
 		OBJ_990 /* ConfigScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* ConfigScanner.swift */; };
 		OBJ_991 /* ConfigScanning.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* ConfigScanning.swift */; };
 		OBJ_992 /* GitSubmodulesScanningStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* GitSubmodulesScanningStrategy.swift */; };
@@ -136,7 +136,7 @@
 		OBJ_28 /* FileFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFinder.swift; sourceTree = "<group>"; };
 		OBJ_30 /* CarthageScanningStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarthageScanningStrategy.swift; sourceTree = "<group>"; };
 		OBJ_31 /* CocoapodsScanningStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoapodsScanningStrategy.swift; sourceTree = "<group>"; };
-		OBJ_32 /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		OBJ_32 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		OBJ_33 /* ConfigScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigScanner.swift; sourceTree = "<group>"; };
 		OBJ_34 /* ConfigScanning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigScanning.swift; sourceTree = "<group>"; };
 		OBJ_35 /* GitSubmodulesScanningStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitSubmodulesScanningStrategy.swift; sourceTree = "<group>"; };
@@ -277,7 +277,7 @@
 			children = (
 				OBJ_30 /* CarthageScanningStrategy.swift */,
 				OBJ_31 /* CocoapodsScanningStrategy.swift */,
-				OBJ_32 /* Component.swift */,
+				OBJ_32 /* Repository.swift */,
 				OBJ_33 /* ConfigScanner.swift */,
 				OBJ_34 /* ConfigScanning.swift */,
 				OBJ_35 /* GitSubmodulesScanningStrategy.swift */,
@@ -669,7 +669,7 @@
 				OBJ_986 /* FileFinder.swift in Sources */,
 				OBJ_987 /* CarthageScanningStrategy.swift in Sources */,
 				OBJ_988 /* CocoapodsScanningStrategy.swift in Sources */,
-				OBJ_989 /* Component.swift in Sources */,
+				OBJ_989 /* Repository.swift in Sources */,
 				OBJ_990 /* ConfigScanner.swift in Sources */,
 				OBJ_991 /* ConfigScanning.swift in Sources */,
 				OBJ_992 /* GitSubmodulesScanningStrategy.swift in Sources */,

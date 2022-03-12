@@ -5,7 +5,7 @@ enum SPMScanningStrategy {}
 
 extension SPMScanningStrategy: ConfigScanning {
 
-    static func scan(_ file: ConfigFile) -> ComponentsSet {
+    static func scan(_ file: ConfigFile) -> Repositories {
         let runningDirectory = main.currentdirectory
         defer {
             main.currentdirectory = runningDirectory
@@ -23,12 +23,12 @@ extension SPMScanningStrategy: ConfigScanning {
             return []
         }
 
-        let components = dependencies
+        let repositories = dependencies
             .compactMap(\.scm)
             .flatMap { $0 }
-            .compactMap { Component(name: $0.identity, url: $0.location) }
+            .compactMap { Repository(name: $0.identity, url: $0.location) }
 
-        return Set(components)
+        return Set(repositories)
     }
 }
 

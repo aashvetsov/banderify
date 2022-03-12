@@ -5,7 +5,7 @@ enum XcodeProjScanningStrategy {}
 
 extension XcodeProjScanningStrategy: ConfigScanning {
 
-    static func scan(_ file: ConfigFile) -> ComponentsSet {
+    static func scan(_ file: ConfigFile) -> Repositories {
         guard
             let url = file.url?.absoluteString,
             case let path = Path(url),
@@ -14,12 +14,12 @@ extension XcodeProjScanningStrategy: ConfigScanning {
             return []
         }
 
-        let components: [Component] = project.pbxproj.projects
+        let repositories: [Repository] = project.pbxproj.projects
             .flatMap(\.packages)
             .compactMap {
                 guard let url = $0.repositoryURL else { return nil }
-                return Component(name: $0.name, url: url)
+                return Repository(name: $0.name, url: url)
             }
-        return Set(components)
+        return Set(repositories)
     }
 }

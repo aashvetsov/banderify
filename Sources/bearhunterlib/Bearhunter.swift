@@ -4,14 +4,14 @@ public enum Bearhunter {}
 
 public extension Bearhunter {
 
-    static func scan(_ path: String?) throws -> ComponentsSet {
+    static func scan(_ path: String?) throws -> Repositories {
         guard let path = path else { throw Error.missingSourceDirectory }
         guard path.isExistingDirectory else { throw Error.notExistingSourceDirectory }
 
         let files = locateConfigFiles(at: path)
-        let components = scanComponents(at: files)
+        let repositories = scanRepositories(at: files)
 
-        return components
+        return repositories
     }
 }
 
@@ -33,18 +33,18 @@ fileprivate extension Bearhunter {
         return files
     }
 
-    static func scanComponents(at files: ConfigFilesSet) -> ComponentsSet {
+    static func scanRepositories(at files: ConfigFilesSet) -> Repositories {
         print("***************** BEARHUNTER STEP2 ******************".level1)
         print("Started analysis of config files".level2)
 
-        let components = Set(
-            files.flatMap { ConfigScanner(file: $0).components }
+        let repositories = Set(
+            files.flatMap { ConfigScanner(file: $0).repositories }
         )
 
         print("Detected dependencies:".level2)
-        print("\(components.setmap(\.url).list.link)")
+        print("\(repositories.setmap(\.url).list.link)")
 
-        return components
+        return repositories
     }
 }
 

@@ -6,7 +6,7 @@ public struct BearhunterScanCommand {
     @Option(name: .shortAndLong, help: "Path to the directory with project")
     private var path: String?
 
-    private(set) static var output: ComponentsSet?
+    private(set) static var output: Repositories?
 
     public init() {}
 

@@ -1,7 +1,7 @@
 struct ConfigScanner {
 
     let file: ConfigFile
-    var components: ComponentsSet { strategy.scan(file) }
+    var repositories: Repositories { strategy.scan(file) }
 }
 
 fileprivate extension ConfigScanner {

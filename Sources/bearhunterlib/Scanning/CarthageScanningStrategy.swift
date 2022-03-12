@@ -5,7 +5,7 @@ enum CarthageScanningStrategy {}
 
 extension CarthageScanningStrategy: ConfigScanning {
 
-    static func scan(_ file: ConfigFile) -> ComponentsSet {
+    static func scan(_ file: ConfigFile) -> Repositories {
         guard let fileUrl = file.url?.prefixedFileScheme else { return [] }
 
         var cartfile: Cartfile?
@@ -15,17 +15,17 @@ extension CarthageScanningStrategy: ConfigScanning {
         }
         guard let cartfile = cartfile else { return [] }
 
-        let components: [Component] = cartfile.dependencies
+        let repositories: [Repository] = cartfile.dependencies
             .map(\.key)
-            .compactMap(component(from:))
+            .compactMap(repository(from:))
 
-        return Set(components)
+        return Set(repositories)
     }
 }
 
 fileprivate extension CarthageScanningStrategy {
 
-    static func component(from dependency: Dependency) -> Component? {
+    static func repository(from dependency: Dependency) -> Repository? {
         var dependencyName, dependencyUrl: String?
         switch dependency {
         case let .gitHub(server, repository):
@@ -38,7 +38,7 @@ fileprivate extension CarthageScanningStrategy {
             return nil
         }
         guard let url = dependencyUrl else { return nil }
-        return Component(name: dependencyName, url: url)
+        return Repository(name: dependencyName, url: url)
     }
 }
 
