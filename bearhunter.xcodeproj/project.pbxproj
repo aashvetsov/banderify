@@ -265,9 +265,9 @@
 		OBJ_25 /* Locating */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_26 /* ConfigLocator.swift */,
 				OBJ_27 /* FileDescriptor.swift */,
 				OBJ_28 /* FileFinder.swift */,
+				OBJ_26 /* ConfigLocator.swift */,
 			);
 			path = Locating;
 			sourceTree = "<group>";
@@ -275,11 +275,11 @@
 		OBJ_29 /* Scanning */ = {
 			isa = PBXGroup;
 			children = (
+				OBJ_32 /* Repository.swift */,
+				OBJ_34 /* ConfigScanning.swift */,
+				OBJ_33 /* ConfigScanner.swift */,
 				OBJ_30 /* CarthageScanningStrategy.swift */,
 				OBJ_31 /* CocoapodsScanningStrategy.swift */,
-				OBJ_32 /* Repository.swift */,
-				OBJ_33 /* ConfigScanner.swift */,
-				OBJ_34 /* ConfigScanning.swift */,
 				OBJ_35 /* GitSubmodulesScanningStrategy.swift */,
 				OBJ_36 /* GitSubtreeScanningStrategy.swift */,
 				OBJ_37 /* SPMScanningStrategy.swift */,
