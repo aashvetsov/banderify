@@ -36,18 +36,18 @@ fileprivate extension SPMScanningStrategy {
 
     struct Package: Decodable, Hashable {
 
-        public struct Dependency: Decodable, Hashable {
+        struct Dependency: Decodable, Hashable {
 
-            public let scm: Set<SCM>?
+            let scm: Set<SCM>?
         }
 
-        public struct SCM: Decodable, Hashable {
+        struct SCM: Decodable, Hashable {
 
-            public let identity: String
-            public let location: String
+            let identity: String
+            let location: String
         }
 
-        public let dependencies: Set<Dependency>?
+        let dependencies: Set<Dependency>?
     }
 }
 
