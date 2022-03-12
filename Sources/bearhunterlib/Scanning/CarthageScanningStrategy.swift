@@ -15,7 +15,7 @@ extension CarthageScanningStrategy: ConfigScanning {
         }
         guard let cartfile = cartfile else { return [] }
 
-        let repositories: [Repository] = cartfile.dependencies
+        let repositories = cartfile.dependencies
             .map(\.key)
             .compactMap(repository(from:))
 
