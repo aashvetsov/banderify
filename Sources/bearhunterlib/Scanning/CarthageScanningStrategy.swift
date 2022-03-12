@@ -6,8 +6,7 @@ enum CarthageScanningStrategy {}
 extension CarthageScanningStrategy: ConfigScanning {
 
     static func scan(_ file: ConfigFile) -> Repositories {
-        guard let fileUrl = file.url?.prefixedFileScheme else { return [] }
-
+        let fileUrl = file.url.prefixedFileScheme
         var cartfile: Cartfile?
         switch Cartfile.from(file: fileUrl) {
         case .success(let result): cartfile = result
@@ -39,12 +38,5 @@ fileprivate extension CarthageScanningStrategy {
         }
         guard let url = dependencyUrl else { return nil }
         return Repository(name: dependencyName, url: url)
-    }
-}
-
-fileprivate extension URL {
-
-    var prefixedFileScheme: URL? {
-        URL(string: "file://\(absoluteString)")
     }
 }

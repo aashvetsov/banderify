@@ -22,6 +22,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		2E8072E227DD3CFC00CA69B4 /* URL+fileScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072E127DD3CFC00CA69B4 /* URL+fileScheme.swift */; };
 		2EA9846627DCA49F00166E8A /* TestDoubles in Resources */ = {isa = PBXBuildFile; fileRef = 2EA9845827DCA22700166E8A /* TestDoubles */; };
 		2EA9846827DCA4B700166E8A /* TestDoubles in Resources */ = {isa = PBXBuildFile; fileRef = 2EA9845927DCA23300166E8A /* TestDoubles */; };
 		2EA9846927DCA55D00166E8A /* BearhunterScanCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* BearhunterScanCommand.swift */; };
@@ -116,6 +117,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E8072E127DD3CFC00CA69B4 /* URL+fileScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+fileScheme.swift"; sourceTree = "<group>"; };
 		2EA9845427DC9FC100166E8A /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		2EA9845827DCA22700166E8A /* TestDoubles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestDoubles; sourceTree = "<group>"; };
 		2EA9845927DCA23300166E8A /* TestDoubles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestDoubles; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				OBJ_22 /* Set+ConsoleOutput.swift */,
 				OBJ_23 /* Set+Map.swift */,
 				OBJ_24 /* String+ConsoleOutput.swift */,
+				2E8072E127DD3CFC00CA69B4 /* URL+fileScheme.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -656,6 +659,7 @@
 			files = (
 				OBJ_974 /* Bearhunter.swift in Sources */,
 				OBJ_975 /* ConfigFile.swift in Sources */,
+				2E8072E227DD3CFC00CA69B4 /* URL+fileScheme.swift in Sources */,
 				OBJ_976 /* DMType.swift in Sources */,
 				OBJ_977 /* ByBlockListDetector.swift in Sources */,
 				OBJ_978 /* ByEmailDetector.swift in Sources */,

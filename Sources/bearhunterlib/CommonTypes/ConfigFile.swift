@@ -6,21 +6,23 @@ struct ConfigFile: Hashable {
     let name: String
     let directory: String
     let type: DMType
+    let url: URL
 
-    init(
+    init?(
         name: String,
         directory: String,
         type: DMType
     ) {
         self.identity = name
         self.type = type
-        let url = URL(string: "\(directory)/\(name)")
-        self.name = url?.lastPathComponent ?? name
-        self.directory = url?.deletingLastPathComponent().absoluteString ?? directory
-        self.url = url
+        if let url = URL(string: "\(directory)/\(name)") {
+            self.name = url.lastPathComponent
+            self.directory = url.deletingLastPathComponent().absoluteString
+            self.url = url
+        } else {
+            return nil
+        }
     }
-
-    var url: URL?
 }
 
 typealias ConfigFiles = Set<ConfigFile>

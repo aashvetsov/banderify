@@ -5,9 +5,11 @@ struct ConfigLocator {
 
     var configFiles: ConfigFiles {
         guard let descriptor = FileDescriptor(string: type.rawValue) else { return [] }
-        return FileFinder.existingFiles(by: descriptor, at: directory)
-            .setmap {
-                ConfigFile(name: $0, directory: directory, type: type)
-            }
+        return Set(
+            FileFinder.existingFiles(by: descriptor, at: directory)
+                .compactMap {
+                    ConfigFile(name: $0, directory: directory, type: type)
+                }
+        )
     }
 }

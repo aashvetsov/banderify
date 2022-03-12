@@ -1,1 +1,79 @@
+platform :ios, '10.3'
 
+inhibit_all_warnings!
+
+# Базовый репозиторий
+source 'https://github.com/qulix-cs-ios/podspecs'
+# Репозиторий Qulix
+source 'https://cs-repo.qulix.com/repository/cocoapods-proxy/'
+# Репозиторий для IdensicMobileSDK
+source 'https://gitlab.webpay.by/sumsub/Specs.git'
+
+$ioskitVersion = '3.29.0'
+
+target 'aval' do
+  use_frameworks!
+
+    pod 'ioskit_utils', $ioskitVersion
+    pod 'ioskit_ui', $ioskitVersion
+    pod 'ioskit_style', $ioskitVersion
+    pod 'ioskit_logger', $ioskitVersion
+    pod 'ioskit_crashreporter', $ioskitVersion
+    pod 'ioskit_wallet', $ioskitVersion
+    pod 'ioskit_urlhandler', $ioskitVersion
+    pod 'ioskit_transport', $ioskitVersion
+    pod 'ioskit_serialization', $ioskitVersion
+    pod 'ioskit_siri', $ioskitVersion
+    pod 'ioskit_pushservice', $ioskitVersion
+    pod 'ioskit_storage', $ioskitVersion
+    pod 'ioskit_cache', $ioskitVersion
+    pod 'ioskit_components', $ioskitVersion
+
+    pod 'MGSwipeTableCell', '1.6.7'
+    pod 'SMPageControl', '1.2'
+    pod 'CardIO', '5.4.1'
+    pod 'GoogleMaps', '3.8.0'
+    pod 'SwiftLint', '0.35.0'
+    pod 'Charts', '3.3.0'
+    pod 'lottie-ios', '3.1.5'
+    pod 'SnapKit', '5.0.1'
+    
+    pod 'IdensicMobileSDK', '1.15.0'
+    pod 'Alamofire', '5.4.1'
+
+    target 'aval_tests' do
+       inherit! :complete
+    end
+
+end
+
+target 'Common' do
+  use_frameworks!
+
+  pod 'ioskit_utils', $ioskitVersion
+  
+end
+
+target 'Protocol' do
+  use_frameworks!
+
+  pod 'ioskit_serialization', $ioskitVersion
+  pod 'ioskit_transport', $ioskitVersion
+
+end
+
+target 'Transport' do
+  use_frameworks!
+
+  pod 'ioskit_transport', $ioskitVersion
+  pod 'ioskit_utils', $ioskitVersion
+
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+    end
+  end
+end
