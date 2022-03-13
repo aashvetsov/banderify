@@ -11,7 +11,7 @@ final class ConfigScannerTests: XCTestCase {
         .carthage: 3,
         .gitSubmodules: 0, // TODO: change when implement corresponding scanner
         .gitSubtree: 0, // TODO: change when implement corresponding scanner
-        .cocoapods: 0 // TODO: change when implement corresponding scanner
+        .cocoapods: 24 // TODO: change when implement corresponding scanner
     ]}
 
     private var type: DMType!

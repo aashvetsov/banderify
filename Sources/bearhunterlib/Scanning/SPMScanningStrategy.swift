@@ -12,9 +12,11 @@ extension SPMScanningStrategy: ConfigScanning {
         }
 
         main.currentdirectory = file.directory
-        let jsonString = run(bash: BashCommands.dumpPackageSwift).stdout
+        let output = run(bash: BashCommands.dumpPackageSwift)
+        let jsonString = output.stdout
 
         guard
+            !jsonString.isEmpty,
             let jsonData = jsonString.data(using: .utf8),
             case let decoder = JSONDecoder(),
             let package: Package = try? decoder.decode(Package.self, from: jsonData),
