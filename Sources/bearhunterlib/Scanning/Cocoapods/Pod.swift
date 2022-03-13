@@ -1,3 +1,4 @@
+import CarthageKit
 extension CocoapodsScanningStrategy {
 
     struct Pod: Decodable {
@@ -18,13 +19,4 @@ extension CocoapodsScanningStrategy {
     }
 
     typealias Dependency = [String: [String]]
-}
-
-extension Array where Element == CocoapodsScanningStrategy.TargetDefinitionChild {
-
-    var dependencies: [String] {
-        self.compactMap(\.dependencies)
-            .flatMap { $0 }
-            .flatMap(\.keys)
-    }
 }

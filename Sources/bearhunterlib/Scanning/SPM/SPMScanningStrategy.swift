@@ -22,7 +22,7 @@ extension SPMScanningStrategy: ConfigScanning {
         let repositories = dependencies
             .compactMap(\.scm)
             .flatMap { $0 }
-            .compactMap { Repository(name: $0.identity, url: $0.location) }
+            .map { Repository(name: $0.identity, url: $0.location) }
 
         return Set(repositories)
     }
