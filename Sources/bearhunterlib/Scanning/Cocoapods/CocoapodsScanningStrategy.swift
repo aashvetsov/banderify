@@ -18,13 +18,13 @@ extension CocoapodsScanningStrategy: ConfigScanning {
             return []
         }
 
+        // TODO: get url for each repo by name
         let sources = pod.sources
+
         let repositories = targetDefinitions
             .compactMap(\.children)
             .flatMap(\.dependencies)
             .compactMap { Repository(name: $0, url: "/url/test") }
-
-        // TODO: get url for each repo by name
 
         return Set(repositories)
     }
