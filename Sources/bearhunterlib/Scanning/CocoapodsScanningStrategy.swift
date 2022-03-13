@@ -17,7 +17,7 @@ extension CocoapodsScanningStrategy: ConfigScanning {
         else {
             return []
         }
-        
+
         let sources = pod.sources
 
         let repositories = targetDefinitions
