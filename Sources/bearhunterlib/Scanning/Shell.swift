@@ -4,7 +4,11 @@ enum Shell {}
 
 extension Shell {
 
-    static func run(command: String, with arguments: [String]?, at directory: String?) -> String? {
+    static func run(
+        command: String, 
+        with arguments: [String]?, 
+        at directory: String?
+    ) -> String? {
         let runningDirectory = main.currentdirectory
         defer {
             main.currentdirectory = runningDirectory
