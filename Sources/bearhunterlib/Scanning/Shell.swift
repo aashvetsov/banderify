@@ -5,8 +5,8 @@ enum Shell {}
 extension Shell {
 
     static func run(
-        command: String, 
-        with arguments: [String]?, 
+        command: String,
+        with arguments: [String]?,
         at directory: String?
     ) -> String? {
         let runningDirectory = main.currentdirectory
