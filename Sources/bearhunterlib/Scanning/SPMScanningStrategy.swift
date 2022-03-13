@@ -36,7 +36,7 @@ extension SPMScanningStrategy: ConfigScanning {
 
 fileprivate extension SPMScanningStrategy {
 
-    struct Package: Decodable, Hashable {
+    struct Package: Decodable {
 
         struct Dependency: Decodable, Hashable {
 

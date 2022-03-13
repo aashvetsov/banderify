@@ -12,22 +12,23 @@ extension CocoapodsScanningStrategy: ConfigScanning {
                 arguments: Shell.podDumpArgs.appending(file.url.absoluteString)
             ).stdout,
             let jsonData = jsonString.data(using: .utf8),
-            let pod: Pod = try? JSONDecoder.snake.decode(Pod.self, from: jsonData)
+            let pod: Pod = try? JSONDecoder.snake.decode(Pod.self, from: jsonData),
+            let targetDefinitions = pod.targetDefinitions
         else {
             return []
         }
+        
+        let sources = pod.sources
 
-        let sources = pod.sources ?? []
-        guard let repositories = pod.targetDefinitions?
+        let repositories = targetDefinitions
             .compactMap(\.children)
-            .flatMap({ $0 })
+            .flatMap { $0 }
             .compactMap(\.dependencies)
-            .flatMap({ $0 })
-            .flatMap(\.keys)
-            .compactMap({ Repository(name: $0, url: "https://github.com/tesrowner/testrepo") })
-        else {
-            return []
-        }
+            .flatMap { $0 }
+            .flatMap { $0.keys }
+            .compactMap {
+                Repository(name: $0, url: "https://github.com/tesrowner/testrepo")
+            }
 
         // TODO: get url for each repo by name
 
@@ -52,28 +53,6 @@ fileprivate extension Array {
     }
 }
 
-fileprivate extension CocoapodsScanningStrategy {
-
-    struct Pod: Decodable, Hashable {
-
-        struct TargetDefinition: Decodable, Hashable {
-
-            let children: Set<TargetDefinitionChild>?
-        }
-
-        struct TargetDefinitionChild: Decodable, Hashable {
-
-            let dependencies: Set<Dependency>?
-        }
-
-        typealias Dependency = [String: [String]]
-
-        let targetDefinitions: Set<TargetDefinition>?
-
-        let sources: Set<String>?
-    }
-}
-
 fileprivate extension JSONDecoder {
 
     static var snake: JSONDecoder {
@@ -81,4 +60,26 @@ fileprivate extension JSONDecoder {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         return decoder
     }
+}
+
+fileprivate extension CocoapodsScanningStrategy {
+
+    struct Pod: Decodable {
+
+        let targetDefinitions: Set<TargetDefinition>?
+
+        let sources: Set<String>?
+    }
+
+    struct TargetDefinition: Decodable, Hashable {
+
+        let children: Set<TargetDefinitionChild>?
+    }
+
+    struct TargetDefinitionChild: Decodable, Hashable {
+
+        let dependencies: Set<Dependency>?
+    }
+
+    typealias Dependency = [String: [String]]
 }
