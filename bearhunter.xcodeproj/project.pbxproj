@@ -23,10 +23,12 @@
 
 /* Begin PBXBuildFile section */
 		2E8072E227DD3CFC00CA69B4 /* URL+fileScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072E127DD3CFC00CA69B4 /* URL+fileScheme.swift */; };
-		2E8072ED27DDFD7500CA69B4 /* SwiftExec in Frameworks */ = {isa = PBXBuildFile; productRef = 2E8072EC27DDFD7500CA69B4 /* SwiftExec */; };
 		2E8072F027DDFD8D00CA69B4 /* SwiftShell in Frameworks */ = {isa = PBXBuildFile; productRef = 2E8072EF27DDFD8D00CA69B4 /* SwiftShell */; };
 		2E8072F827DE65FA00CA69B4 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072F727DE65FA00CA69B4 /* Package.swift */; };
 		2E8072FA27DE662400CA69B4 /* Pod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072F927DE662400CA69B4 /* Pod.swift */; };
+		2E8072FC27DE67C300CA69B4 /* Array+Appending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072FB27DE67C300CA69B4 /* Array+Appending.swift */; };
+		2E8072FE27DE6DE900CA69B4 /* String+Prettify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072FD27DE6DE900CA69B4 /* String+Prettify.swift */; };
+		2E80730027DE702B00CA69B4 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072FF27DE702B00CA69B4 /* Shell.swift */; };
 		2EA9846627DCA49F00166E8A /* TestDoubles in Resources */ = {isa = PBXBuildFile; fileRef = 2EA9845827DCA22700166E8A /* TestDoubles */; };
 		2EA9846827DCA4B700166E8A /* TestDoubles in Resources */ = {isa = PBXBuildFile; fileRef = 2EA9845927DCA23300166E8A /* TestDoubles */; };
 		2EA9846927DCA55D00166E8A /* BearhunterScanCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* BearhunterScanCommand.swift */; };
@@ -123,6 +125,9 @@
 		2E8072E127DD3CFC00CA69B4 /* URL+fileScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+fileScheme.swift"; sourceTree = "<group>"; };
 		2E8072F727DE65FA00CA69B4 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		2E8072F927DE662400CA69B4 /* Pod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pod.swift; sourceTree = "<group>"; };
+		2E8072FB27DE67C300CA69B4 /* Array+Appending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Appending.swift"; sourceTree = "<group>"; };
+		2E8072FD27DE6DE900CA69B4 /* String+Prettify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Prettify.swift"; sourceTree = "<group>"; };
+		2E8072FF27DE702B00CA69B4 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
 		2EA9845427DC9FC100166E8A /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		2EA9845827DCA22700166E8A /* TestDoubles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestDoubles; sourceTree = "<group>"; };
 		2EA9845927DCA23300166E8A /* TestDoubles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestDoubles; sourceTree = "<group>"; };
@@ -212,7 +217,6 @@
 				2EDD1F2C27DC9C5F00D90C6E /* CarthageKit in Frameworks */,
 				2EDD1F2927DC9BA500D90C6E /* XcodeProj in Frameworks */,
 				2E8072F027DDFD8D00CA69B4 /* SwiftShell in Frameworks */,
-				2E8072ED27DDFD7500CA69B4 /* SwiftExec in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +321,8 @@
 				OBJ_23 /* Set+Map.swift */,
 				OBJ_24 /* String+ConsoleOutput.swift */,
 				2E8072E127DD3CFC00CA69B4 /* URL+fileScheme.swift */,
+				2E8072FB27DE67C300CA69B4 /* Array+Appending.swift */,
+				2E8072FD27DE6DE900CA69B4 /* String+Prettify.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 				OBJ_32 /* Repository.swift */,
 				OBJ_34 /* ConfigScanning.swift */,
 				OBJ_33 /* ConfigScanner.swift */,
+				2E8072FF27DE702B00CA69B4 /* Shell.swift */,
 				2E8072F127DE637400CA69B4 /* Carthage */,
 				2E8072F227DE637F00CA69B4 /* Cocoapods */,
 				2E8072F327DE638800CA69B4 /* GitSubtree */,
@@ -524,7 +531,6 @@
 				2EDD1F2827DC9BA500D90C6E /* XcodeProj */,
 				2EDD1F2B27DC9C5F00D90C6E /* CarthageKit */,
 				2EDD1F2E27DC9C7F00D90C6E /* Rainbow */,
-				2E8072EC27DDFD7500CA69B4 /* SwiftExec */,
 				2E8072EF27DDFD8D00CA69B4 /* SwiftShell */,
 			);
 			productName = bearhunterlib;
@@ -588,7 +594,6 @@
 				2EDD1F2A27DC9C5F00D90C6E /* XCRemoteSwiftPackageReference "Carthage" */,
 				2EDD1F2D27DC9C7F00D90C6E /* XCRemoteSwiftPackageReference "Rainbow" */,
 				2EDD1F3327DC9CC700D90C6E /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
-				2E8072EB27DDFD7500CA69B4 /* XCRemoteSwiftPackageReference "swift-exec" */,
 				2E8072EE27DDFD8D00CA69B4 /* XCRemoteSwiftPackageReference "SwiftShell" */,
 			);
 			productRefGroup = OBJ_381 /* Products */;
@@ -721,6 +726,7 @@
 				OBJ_976 /* DMType.swift in Sources */,
 				OBJ_977 /* ByBlockListDetector.swift in Sources */,
 				OBJ_978 /* ByEmailDetector.swift in Sources */,
+				2E8072FE27DE6DE900CA69B4 /* String+Prettify.swift in Sources */,
 				OBJ_979 /* SoftwareType.swift in Sources */,
 				OBJ_980 /* SoftwareTypeDetecting.swift in Sources */,
 				OBJ_981 /* Set+ConsoleOutput.swift in Sources */,
@@ -735,9 +741,11 @@
 				OBJ_989 /* Repository.swift in Sources */,
 				OBJ_990 /* ConfigScanner.swift in Sources */,
 				OBJ_991 /* ConfigScanning.swift in Sources */,
+				2E80730027DE702B00CA69B4 /* Shell.swift in Sources */,
 				OBJ_992 /* GitSubmodulesScanningStrategy.swift in Sources */,
 				OBJ_993 /* GitSubtreeScanningStrategy.swift in Sources */,
 				OBJ_994 /* SPMScanningStrategy.swift in Sources */,
+				2E8072FC27DE67C300CA69B4 /* Array+Appending.swift in Sources */,
 				OBJ_995 /* XcodeProjScanningStrategy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1288,14 +1296,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2E8072EB27DDFD7500CA69B4 /* XCRemoteSwiftPackageReference "swift-exec" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/samuelmeuli/swift-exec.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		2E8072EE27DDFD8D00CA69B4 /* XCRemoteSwiftPackageReference "SwiftShell" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kareman/SwiftShell.git";
@@ -1339,11 +1339,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2E8072EC27DDFD7500CA69B4 /* SwiftExec */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2E8072EB27DDFD7500CA69B4 /* XCRemoteSwiftPackageReference "swift-exec" */;
-			productName = SwiftExec;
-		};
 		2E8072EF27DDFD8D00CA69B4 /* SwiftShell */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2E8072EE27DDFD8D00CA69B4 /* XCRemoteSwiftPackageReference "SwiftShell" */;

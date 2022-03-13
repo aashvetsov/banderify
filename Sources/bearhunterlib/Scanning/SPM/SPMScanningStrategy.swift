@@ -6,18 +6,16 @@ enum SPMScanningStrategy {}
 extension SPMScanningStrategy: ConfigScanning {
 
     static func scan(_ file: ConfigFile) -> Repositories {
-        let runningDirectory = main.currentdirectory
-        defer {
-            main.currentdirectory = runningDirectory
-        }
-
-        main.currentdirectory = file.directory
-        let output = run(bash: BashCommands.dumpPackageSwift)
-        let jsonString = output.stdout
+        let arguments = Command.packageDumsArgs
+        let jsonString = Shell.run(
+            command: Command.swift,
+            with: arguments,
+            at: file.directory
+        )?
+            .prettified(using: PackageJSON.startMarker)
 
         guard
-            !jsonString.isEmpty,
-            let jsonData = jsonString.data(using: .utf8),
+            let jsonData = jsonString?.data(using: .utf8),
             case let decoder = JSONDecoder(),
             let package: Package = try? decoder.decode(Package.self, from: jsonData),
             let dependencies = package.dependencies
@@ -36,7 +34,12 @@ extension SPMScanningStrategy: ConfigScanning {
 
 fileprivate extension SPMScanningStrategy {
 
-    enum BashCommands {
-        static let dumpPackageSwift = "swift package dump-package"
+    enum Command {
+        static let swift = "swift"
+        static let packageDumsArgs = ["package", "dump-package"]
+    }
+
+    enum PackageJSON {
+        static let startMarker = "{\"cLanguageStandard\""
     }
 }

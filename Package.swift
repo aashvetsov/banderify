@@ -17,9 +17,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser", .upToNextMajor(from: "1.0.3")),
-        /* TODO: use the same shell execution tool for all scanners */
         .package(url: "https://github.com/kareman/SwiftShell.git", .upToNextMajor(from: "5.1.0")),
-        .package(url: "https://github.com/samuelmeuli/swift-exec.git", .branch("master")),
         .package(url: "https://github.com/tuist/XcodeProj.git", .upToNextMajor(from: "8.0.0")),
         .package(url: "https://github.com/Carthage/Carthage.git", .upToNextMajor(from: "0.9.4")),
         .package(url: "https://github.com/onevcat/Rainbow", .upToNextMajor(from: "4.0.0"))
@@ -31,7 +29,6 @@ let package = Package(
                 "Rainbow",
                 "SwiftShell",
                 "XcodeProj",
-                .product(name: "SwiftExec", package: "swift-exec"),
                 .product(name: "CarthageKit", package: "Carthage")
             ]
         ),

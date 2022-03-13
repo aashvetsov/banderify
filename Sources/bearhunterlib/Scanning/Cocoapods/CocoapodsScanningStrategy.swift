@@ -1,17 +1,20 @@
 import Foundation
-import SwiftExec
 
 enum CocoapodsScanningStrategy {}
 
 extension CocoapodsScanningStrategy: ConfigScanning {
 
     static func scan(_ file: ConfigFile) -> Repositories {
+        let arguments = Command.podDumpArgs.appending(file.name)
+        let jsonString = Shell.run(
+            command: Command.pod,
+            with: arguments,
+            at: file.directory
+        )?
+            .prettified(using: PodJSON.startMarker)
+
         guard
-            let jsonString = try? exec(
-                program: Shell.pod,
-                arguments: Shell.podDumpArgs.appending(file.url.absoluteString)
-            ).stdout,
-            let jsonData = jsonString.data(using: .utf8),
+            let jsonData = jsonString?.data(using: .utf8),
             let pod: Pod = try? JSONDecoder.snake.decode(Pod.self, from: jsonData),
             let targetDefinitions = pod.targetDefinitions
         else {
@@ -33,18 +36,13 @@ extension CocoapodsScanningStrategy: ConfigScanning {
 
 fileprivate extension CocoapodsScanningStrategy {
 
-    enum Shell {
+    enum Command {
         static let pod = "/usr/local/bin/pod"
         static let podDumpArgs = ["ipc", "podfile-json"]
     }
-}
 
-fileprivate extension Array {
-
-    func appending(_ newElement: Element) -> Array {
-        var result = Array(self)
-        result.append(newElement)
-        return result
+    enum PodJSON {
+        static let startMarker = "{\"target_definitions\""
     }
 }
 
