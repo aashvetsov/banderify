@@ -27,7 +27,6 @@
 		2E8072F827DE65FA00CA69B4 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072F727DE65FA00CA69B4 /* Package.swift */; };
 		2E8072FA27DE662400CA69B4 /* Pod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072F927DE662400CA69B4 /* Pod.swift */; };
 		2E8072FC27DE67C300CA69B4 /* Array+Appending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072FB27DE67C300CA69B4 /* Array+Appending.swift */; };
-		2E8072FE27DE6DE900CA69B4 /* String+Prettify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072FD27DE6DE900CA69B4 /* String+Prettify.swift */; };
 		2E80730027DE702B00CA69B4 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072FF27DE702B00CA69B4 /* Shell.swift */; };
 		2EA9846627DCA49F00166E8A /* TestDoubles in Resources */ = {isa = PBXBuildFile; fileRef = 2EA9845827DCA22700166E8A /* TestDoubles */; };
 		2EA9846827DCA4B700166E8A /* TestDoubles in Resources */ = {isa = PBXBuildFile; fileRef = 2EA9845927DCA23300166E8A /* TestDoubles */; };
@@ -126,7 +125,6 @@
 		2E8072F727DE65FA00CA69B4 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		2E8072F927DE662400CA69B4 /* Pod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pod.swift; sourceTree = "<group>"; };
 		2E8072FB27DE67C300CA69B4 /* Array+Appending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Appending.swift"; sourceTree = "<group>"; };
-		2E8072FD27DE6DE900CA69B4 /* String+Prettify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Prettify.swift"; sourceTree = "<group>"; };
 		2E8072FF27DE702B00CA69B4 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
 		2EA9845427DC9FC100166E8A /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		2EA9845827DCA22700166E8A /* TestDoubles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestDoubles; sourceTree = "<group>"; };
@@ -322,7 +320,6 @@
 				OBJ_24 /* String+ConsoleOutput.swift */,
 				2E8072E127DD3CFC00CA69B4 /* URL+fileScheme.swift */,
 				2E8072FB27DE67C300CA69B4 /* Array+Appending.swift */,
-				2E8072FD27DE6DE900CA69B4 /* String+Prettify.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -726,7 +723,6 @@
 				OBJ_976 /* DMType.swift in Sources */,
 				OBJ_977 /* ByBlockListDetector.swift in Sources */,
 				OBJ_978 /* ByEmailDetector.swift in Sources */,
-				2E8072FE27DE6DE900CA69B4 /* String+Prettify.swift in Sources */,
 				OBJ_979 /* SoftwareType.swift in Sources */,
 				OBJ_980 /* SoftwareTypeDetecting.swift in Sources */,
 				OBJ_981 /* Set+ConsoleOutput.swift in Sources */,

@@ -7,15 +7,14 @@ extension SPMScanningStrategy: ConfigScanning {
 
     static func scan(_ file: ConfigFile) -> Repositories {
         let arguments = Command.packageDumsArgs
-        let jsonString = Shell.run(
-            command: Command.swift,
-            with: arguments,
-            at: file.directory
-        )?
-            .prettified(using: PackageJSON.startMarker)
 
         guard
-            let jsonData = jsonString?.data(using: .utf8),
+            let jsonString = Shell.run(
+                command: Command.swift,
+                with: arguments,
+                at: file.directory
+            ),
+            let jsonData = jsonString.data(using: .utf8),
             case let decoder = JSONDecoder(),
             let package: Package = try? decoder.decode(Package.self, from: jsonData),
             let dependencies = package.dependencies
@@ -37,9 +36,5 @@ fileprivate extension SPMScanningStrategy {
     enum Command {
         static let swift = "swift"
         static let packageDumsArgs = ["package", "dump-package"]
-    }
-
-    enum PackageJSON {
-        static let startMarker = "{\"cLanguageStandard\""
     }
 }

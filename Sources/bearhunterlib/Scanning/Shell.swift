@@ -18,11 +18,10 @@ extension Shell {
             main.currentdirectory = directory
         }
 
-        let output = SwiftShell.run(command, arguments ?? [], combineOutput: true)
+        let output = SwiftShell.run(command, arguments ?? [], combineOutput: false)
         let result = output.stdout
-        let error = output.stderror
 
-        guard error.isEmpty, !result.isEmpty else { return nil }
+        guard !result.isEmpty else { return nil }
 
         return result
     }

@@ -6,15 +6,14 @@ extension CocoapodsScanningStrategy: ConfigScanning {
 
     static func scan(_ file: ConfigFile) -> Repositories {
         let arguments = Command.podDumpArgs.appending(file.name)
-        let jsonString = Shell.run(
-            command: Command.pod,
-            with: arguments,
-            at: file.directory
-        )?
-            .prettified(using: PodJSON.startMarker)
 
         guard
-            let jsonData = jsonString?.data(using: .utf8),
+            let jsonString = Shell.run(
+                command: Command.pod,
+                with: arguments,
+                at: file.directory
+            ),
+            let jsonData = jsonString.data(using: .utf8),
             let pod: Pod = try? JSONDecoder.snake.decode(Pod.self, from: jsonData),
             let targetDefinitions = pod.targetDefinitions
         else {
@@ -22,7 +21,6 @@ extension CocoapodsScanningStrategy: ConfigScanning {
         }
 
         let sources = pod.sources
-
         let repositories = targetDefinitions
             .compactMap(\.children)
             .flatMap(\.dependencies)
@@ -39,10 +37,6 @@ fileprivate extension CocoapodsScanningStrategy {
     enum Command {
         static let pod = "/usr/local/bin/pod"
         static let podDumpArgs = ["ipc", "podfile-json"]
-    }
-
-    enum PodJSON {
-        static let startMarker = "{\"target_definitions\""
     }
 }
 
