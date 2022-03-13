@@ -13,8 +13,7 @@ extension SPMScanningStrategy: ConfigScanning {
                 at: file.directory
             ),
             let jsonData = jsonString.data(using: .utf8),
-            case let decoder = JSONDecoder(),
-            let package: Package = try? decoder.decode(Package.self, from: jsonData),
+            let package: Package = try? JSONDecoder().decode(Package.self, from: jsonData),
             let dependencies = package.dependencies
         else {
             return []
