@@ -36,25 +36,6 @@ extension SPMScanningStrategy: ConfigScanning {
 
 fileprivate extension SPMScanningStrategy {
 
-    struct Package: Decodable {
-
-        struct Dependency: Decodable, Hashable {
-
-            let scm: Set<SCM>?
-        }
-
-        struct SCM: Decodable, Hashable {
-
-            let identity: String
-            let location: String
-        }
-
-        let dependencies: Set<Dependency>?
-    }
-}
-
-fileprivate extension SPMScanningStrategy {
-
     enum BashCommands {
         static let dumpPackageSwift = "swift package dump-package"
     }

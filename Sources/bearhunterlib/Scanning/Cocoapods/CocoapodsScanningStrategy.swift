@@ -22,13 +22,8 @@ extension CocoapodsScanningStrategy: ConfigScanning {
 
         let repositories = targetDefinitions
             .compactMap(\.children)
-            .flatMap { $0 }
-            .compactMap(\.dependencies)
-            .flatMap { $0 }
-            .flatMap { $0.keys }
-            .compactMap {
-                Repository(name: $0, url: "https://github.com/tesrowner/testrepo")
-            }
+            .flatMap(\.dependencies)
+            .compactMap { Repository(name: $0, url: "/url/test") }
 
         // TODO: get url for each repo by name
 
@@ -60,26 +55,4 @@ fileprivate extension JSONDecoder {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         return decoder
     }
-}
-
-fileprivate extension CocoapodsScanningStrategy {
-
-    struct Pod: Decodable {
-
-        let targetDefinitions: Set<TargetDefinition>?
-
-        let sources: Set<String>?
-    }
-
-    struct TargetDefinition: Decodable, Hashable {
-
-        let children: Set<TargetDefinitionChild>?
-    }
-
-    struct TargetDefinitionChild: Decodable, Hashable {
-
-        let dependencies: Set<Dependency>?
-    }
-
-    typealias Dependency = [String: [String]]
 }

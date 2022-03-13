@@ -25,6 +25,8 @@
 		2E8072E227DD3CFC00CA69B4 /* URL+fileScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072E127DD3CFC00CA69B4 /* URL+fileScheme.swift */; };
 		2E8072ED27DDFD7500CA69B4 /* SwiftExec in Frameworks */ = {isa = PBXBuildFile; productRef = 2E8072EC27DDFD7500CA69B4 /* SwiftExec */; };
 		2E8072F027DDFD8D00CA69B4 /* SwiftShell in Frameworks */ = {isa = PBXBuildFile; productRef = 2E8072EF27DDFD8D00CA69B4 /* SwiftShell */; };
+		2E8072F827DE65FA00CA69B4 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072F727DE65FA00CA69B4 /* Package.swift */; };
+		2E8072FA27DE662400CA69B4 /* Pod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072F927DE662400CA69B4 /* Pod.swift */; };
 		2EA9846627DCA49F00166E8A /* TestDoubles in Resources */ = {isa = PBXBuildFile; fileRef = 2EA9845827DCA22700166E8A /* TestDoubles */; };
 		2EA9846827DCA4B700166E8A /* TestDoubles in Resources */ = {isa = PBXBuildFile; fileRef = 2EA9845927DCA23300166E8A /* TestDoubles */; };
 		2EA9846927DCA55D00166E8A /* BearhunterScanCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* BearhunterScanCommand.swift */; };
@@ -119,6 +121,8 @@
 
 /* Begin PBXFileReference section */
 		2E8072E127DD3CFC00CA69B4 /* URL+fileScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+fileScheme.swift"; sourceTree = "<group>"; };
+		2E8072F727DE65FA00CA69B4 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		2E8072F927DE662400CA69B4 /* Pod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pod.swift; sourceTree = "<group>"; };
 		2EA9845427DC9FC100166E8A /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		2EA9845827DCA22700166E8A /* TestDoubles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestDoubles; sourceTree = "<group>"; };
 		2EA9845927DCA23300166E8A /* TestDoubles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestDoubles; sourceTree = "<group>"; };
@@ -215,6 +219,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E8072F127DE637400CA69B4 /* Carthage */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_30 /* CarthageScanningStrategy.swift */,
+			);
+			path = Carthage;
+			sourceTree = "<group>";
+		};
+		2E8072F227DE637F00CA69B4 /* Cocoapods */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_31 /* CocoapodsScanningStrategy.swift */,
+				2E8072F927DE662400CA69B4 /* Pod.swift */,
+			);
+			path = Cocoapods;
+			sourceTree = "<group>";
+		};
+		2E8072F327DE638800CA69B4 /* GitSubtree */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_36 /* GitSubtreeScanningStrategy.swift */,
+			);
+			path = GitSubtree;
+			sourceTree = "<group>";
+		};
+		2E8072F427DE639400CA69B4 /* GitSubmodule */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_35 /* GitSubmodulesScanningStrategy.swift */,
+			);
+			path = GitSubmodule;
+			sourceTree = "<group>";
+		};
+		2E8072F527DE63A300CA69B4 /* SPM */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_37 /* SPMScanningStrategy.swift */,
+				2E8072F727DE65FA00CA69B4 /* Package.swift */,
+			);
+			path = SPM;
+			sourceTree = "<group>";
+		};
+		2E8072F627DE63AB00CA69B4 /* XCodeProj */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_38 /* XcodeProjScanningStrategy.swift */,
+			);
+			path = XCodeProj;
+			sourceTree = "<group>";
+		};
 		2EA9846D27DCA58800166E8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,12 +337,12 @@
 				OBJ_32 /* Repository.swift */,
 				OBJ_34 /* ConfigScanning.swift */,
 				OBJ_33 /* ConfigScanner.swift */,
-				OBJ_30 /* CarthageScanningStrategy.swift */,
-				OBJ_31 /* CocoapodsScanningStrategy.swift */,
-				OBJ_35 /* GitSubmodulesScanningStrategy.swift */,
-				OBJ_36 /* GitSubtreeScanningStrategy.swift */,
-				OBJ_37 /* SPMScanningStrategy.swift */,
-				OBJ_38 /* XcodeProjScanningStrategy.swift */,
+				2E8072F127DE637400CA69B4 /* Carthage */,
+				2E8072F227DE637F00CA69B4 /* Cocoapods */,
+				2E8072F327DE638800CA69B4 /* GitSubtree */,
+				2E8072F527DE63A300CA69B4 /* SPM */,
+				2E8072F427DE639400CA69B4 /* GitSubmodule */,
+				2E8072F627DE63AB00CA69B4 /* XCodeProj */,
 			);
 			path = Scanning;
 			sourceTree = "<group>";
@@ -660,6 +714,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				2E8072FA27DE662400CA69B4 /* Pod.swift in Sources */,
 				OBJ_974 /* Bearhunter.swift in Sources */,
 				OBJ_975 /* ConfigFile.swift in Sources */,
 				2E8072E227DD3CFC00CA69B4 /* URL+fileScheme.swift in Sources */,
@@ -672,6 +727,7 @@
 				OBJ_982 /* Set+Map.swift in Sources */,
 				OBJ_983 /* String+ConsoleOutput.swift in Sources */,
 				OBJ_984 /* ConfigLocator.swift in Sources */,
+				2E8072F827DE65FA00CA69B4 /* Package.swift in Sources */,
 				OBJ_985 /* FileDescriptor.swift in Sources */,
 				OBJ_986 /* FileFinder.swift in Sources */,
 				OBJ_987 /* CarthageScanningStrategy.swift in Sources */,
