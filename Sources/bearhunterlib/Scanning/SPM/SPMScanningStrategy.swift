@@ -6,12 +6,10 @@ enum SPMScanningStrategy {}
 extension SPMScanningStrategy: ConfigScanning {
 
     static func scan(_ file: ConfigFile) -> Repositories {
-        let arguments = Command.packageDumsArgs
-
         guard
             let jsonString = Shell.run(
                 command: Command.swift,
-                with: arguments,
+                with: Command.packageDumsArgs,
                 at: file.directory
             ),
             let jsonData = jsonString.data(using: .utf8),

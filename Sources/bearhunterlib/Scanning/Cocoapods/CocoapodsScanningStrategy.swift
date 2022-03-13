@@ -5,12 +5,10 @@ enum CocoapodsScanningStrategy {}
 extension CocoapodsScanningStrategy: ConfigScanning {
 
     static func scan(_ file: ConfigFile) -> Repositories {
-        let arguments = Command.podDumpArgs.appending(file.name)
-
         guard
             let jsonString = Shell.run(
                 command: Command.pod,
-                with: arguments,
+                with: Command.podDumpArgs.appending(file.name),
                 at: file.directory
             ),
             let jsonData = jsonString.data(using: .utf8),
