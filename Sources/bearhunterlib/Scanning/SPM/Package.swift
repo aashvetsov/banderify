@@ -4,13 +4,13 @@ extension SPMScanningStrategy {
 
         struct Dependency: Decodable {
 
+            struct SCM: Decodable {
+
+                let identity: String
+                let location: String
+            }
+
             let scm: [SCM]?
-        }
-
-        struct SCM: Decodable {
-
-            let identity: String
-            let location: String
         }
 
         let dependencies: [Dependency]?

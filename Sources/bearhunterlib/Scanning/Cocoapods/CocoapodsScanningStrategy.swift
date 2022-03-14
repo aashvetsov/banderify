@@ -12,7 +12,7 @@ extension CocoapodsScanningStrategy: ConfigScanning {
                 at: file.directory
             ),
             let jsonData = jsonString.data(using: .utf8),
-            let pod: Pod = try? JSONDecoder.snake.decode(Pod.self, from: jsonData),
+            let pod = try? JSONDecoder.snake.decode(Pod.self, from: jsonData),
             let targetDefinitions = pod.targetDefinitions
         else {
             return []
