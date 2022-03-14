@@ -7,12 +7,12 @@ extension CocoapodsScanningStrategy: ConfigScanning {
     static func scan(_ file: ConfigFile) -> Repositories {
         guard
             let executable = podExecutable,
-            let jsonString = Shell.run(
+            let jsonOutput = Shell.run(
                 command: executable,
                 with: Command.podDumpArgs.appending(file.name),
                 at: file.directory
             ),
-            let pod = decode(Pod.self, from: jsonString, strategy: .convertFromSnakeCase),
+            let pod = decode(Pod.self, from: jsonOutput, strategy: .convertFromSnakeCase),
             let targetDefinitions = pod.targetDefinitions
         else {
             return []

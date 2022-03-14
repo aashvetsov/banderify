@@ -7,13 +7,12 @@ extension SPMScanningStrategy: ConfigScanning {
 
     static func scan(_ file: ConfigFile) -> Repositories {
         guard
-            let jsonString = Shell.run(
+            let jsonOutput = Shell.run(
                 command: Command.swift,
                 with: Command.packageDumsArgs,
                 at: file.directory
             ),
-            let package = decode(Package.self, from: jsonString),
-            let dependencies = package.dependencies
+            let dependencies = decode(Package.self, from: jsonOutput)?.dependencies
         else {
             return []
         }
