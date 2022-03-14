@@ -12,8 +12,7 @@ extension SPMScanningStrategy: ConfigScanning {
                 with: Command.packageDumsArgs,
                 at: file.directory
             ),
-            let jsonData = jsonString.data(using: .utf8),
-            let package = decode(Package.self, from: jsonData),
+            let package = decode(Package.self, from: jsonString),
             let dependencies = package.dependencies
         else {
             return []

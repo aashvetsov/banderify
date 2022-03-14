@@ -12,8 +12,7 @@ extension CocoapodsScanningStrategy: ConfigScanning {
                 with: Command.podDumpArgs.appending(file.name),
                 at: file.directory
             ),
-            let jsonData = jsonString.data(using: .utf8),
-            let pod = decode(Pod.self, from: jsonData, strategy: .convertFromSnakeCase),
+            let pod = decode(Pod.self, from: jsonString, strategy: .convertFromSnakeCase),
             let targetDefinitions = pod.targetDefinitions
         else {
             return []
@@ -34,15 +33,6 @@ extension CocoapodsScanningStrategy: ConfigScanning {
 
 fileprivate extension CocoapodsScanningStrategy {
 
-    static var podExecutable: String? {
-        PodExecutable.allCases
-            .map(\.rawValue)
-            .first(where: { FileManager.default.fileExists(atPath: $0) })
-    }
-}
-
-fileprivate extension CocoapodsScanningStrategy {
-
     enum PodExecutable: String, CaseIterable {
         case gem = "/usr/local/bin/pod"
         case homebrew = "/opt/homebrew/bin/pod"
@@ -50,5 +40,14 @@ fileprivate extension CocoapodsScanningStrategy {
 
     enum Command {
         static let podDumpArgs = ["ipc", "podfile-json"]
+    }
+}
+
+fileprivate extension CocoapodsScanningStrategy {
+
+    static var podExecutable: String? {
+        PodExecutable.allCases
+            .map(\.rawValue)
+            .first(where: { FileManager.default.fileExists(atPath: $0) })
     }
 }
