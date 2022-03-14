@@ -2,7 +2,6 @@ import Rainbow
 
 extension String {
 
-    var level1: String { cyan.bold }
-    var level2: String { green }
+    var loginfo: String { cyan.bold }
     var link: String { underline }
 }
