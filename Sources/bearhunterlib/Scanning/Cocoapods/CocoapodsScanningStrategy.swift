@@ -44,7 +44,7 @@ fileprivate extension CocoapodsScanningStrategy {
 fileprivate extension CocoapodsScanningStrategy {
 
     enum PodExecutable: String, CaseIterable {
-        case bundler = "/usr/local/bin/pod"
+        case gem = "/usr/local/bin/pod"
         case homebrew = "/opt/homebrew/bin/pod"
     }
 
