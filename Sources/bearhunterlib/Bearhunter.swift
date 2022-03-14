@@ -18,8 +18,7 @@ public extension Bearhunter {
 fileprivate extension Bearhunter {
 
     static func locateConfigFiles(at path: String) -> ConfigFiles {
-        print("***************** BEARHUNTER STEP1 ******************".level1)
-        print("Started analysis of directory: \(path)".level2)
+        print("Started analysis of directory: \(path)".loginfo)
 
         let files = Set(
             DMType.allCases
@@ -27,21 +26,20 @@ fileprivate extension Bearhunter {
                 .flatMap(\.configFiles)
         )
 
-        print("Detected files potentially containing dependencies:".level2)
+        print("Detected files potentially containing dependencies:".loginfo)
         print("\(files.setmap(\.identity).list)")
 
         return files
     }
 
     static func scanRepositories(at files: ConfigFiles) -> Repositories {
-        print("***************** BEARHUNTER STEP2 ******************".level1)
-        print("Started analysis of config files".level2)
+        print("Started analysis of config files".loginfo)
 
         let repositories = Set(
             files.flatMap { ConfigScanner(file: $0).repositories }
         )
 
-        print("Detected dependencies:".level2)
+        print("Detected dependencies:".loginfo)
         print("\(repositories.setmap(\.url).list.link)")
 
         return repositories
