@@ -22,7 +22,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		2E8072E227DD3CFC00CA69B4 /* URL+fileScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072E127DD3CFC00CA69B4 /* URL+fileScheme.swift */; };
+		2E8072E227DD3CFC00CA69B4 /* URL+FileScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072E127DD3CFC00CA69B4 /* URL+FileScheme.swift */; };
 		2E8072F027DDFD8D00CA69B4 /* SwiftShell in Frameworks */ = {isa = PBXBuildFile; productRef = 2E8072EF27DDFD8D00CA69B4 /* SwiftShell */; };
 		2E8072F827DE65FA00CA69B4 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072F727DE65FA00CA69B4 /* Package.swift */; };
 		2E8072FA27DE662400CA69B4 /* Pod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072F927DE662400CA69B4 /* Pod.swift */; };
@@ -121,7 +121,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2E8072E127DD3CFC00CA69B4 /* URL+fileScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+fileScheme.swift"; sourceTree = "<group>"; };
+		2E8072E127DD3CFC00CA69B4 /* URL+FileScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+FileScheme.swift"; sourceTree = "<group>"; };
 		2E8072F727DE65FA00CA69B4 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		2E8072F927DE662400CA69B4 /* Pod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pod.swift; sourceTree = "<group>"; };
 		2E8072FB27DE67C300CA69B4 /* Array+Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Transform.swift"; sourceTree = "<group>"; };
@@ -318,7 +318,7 @@
 				OBJ_22 /* Set+ConsoleOutput.swift */,
 				OBJ_23 /* Set+Transform.swift */,
 				OBJ_24 /* String+ConsoleOutput.swift */,
-				2E8072E127DD3CFC00CA69B4 /* URL+fileScheme.swift */,
+				2E8072E127DD3CFC00CA69B4 /* URL+FileScheme.swift */,
 				2E8072FB27DE67C300CA69B4 /* Array+Transform.swift */,
 			);
 			path = Extensions;
@@ -719,7 +719,7 @@
 				2E8072FA27DE662400CA69B4 /* Pod.swift in Sources */,
 				OBJ_974 /* Bearhunter.swift in Sources */,
 				OBJ_975 /* ConfigFile.swift in Sources */,
-				2E8072E227DD3CFC00CA69B4 /* URL+fileScheme.swift in Sources */,
+				2E8072E227DD3CFC00CA69B4 /* URL+FileScheme.swift in Sources */,
 				OBJ_976 /* DMType.swift in Sources */,
 				OBJ_977 /* ByBlockListDetector.swift in Sources */,
 				OBJ_978 /* ByEmailDetector.swift in Sources */,
