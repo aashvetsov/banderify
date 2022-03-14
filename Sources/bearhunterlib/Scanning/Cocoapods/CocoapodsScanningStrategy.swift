@@ -6,8 +6,9 @@ extension CocoapodsScanningStrategy: ConfigScanning {
 
     static func scan(_ file: ConfigFile) -> Repositories {
         guard
+            let executable = podExecutable,
             let jsonString = Shell.run(
-                command: Command.pod,
+                command: executable,
                 with: Command.podDumpArgs.appending(file.name),
                 at: file.directory
             ),
@@ -33,8 +34,21 @@ extension CocoapodsScanningStrategy: ConfigScanning {
 
 fileprivate extension CocoapodsScanningStrategy {
 
+    static var podExecutable: String? {
+        PodExecutable.allCases
+            .map(\.rawValue)
+            .first(where: { FileManager.default.fileExists(atPath: $0) })
+    }
+}
+
+fileprivate extension CocoapodsScanningStrategy {
+
+    enum PodExecutable: String, CaseIterable {
+        case bundler = "/usr/local/bin/pod"
+        case homebrew = "/opt/homebrew/bin/pod"
+    }
+
     enum Command {
-        static let pod = "/usr/local/bin/pod"
         static let podDumpArgs = ["ipc", "podfile-json"]
     }
 }
