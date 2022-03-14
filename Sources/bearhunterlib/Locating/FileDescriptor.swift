@@ -6,9 +6,9 @@ struct FileDescriptor: Equatable {
     let ext: String?
 
     init?(string: String) {
-        guard let fileNameWithExt = URL(string: string)?.lastPathComponent else { return nil }
+        guard let nameWithExt = URL(string: string)?.lastPathComponent else { return nil }
 
-        let components = fileNameWithExt.components(separatedBy: ".")
+        let components = nameWithExt.components(separatedBy: ".")
         name = components.first
         ext = components.first != components.last ? components.last : nil
     }
