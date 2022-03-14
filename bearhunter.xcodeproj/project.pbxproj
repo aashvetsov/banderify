@@ -28,6 +28,7 @@
 		2E8072FA27DE662400CA69B4 /* Pod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072F927DE662400CA69B4 /* Pod.swift */; };
 		2E8072FC27DE67C300CA69B4 /* Array+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072FB27DE67C300CA69B4 /* Array+Transform.swift */; };
 		2E80730027DE702B00CA69B4 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072FF27DE702B00CA69B4 /* Shell.swift */; };
+		2E80733D27DFD3E400CA69B4 /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80733C27DFD3E400CA69B4 /* Decode.swift */; };
 		2EA9846627DCA49F00166E8A /* TestDoubles in Resources */ = {isa = PBXBuildFile; fileRef = 2EA9845827DCA22700166E8A /* TestDoubles */; };
 		2EA9846827DCA4B700166E8A /* TestDoubles in Resources */ = {isa = PBXBuildFile; fileRef = 2EA9845927DCA23300166E8A /* TestDoubles */; };
 		2EA9846927DCA55D00166E8A /* BearhunterScanCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* BearhunterScanCommand.swift */; };
@@ -126,6 +127,7 @@
 		2E8072F927DE662400CA69B4 /* Pod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pod.swift; sourceTree = "<group>"; };
 		2E8072FB27DE67C300CA69B4 /* Array+Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Transform.swift"; sourceTree = "<group>"; };
 		2E8072FF27DE702B00CA69B4 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
+		2E80733C27DFD3E400CA69B4 /* Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decode.swift; sourceTree = "<group>"; };
 		2EA9845427DC9FC100166E8A /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		2EA9845827DCA22700166E8A /* TestDoubles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestDoubles; sourceTree = "<group>"; };
 		2EA9845927DCA23300166E8A /* TestDoubles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestDoubles; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				OBJ_24 /* String+ConsoleOutput.swift */,
 				2E8072E127DD3CFC00CA69B4 /* URL+FileScheme.swift */,
 				2E8072FB27DE67C300CA69B4 /* Array+Transform.swift */,
+				2E80733C27DFD3E400CA69B4 /* Decode.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -717,6 +720,7 @@
 			buildActionMask = 0;
 			files = (
 				2E8072FA27DE662400CA69B4 /* Pod.swift in Sources */,
+				2E80733D27DFD3E400CA69B4 /* Decode.swift in Sources */,
 				OBJ_974 /* Bearhunter.swift in Sources */,
 				OBJ_975 /* ConfigFile.swift in Sources */,
 				2E8072E227DD3CFC00CA69B4 /* URL+FileScheme.swift in Sources */,

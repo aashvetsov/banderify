@@ -13,7 +13,7 @@ extension CocoapodsScanningStrategy: ConfigScanning {
                 at: file.directory
             ),
             let jsonData = jsonString.data(using: .utf8),
-            let pod = try? JSONDecoder.snake.decode(Pod.self, from: jsonData),
+            let pod = decode(Pod.self, from: jsonData, strategy: .convertFromSnakeCase),
             let targetDefinitions = pod.targetDefinitions
         else {
             return []
@@ -50,14 +50,5 @@ fileprivate extension CocoapodsScanningStrategy {
 
     enum Command {
         static let podDumpArgs = ["ipc", "podfile-json"]
-    }
-}
-
-fileprivate extension JSONDecoder {
-
-    static var snake: JSONDecoder {
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        return decoder
     }
 }
