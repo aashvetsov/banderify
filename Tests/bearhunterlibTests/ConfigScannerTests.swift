@@ -22,44 +22,48 @@ final class ConfigScannerTests: XCTestCase {
     func test_givenLocatorForAllDMsPath_whenScanRepositories_thenRepositoriesCountEqualExpectations() {
         // given
         let locator = ConfigLocator(directory: Bundle.allDMsPath, type: type)
-        let configFiles = locator.configFiles ?? []
+        let configFiles = locator.configFiles
 
         // when
-        let repositories = configFiles.compactMap(repositories).flatMap { $0 }
+        let repositories = configFiles?.compactMap(repositories).flatMap { $0 }
 
         // then
-        XCTAssertEqual(repositories.count, expectation(for: type))
+        if let repositories = repositories {
+            XCTAssertEqual(repositories.count, expectation)            
+        } else {
+            XCTFail("No configFiles found")                        
+        }
     }
 
-    func test_givenLocatorForNotExistingPath_whenScanRepositories_thenRepositoriesIsEmpty() {
+    func test_givenLocatorForNotExistingPath_whenScanRepositories_thenRepositoriesIsNil() {
         // given
         let locator = ConfigLocator(directory: Bundle.notExistingPath, type: type)
-        let configFiles = locator.configFiles ?? []
+        let configFiles = locator.configFiles
 
         // when
-        let repositories = configFiles.compactMap(repositories).flatMap { $0 }
+        let repositories = configFiles?.compactMap(repositories)
 
         // then
-        XCTAssertTrue(repositories.isEmpty)
+        XCTAssertNil(repositories)
     }
 
-    func test_givenLocatorForNoConfigFilesPath_whenScanRepositories_thenRepositoriesIsEmpty() {
+    func test_givenLocatorForNoConfigFilesPath_whenScanRepositories_thenRepositoriesIsNil() {
         // given
         let locator = ConfigLocator(directory: Bundle.noConfigFilesPath, type: type)
-        let configFiles = locator.configFiles ?? []
+        let configFiles = locator.configFiles
 
         // when
-        let repositories = configFiles.compactMap(repositories).flatMap { $0 }
+        let repositories = configFiles?.compactMap(repositories)
 
         // then
-        XCTAssertTrue(repositories.isEmpty)
+        XCTAssertNil(repositories)
     }
 }
 
 fileprivate extension ConfigScannerTests {
     
-    func expectation(for type: DMType) -> Int {
-        switch type {
+    var expectation: Int {
+        switch type! {
         case .spm: return 1
         case .xcodeproj: return 3
         case .carthage: return 3
