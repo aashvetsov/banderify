@@ -9,7 +9,7 @@ extension CocoapodsScanningStrategy: ConfigScanning {
             let executable = podExecutable,
             let jsonOutput = Shell.run(
                 command: executable,
-                with: Command.podDumpArgs + [file.name],
+                with: PodExecutable.podDumpArgs + [file.name],
                 at: file.directory
             ),
             let pod = decode(Pod.self, from: jsonOutput, strategy: .convertFromSnakeCase),
@@ -32,14 +32,9 @@ fileprivate extension CocoapodsScanningStrategy {
     enum PodExecutable: String, CaseIterable {
         case gem = "/usr/local/bin/pod"
         case homebrew = "/opt/homebrew/bin/pod"
-    }
 
-    enum Command {
         static let podDumpArgs = ["ipc", "podfile-json"]
     }
-}
-
-fileprivate extension CocoapodsScanningStrategy {
 
     static var podExecutable: String? {
         PodExecutable.allCases
