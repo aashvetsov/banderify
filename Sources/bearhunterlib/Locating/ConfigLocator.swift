@@ -11,9 +11,7 @@ struct ConfigLocator {
             return nil
         }
         return files
-            .compactMap {
-                ConfigFile(name: $0, directory: directory, type: type)
-            }
+            .compactMap { ConfigFile(name: $0, directory: directory, type: type) }
             .set()
     }
 }
