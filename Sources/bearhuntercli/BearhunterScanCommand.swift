@@ -3,16 +3,19 @@ import bearhunterlib
 
 public struct BearhunterScanCommand {
 
+    public typealias Output = Repositories
+    
     @Option(name: .shortAndLong, help: "Path to the directory with project")
     private var path: String?
 
-    private(set) static var output: Repositories?
+    private static var output: Output?
 
     public init() {}
 
-    public static func execute(with arguments: [String]?) throws {
+    public static func execute(with arguments: [String]?) throws -> Output? {
         var cmd = try BearhunterScanCommand.parseAsRoot(arguments)
         try cmd.run()
+        return Self.output
     }
 }
 

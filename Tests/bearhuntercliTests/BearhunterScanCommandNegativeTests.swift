@@ -1,4 +1,4 @@
-@testable import bearhuntercli
+import bearhuntercli
 import testsCommon
 import XCTest
 
@@ -27,13 +27,14 @@ final class BearhunterScanCommandNegativeTests: XCTestCase {
     }
 
     func test_whenCallCommandExecuteWithInvalidArguments_thenOutputIsNilErrorIsNotNil() {
+        var repositories: BearhunterScanCommand.Output?
         var testError: Error?
 
         // when
-        do { try BearhunterScanCommand.execute(with: arguments) } catch { testError = error }
+        do { repositories = try BearhunterScanCommand.execute(with: arguments) } catch { testError = error }
 
         // then
-        XCTAssertNil(BearhunterScanCommand.output)
+        XCTAssertNil(repositories)
         XCTAssertNotNil(testError)
     }
 }
