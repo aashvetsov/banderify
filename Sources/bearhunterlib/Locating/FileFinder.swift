@@ -18,6 +18,7 @@ extension FileFinder {
         let filtered = allFiles
             .compactMap(\.fileName)
             .filter { FileDescriptor(string: $0) =~ descriptor }
+
         return filtered.isEmpty ? nil : filtered
     }
 }
