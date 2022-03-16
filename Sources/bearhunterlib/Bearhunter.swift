@@ -31,7 +31,7 @@ fileprivate extension Bearhunter {
         }
 
         print("Detected files potentially containing dependencies:".loginfo)
-        print("\(files.map(\.identity).multilined)")
+        print("\(files.map(\.id).multilined)")
 
         return files
     }

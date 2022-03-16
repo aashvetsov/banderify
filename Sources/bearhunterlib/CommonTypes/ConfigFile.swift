@@ -1,8 +1,8 @@
 import Foundation
 
-struct ConfigFile: Hashable {
+struct ConfigFile: Identifiable, Hashable {
 
-    let identity: String
+    let id: String
 
     let name: String
     let directory: String
@@ -11,11 +11,13 @@ struct ConfigFile: Hashable {
     let type: DMType
 
     init?(
+        id: String? = nil,
         name: String,
         directory: String,
         type: DMType
     ) {
-        self.identity = name
+        self.id = id ?? name
+        
         self.type = type
         if let url = URL(string: "\(directory)/\(name)") {
             self.name = url.lastPathComponent
