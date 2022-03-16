@@ -9,7 +9,7 @@ extension CocoapodsScanningStrategy: ConfigScanning {
             let executable = podExecutable,
             let jsonOutput = Shell.run(
                 command: executable,
-                with: Command.podDumpArgs.appending(file.name),
+                with: Command.podDumpArgs + [file.name],
                 at: file.directory
             ),
             let pod = decode(Pod.self, from: jsonOutput, strategy: .convertFromSnakeCase),
@@ -18,14 +18,10 @@ extension CocoapodsScanningStrategy: ConfigScanning {
             return []
         }
 
-        let repositories: [Repository] = targetDefinitions
-            .compactMap(\.children)
-            .flatMap { $0 }
-            .compactMap(\.dependencies)
-            .flatMap { $0 }
-            .reduce(into: []) { result, dependencies in
-                result += dependencies.map { Repository(name: $0.key, url: "/test/url", version: $0.value.first) }
-            }
+        let repositories = targetDefinitions
+            .flatMap(\.children)
+            .flatMap(\.dependencies)
+            .map(Repository.init)
 
         return Set(repositories)
     }
@@ -49,5 +45,18 @@ fileprivate extension CocoapodsScanningStrategy {
         PodExecutable.allCases
             .map(\.rawValue)
             .first(where: { FileManager.default.fileExists(atPath: $0) })
+    }
+}
+
+fileprivate extension Repository {
+
+    typealias Dependency = CocoapodsScanningStrategy.Pod.Dependency
+
+    init(_ dependency: Dependency) {
+        self.init(
+            name: dependency.keys.first,
+            url: "/test/url",
+            version: dependency.values.first?.first
+        )
     }
 }

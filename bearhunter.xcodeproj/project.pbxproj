@@ -26,7 +26,6 @@
 		2E8072F027DDFD8D00CA69B4 /* SwiftShell in Frameworks */ = {isa = PBXBuildFile; productRef = 2E8072EF27DDFD8D00CA69B4 /* SwiftShell */; };
 		2E8072F827DE65FA00CA69B4 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072F727DE65FA00CA69B4 /* Package.swift */; };
 		2E8072FA27DE662400CA69B4 /* Pod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072F927DE662400CA69B4 /* Pod.swift */; };
-		2E8072FC27DE67C300CA69B4 /* Array+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072FB27DE67C300CA69B4 /* Array+Transform.swift */; };
 		2E80730027DE702B00CA69B4 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072FF27DE702B00CA69B4 /* Shell.swift */; };
 		2E80733D27DFD3E400CA69B4 /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80733C27DFD3E400CA69B4 /* Decode.swift */; };
 		2EA9846627DCA49F00166E8A /* TestDoubles in Resources */ = {isa = PBXBuildFile; fileRef = 2EA9845827DCA22700166E8A /* TestDoubles */; };
@@ -38,6 +37,7 @@
 		2EDD1F2C27DC9C5F00D90C6E /* CarthageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2EDD1F2B27DC9C5F00D90C6E /* CarthageKit */; };
 		2EDD1F2F27DC9C7F00D90C6E /* Rainbow in Frameworks */ = {isa = PBXBuildFile; productRef = 2EDD1F2E27DC9C7F00D90C6E /* Rainbow */; };
 		2EDD1F3527DC9CC700D90C6E /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 2EDD1F3427DC9CC700D90C6E /* ArgumentParser */; };
+		2EF88C1B27E14C640053A92C /* Array+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF88C1A27E14C640053A92C /* Array+Transform.swift */; };
 		OBJ_1027 /* BearhunterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* BearhunterTests.swift */; };
 		OBJ_1028 /* ConfigLocatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* ConfigLocatorsTests.swift */; };
 		OBJ_1029 /* ConfigScannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_50 /* ConfigScannerTests.swift */; };
@@ -59,8 +59,7 @@
 		OBJ_978 /* ByEmailDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* ByEmailDetector.swift */; };
 		OBJ_979 /* SoftwareType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* SoftwareType.swift */; };
 		OBJ_980 /* SoftwareTypeDetecting.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* SoftwareTypeDetecting.swift */; };
-		OBJ_981 /* Set+ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* Set+ConsoleOutput.swift */; };
-		OBJ_982 /* Set+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* Set+Transform.swift */; };
+		OBJ_981 /* Collection+ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* Collection+ConsoleOutput.swift */; };
 		OBJ_983 /* String+ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* String+ConsoleOutput.swift */; };
 		OBJ_984 /* ConfigLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* ConfigLocator.swift */; };
 		OBJ_985 /* FileDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* FileDescriptor.swift */; };
@@ -125,13 +124,13 @@
 		2E8072E127DD3CFC00CA69B4 /* URL+FileScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+FileScheme.swift"; sourceTree = "<group>"; };
 		2E8072F727DE65FA00CA69B4 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		2E8072F927DE662400CA69B4 /* Pod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pod.swift; sourceTree = "<group>"; };
-		2E8072FB27DE67C300CA69B4 /* Array+Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Transform.swift"; sourceTree = "<group>"; };
 		2E8072FF27DE702B00CA69B4 /* Shell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
 		2E80733C27DFD3E400CA69B4 /* Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decode.swift; sourceTree = "<group>"; };
 		2EA9845427DC9FC100166E8A /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		2EA9845827DCA22700166E8A /* TestDoubles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestDoubles; sourceTree = "<group>"; };
 		2EA9845927DCA23300166E8A /* TestDoubles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestDoubles; sourceTree = "<group>"; };
 		2EA9846427DCA41000166E8A /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		2EF88C1A27E14C640053A92C /* Array+Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Transform.swift"; sourceTree = "<group>"; };
 		OBJ_10 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		OBJ_12 /* Bearhunter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearhunter.swift; sourceTree = "<group>"; };
 		OBJ_14 /* ConfigFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigFile.swift; sourceTree = "<group>"; };
@@ -140,8 +139,7 @@
 		OBJ_18 /* ByEmailDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByEmailDetector.swift; sourceTree = "<group>"; };
 		OBJ_19 /* SoftwareType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftwareType.swift; sourceTree = "<group>"; };
 		OBJ_20 /* SoftwareTypeDetecting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftwareTypeDetecting.swift; sourceTree = "<group>"; };
-		OBJ_22 /* Set+ConsoleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+ConsoleOutput.swift"; sourceTree = "<group>"; };
-		OBJ_23 /* Set+Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Transform.swift"; sourceTree = "<group>"; };
+		OBJ_22 /* Collection+ConsoleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+ConsoleOutput.swift"; sourceTree = "<group>"; };
 		OBJ_24 /* String+ConsoleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ConsoleOutput.swift"; sourceTree = "<group>"; };
 		OBJ_26 /* ConfigLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigLocator.swift; sourceTree = "<group>"; };
 		OBJ_27 /* FileDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDescriptor.swift; sourceTree = "<group>"; };
@@ -317,12 +315,11 @@
 		OBJ_21 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_22 /* Set+ConsoleOutput.swift */,
-				OBJ_23 /* Set+Transform.swift */,
+				OBJ_22 /* Collection+ConsoleOutput.swift */,
 				OBJ_24 /* String+ConsoleOutput.swift */,
 				2E8072E127DD3CFC00CA69B4 /* URL+FileScheme.swift */,
-				2E8072FB27DE67C300CA69B4 /* Array+Transform.swift */,
 				2E80733C27DFD3E400CA69B4 /* Decode.swift */,
+				2EF88C1A27E14C640053A92C /* Array+Transform.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -729,13 +726,13 @@
 				OBJ_978 /* ByEmailDetector.swift in Sources */,
 				OBJ_979 /* SoftwareType.swift in Sources */,
 				OBJ_980 /* SoftwareTypeDetecting.swift in Sources */,
-				OBJ_981 /* Set+ConsoleOutput.swift in Sources */,
-				OBJ_982 /* Set+Transform.swift in Sources */,
+				OBJ_981 /* Collection+ConsoleOutput.swift in Sources */,
 				OBJ_983 /* String+ConsoleOutput.swift in Sources */,
 				OBJ_984 /* ConfigLocator.swift in Sources */,
 				2E8072F827DE65FA00CA69B4 /* Package.swift in Sources */,
 				OBJ_985 /* FileDescriptor.swift in Sources */,
 				OBJ_986 /* FileFinder.swift in Sources */,
+				2EF88C1B27E14C640053A92C /* Array+Transform.swift in Sources */,
 				OBJ_987 /* CarthageScanningStrategy.swift in Sources */,
 				OBJ_988 /* CocoapodsScanningStrategy.swift in Sources */,
 				OBJ_989 /* Repository.swift in Sources */,
@@ -745,7 +742,6 @@
 				OBJ_992 /* GitSubmodulesScanningStrategy.swift in Sources */,
 				OBJ_993 /* GitSubtreeScanningStrategy.swift in Sources */,
 				OBJ_994 /* SPMScanningStrategy.swift in Sources */,
-				2E8072FC27DE67C300CA69B4 /* Array+Transform.swift in Sources */,
 				OBJ_995 /* XcodeProjScanningStrategy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

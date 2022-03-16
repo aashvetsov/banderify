@@ -27,7 +27,7 @@ fileprivate extension Bearhunter {
         )
 
         print("Detected files potentially containing dependencies:".loginfo)
-        print("\(files.setmap(\.identity).list)")
+        print("\(files.map(\.identity).multilined)")
 
         return files
     }
@@ -40,7 +40,7 @@ fileprivate extension Bearhunter {
         )
 
         print("Detected dependencies:".loginfo)
-        print("\(repositories.setmap(\.url).list.link)")
+        print("\(repositories.map(\.url).multilined.link)")
 
         return repositories
     }
