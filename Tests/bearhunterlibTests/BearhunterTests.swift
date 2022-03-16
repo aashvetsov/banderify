@@ -4,15 +4,12 @@ import XCTest
 
 final class BearhunterTests: XCTestCase {
 
-    func test_givenAllDMsPath_whenCallScan_thenRepositoriesIsEmptyFalseAndErrorIsNil() {
+    func test_whenCallScanWithAllDMsPath_thenRepositoriesIsEmptyFalseAndErrorIsNil() {
         var repositories: Repositories?
         var testError: Error?
         
-        // given
-        let path = Bundle.allDMsPath
-
         // when
-        do { repositories = try Bearhunter.scan(path) } catch { testError = error }
+        do { repositories = try Bearhunter.scan(Bundle.allDMsPath) } catch { testError = error }
 
         // then
         if let repositories = repositories {
@@ -23,30 +20,24 @@ final class BearhunterTests: XCTestCase {
         }
     }
 
-    func test_givenNotExistingPath_whenCallScan_thenRepositoriesIsNilAndTestErrorIsNotNil() {
+    func test_whenCallScanWIthNotExistingPath_thenRepositoriesIsNilAndTestErrorIsNotNil() {
         var repositories: Repositories?
         var testError: Error?
         
-        // given
-        let path = Bundle.notExistingPath
-
         // when
-        do { repositories = try Bearhunter.scan(path) } catch { testError = error }
+        do { repositories = try Bearhunter.scan(Bundle.notExistingPath) } catch { testError = error }
 
         // then
         XCTAssertNil(repositories)
         XCTAssertNotNil(testError)            
     }
 
-    func test_givenNoConfigFilesPath_whenCallScan_thenRepositoriesIsNilAndTestErrorIsNil() {
+    func test_whenCallScanNoConfigFilesPath_thenRepositoriesIsNilAndTestErrorIsNil() {
         var repositories: Repositories?
         var testError: Error?
         
-        // given
-        let path = Bundle.noConfigFilesPath
-
         // when
-        do { repositories = try Bearhunter.scan(path) } catch { testError = error }
+        do { repositories = try Bearhunter.scan(Bundle.noConfigFilesPath) } catch { testError = error }
 
         // then
         XCTAssertNil(repositories)
