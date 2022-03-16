@@ -41,7 +41,7 @@ fileprivate extension CocoapodsScanningStrategy {
         static var installed: String? {
             allCases
                 .map(\.rawValue)
-                .first(where: { FileManager.default.fileExists(atPath: $0) })
+                .first(where: FileManager.default.fileExists)
         }
     }
 }
