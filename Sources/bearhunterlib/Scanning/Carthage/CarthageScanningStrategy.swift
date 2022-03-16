@@ -20,7 +20,7 @@ extension CarthageScanningStrategy: ConfigScanning {
 fileprivate extension ConfigFile {
 
     var cartfile: Cartfile? {
-        let fileUrl = url.prefixedFileScheme
+        let fileUrl = url.fileURL
         switch Cartfile.from(file: fileUrl) {
         case .success(let cartfile): return cartfile
         default: return nil
@@ -47,10 +47,19 @@ fileprivate extension Repository {
     }
 }
 
-extension URL {
+fileprivate extension URL {
 
-    var prefixedFileScheme: URL {
-        // swiftlint:disable:next force_unwrapping
-        URL(string: "file://\(absoluteString)")!
+    var fileURL: URL {
+        guard
+            !absoluteString.contains(Conststants.fileScheme),
+            let url = URL(string: "\(Conststants.fileScheme)\(absoluteString)")
+        else {
+            return self
+        }
+        return url
+    }
+
+    enum Conststants {
+        static let fileScheme = "file://"
     }
 }
