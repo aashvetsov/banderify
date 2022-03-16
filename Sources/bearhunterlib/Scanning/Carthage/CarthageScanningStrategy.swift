@@ -36,7 +36,7 @@ fileprivate extension CarthageScanningStrategy {
         default:
             return nil
         }
-        guard let url = dependencyUrl else { return nil }
-        return Repository(name: dependencyName, url: url)
+        guard let dependencyName = dependencyName else { return nil }
+        return Repository(name: dependencyName, url: dependencyUrl)
     }
 }

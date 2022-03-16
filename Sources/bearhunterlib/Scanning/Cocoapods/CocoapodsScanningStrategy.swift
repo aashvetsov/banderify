@@ -21,7 +21,7 @@ extension CocoapodsScanningStrategy: ConfigScanning {
         let repositories = targetDefinitions
             .flatMap(\.children)
             .flatMap(\.dependencies)
-            .map(Repository.init)
+            .compactMap(Repository.init)
 
         return Set(repositories)
     }
@@ -47,10 +47,10 @@ fileprivate extension Repository {
 
     typealias Dependency = CocoapodsScanningStrategy.Pod.Dependency
 
-    init(_ dependency: Dependency) {
+    init?(_ dependency: Dependency) {
+        guard let name = dependency.keys.first else { return nil }
         self.init(
-            name: dependency.keys.first,
-            url: "/test/url",
+            name: name,
             version: dependency.values.first?.first
         )
     }

@@ -21,7 +21,7 @@ extension XcodeProjScanningStrategy: ConfigScanning {
 fileprivate extension Repository {
 
     init?(_ package: XCRemoteSwiftPackageReference) {
-        guard let url = package.repositoryURL else { return nil }
-        self.init(name: package.name, url: url)
+        guard let name = package.name else { return nil }
+        self.init(name: name, url: package.repositoryURL)
     }
 }

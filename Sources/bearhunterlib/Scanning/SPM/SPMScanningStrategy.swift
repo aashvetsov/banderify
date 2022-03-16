@@ -19,7 +19,7 @@ extension SPMScanningStrategy: ConfigScanning {
 
         let repositories = dependencies
             .flatMap(\.scm)
-            .map(Repository.init)
+            .compactMap(Repository.init)
 
         return Set(repositories)
     }
@@ -37,7 +37,7 @@ fileprivate extension Repository {
 
     typealias SCM = SPMScanningStrategy.Package.Dependency.SCM
 
-    init(_ scm: SCM) {
+    init?(_ scm: SCM) {
         self.init(name: scm.identity, url: scm.location)
     }
 }
