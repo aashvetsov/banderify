@@ -24,6 +24,8 @@ extension CocoapodsScanningStrategy: ConfigScanning {
             .flatMap(\.repositories)
             .set()
 
+        // TODO: get urls for repositories
+
         return repositories
     }
 }
