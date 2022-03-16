@@ -25,7 +25,9 @@ final class ConfigScannerTests: XCTestCase {
         let configFiles = locator.configFiles
 
         // when
-        let repositories = configFiles?.compactMap(repositories).flatMap { $0 }
+        let repositories = configFiles?
+            .compactMap(repositories)
+            .flatMap { $0 }
 
         // then
         if let repositories = repositories {
@@ -41,7 +43,8 @@ final class ConfigScannerTests: XCTestCase {
         let configFiles = locator.configFiles
 
         // when
-        let repositories = configFiles?.compactMap(repositories)
+        let repositories = configFiles?
+            .compactMap(repositories)
 
         // then
         XCTAssertNil(repositories)
@@ -53,7 +56,8 @@ final class ConfigScannerTests: XCTestCase {
         let configFiles = locator.configFiles
 
         // when
-        let repositories = configFiles?.compactMap(repositories)
+        let repositories = configFiles?
+            .compactMap(repositories)
 
         // then
         XCTAssertNil(repositories)
