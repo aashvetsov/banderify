@@ -31,9 +31,10 @@ final class ConfigScannerTests: XCTestCase {
     func test_givenLocatorForAllDMsPath_whenScanRepositories_thenRepositoriesCountEqualExpectations() {
         // given
         let locator = ConfigLocator(directory: Bundle.allDMsPath, type: type)
+        let configFiles = locator.configFiles ?? []
 
         // when
-        let repositories = locator.configFiles.flatMap(repositories(from:))
+        let repositories = configFiles.flatMap(repositories(from:))
 
         // then
         XCTAssertEqual(repositories.count, expectations[type])
@@ -42,9 +43,10 @@ final class ConfigScannerTests: XCTestCase {
     func test_givenLocatorForNotExistingPath_whenScanRepositories_thenRepositoriesIsEmpty() {
         // given
         let locator = ConfigLocator(directory: Bundle.notExistingPath, type: type)
+        let configFiles = locator.configFiles ?? []
 
         // when
-        let repositories = locator.configFiles.flatMap(repositories(from:))
+        let repositories = configFiles.flatMap(repositories(from:))
 
         // then
         XCTAssertTrue(repositories.isEmpty)
@@ -53,9 +55,10 @@ final class ConfigScannerTests: XCTestCase {
     func test_givenLocatorForNoConfigFilesPath_whenScanRepositories_thenRepositoriesIsEmpty() {
         // given
         let locator = ConfigLocator(directory: Bundle.noConfigFilesPath, type: type)
+        let configFiles = locator.configFiles ?? []
 
         // when
-        let repositories = locator.configFiles.flatMap(repositories(from:))
+        let repositories = configFiles.flatMap(repositories(from:))
 
         // then
         XCTAssertTrue(repositories.isEmpty)

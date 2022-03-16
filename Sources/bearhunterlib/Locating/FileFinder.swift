@@ -7,12 +7,12 @@ extension FileFinder {
     static func existingFiles(
         by descriptor: FileDescriptor,
         at sourceDirectory: String
-    ) -> [String] {
+    ) -> [String]? {
         guard
             let enumerator = FileManager.default.enumerator(atPath: sourceDirectory),
             let allFiles = enumerator.allObjects as? [String]
         else {
-            return []
+            return nil
         }
 
         return allFiles

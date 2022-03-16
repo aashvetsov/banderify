@@ -20,8 +20,9 @@ extension SPMScanningStrategy: ConfigScanning {
         let repositories = dependencies
             .flatMap(\.scm)
             .compactMap(Repository.init)
+            .set()
 
-        return Set(repositories)
+        return repositories
     }
 }
 
