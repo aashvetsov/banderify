@@ -22,8 +22,7 @@ extension CarthageScanningStrategy: ConfigScanning {
 fileprivate extension ConfigFile {
 
     var cartfile: Cartfile? {
-        let fileUrl = url.fileURL
-        switch Cartfile.from(file: fileUrl) {
+        switch Cartfile.from(file: url.fileURL) {
         case .success(let cartfile): return cartfile
         default: return nil
         }
