@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "bearhunter",
     platforms: [
-        // TODO: port to other platforms (SPM and Cocoapods scanning are blockers due to shell-based algorithm)
+        // TODO: port to other platforms (SPM and Cocoapods scanning are blockers due to shell-based algorithms)
         .macOS(.v10_15)
     ],
     products: [
