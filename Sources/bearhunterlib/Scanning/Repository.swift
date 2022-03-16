@@ -4,7 +4,7 @@ public struct Repository: Hashable {
     let url: String?
     let version: String?
 
-    init?(name: String, url: String? = nil, version: String? = nil) {
+    init(name: String, url: String? = nil, version: String? = nil) {
         self.name = name
         self.url = url
         self.version = version
