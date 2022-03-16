@@ -21,8 +21,6 @@ extension Shell {
         let output = SwiftShell.run(command, arguments ?? [], combineOutput: false)
         let result = output.stdout
 
-        guard !result.isEmpty else { return nil }
-
-        return result
+        return result.isEmpty ? nil : result
     }
 }
