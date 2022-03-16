@@ -2,7 +2,7 @@ import Foundation
 
 extension Array {
 
-    // TODO: write docu,emtation for this method's purposes
+    // TODO: write documentation for this method's purposes
     @inlinable
     func flatMap<SegmentOfResult>(
         _ transform: (Element) throws -> SegmentOfResult?
