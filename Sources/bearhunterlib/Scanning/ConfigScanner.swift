@@ -11,8 +11,8 @@ fileprivate extension ConfigScanner {
         case .spm: return SPMScanningStrategy.self
         case .xcodeproj: return XcodeProjScanningStrategy.self
         case .carthage: return CarthageScanningStrategy.self
-        case .gitSubmodules: return GitSubmodulesScanningStrategy.self
-        case .gitSubtree: return GitSubtreeScanningStrategy.self
+        case .gitSubmodules: return /*GitSubmodulesScanningStrategy.self*/ nil
+        case .gitSubtree: return /*GitSubtreeScanningStrategy.self*/ nil
         case .cocoapods: return CocoapodsScanningStrategy.self
         }
     }
