@@ -24,7 +24,7 @@ extension CocoapodsScanningStrategy: ConfigScanning {
             .compactMap(Repository.init)
 
         // TODO: fill repositories with urls
-        
+
         return Set(repositories)
     }
 }
