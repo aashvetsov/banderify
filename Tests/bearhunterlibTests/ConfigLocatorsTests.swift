@@ -41,14 +41,14 @@ final class ConfigLocatorsTests: XCTestCase {
         XCTAssertNil(configFiles)
     }
 
-    func test_givenLocatorForNoConfigFilesPath_whenGetConfigFiles_thenConfigFilesIsEmpty() {
+    func test_givenLocatorForNoConfigFilesPath_whenGetConfigFiles_thenConfigFilesIsNil() {
         // given
         let locator = ConfigLocator(directory: Bundle.noConfigFilesPath, type: type)
 
         // when
-        guard let configFiles = locator.configFiles else { XCTFail("No configFiles found"); return }
+        let configFiles = locator.configFiles
 
         // then
-        XCTAssertTrue(configFiles.isEmpty)
+        XCTAssertNil(configFiles)
     }
 }
