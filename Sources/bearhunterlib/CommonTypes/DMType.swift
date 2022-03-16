@@ -1,4 +1,4 @@
-enum DMType: String, RawRepresentable, CaseIterable {
+enum DMType: String, CaseIterable {
     case spm = "Package.swift"
     case xcodeproj = ".xcodeproj"
     case carthage = "Cartfile"
