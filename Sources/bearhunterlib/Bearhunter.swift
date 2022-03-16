@@ -4,11 +4,11 @@ public enum Bearhunter {}
 
 public extension Bearhunter {
 
-    static func scan(_ path: String?) throws -> Repositories {
+    static func scan(_ path: String?) throws -> Repositories? {
         guard let path = path else { throw Error.missingSourceDirectory }
-        guard path.isExistingDirectory else { throw Error.notExistingSourceDirectory }
+        guard path.isDirectory else { throw Error.notExistingSourceDirectory }
 
-        let files = locateConfigFiles(at: path)
+        guard let files = locateConfigFiles(at: path) else { return nil }
         let repositories = scanRepositories(at: files)
 
         return repositories
@@ -17,13 +17,18 @@ public extension Bearhunter {
 
 fileprivate extension Bearhunter {
 
-    static func locateConfigFiles(at path: String) -> ConfigFiles {
+    static func locateConfigFiles(at path: String) -> ConfigFiles? {
         print("Started analysis of directory: \(path)".loginfo)
 
-        let files = DMType.allCases
-            .map { ConfigLocator(directory: path, type: $0) }
-            .flatMap(\.configFiles)
-            .set()
+        guard 
+            let files = DMType.allCases
+                .map({ ConfigLocator(directory: path, type: $0) })
+                .flatMap(\.configFiles)
+                .set()
+        else {
+            print("Files potentially containing dependencies were not detected".loginfo)
+            return nil
+        }
 
         print("Detected files potentially containing dependencies:".loginfo)
         print("\(files.map(\.identity).multilined)")
@@ -31,15 +36,20 @@ fileprivate extension Bearhunter {
         return files
     }
 
-    static func scanRepositories(at files: ConfigFiles) -> Repositories {
+    static func scanRepositories(at files: ConfigFiles) -> Repositories? {
         print("Started analysis of config files".loginfo)
 
-        let repositories = files
-            .flatMap { ConfigScanner(file: $0).repositories }
+        guard let repositories = files
+            .compactMap({ ConfigScanner(file: $0).repositories })
+            .flatMap({ $0 })
             .set()
+        else {
+            print("Didn't detect any dependency".loginfo)
+            return nil
+        }
 
         print("Detected dependencies:".loginfo)
-        print("\(repositories.map(\.url).multilined.link)")
+        print("\(repositories.compactMap(\.url).multilined.link)")
 
         return repositories
     }
@@ -47,7 +57,7 @@ fileprivate extension Bearhunter {
 
 fileprivate extension String {
 
-    var isExistingDirectory: Bool {
+    var isDirectory: Bool {
         var isDir: ObjCBool = false
         return FileManager.default.fileExists(
             atPath: self,

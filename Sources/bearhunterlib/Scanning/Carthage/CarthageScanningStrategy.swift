@@ -5,13 +5,15 @@ enum CarthageScanningStrategy {}
 
 extension CarthageScanningStrategy: ConfigScanning {
 
-    static func scan(_ file: ConfigFile) -> Repositories {
-        guard let cartfile = file.cartfile else { return [] }
-
-        let repositories = cartfile.dependencies
-            .map(\.key)
-            .compactMap(Repository.init)
-            .set()
+    static func scan(_ file: ConfigFile) -> Repositories? {
+        guard
+            let repositories = file.cartfile?.dependencies
+                .map(\.key)
+                .compactMap(Repository.init)
+                .set()
+        else {
+            return nil
+        }
 
         return repositories
     }

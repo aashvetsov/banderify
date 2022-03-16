@@ -1,7 +1,7 @@
 struct ConfigScanner {
 
     let file: ConfigFile
-    var repositories: Repositories { strategy.scan(file) }
+    var repositories: Repositories? { strategy.scan(file) }
 }
 
 fileprivate extension ConfigScanner {

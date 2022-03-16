@@ -5,9 +5,9 @@ import XCTest
 final class BearhunterTests: XCTestCase {
 
     func test_givenAllDMsPath_whenCallScan_thenRepositoriesIsEmptyFalseAndErrorIsNil() {
+        var repositories: Repositories?
         var testError: Error?
-        var repositories: Repositories = []
-
+        
         // given
         let path = Bundle.allDMsPath
 
@@ -15,14 +15,18 @@ final class BearhunterTests: XCTestCase {
         do { repositories = try Bearhunter.scan(path) } catch { testError = error }
 
         // then
-        XCTAssertFalse(repositories.isEmpty)
-        XCTAssertNil(testError)
+        if let repositories = repositories {
+            XCTAssertFalse(repositories.isEmpty)            
+            XCTAssertNil(testError)            
+        } else {
+            XCTFail("Failed to scan reposiroies")
+        }
     }
 
-    func test_givenNotExistingPath_whenCallScan_thenRepositoriesIsEmptyAndErrorIsNotNil() {
+    func test_givenNotExistingPath_whenCallScan_thenRepositoriesIsNilAndTestErrorIsNotNil() {
+        var repositories: Repositories?
         var testError: Error?
-        var repositories: Repositories = []
-
+        
         // given
         let path = Bundle.notExistingPath
 
@@ -30,14 +34,14 @@ final class BearhunterTests: XCTestCase {
         do { repositories = try Bearhunter.scan(path) } catch { testError = error }
 
         // then
-        XCTAssertTrue(repositories.isEmpty)
-        XCTAssertNotNil(testError)
+        XCTAssertNil(repositories)
+        XCTAssertNotNil(testError)            
     }
 
-    func test_givenNoConfigFilesPath_whenCallScan_thenRepositoriesIsEmptyAndErrorIsNil() {
+    func test_givenNoConfigFilesPath_whenCallScan_thenRepositoriesIsNilAndTestErrorIsNil() {
+        var repositories: Repositories?
         var testError: Error?
-        var repositories: Repositories = []
-
+        
         // given
         let path = Bundle.noConfigFilesPath
 
@@ -45,7 +49,7 @@ final class BearhunterTests: XCTestCase {
         do { repositories = try Bearhunter.scan(path) } catch { testError = error }
 
         // then
-        XCTAssertTrue(repositories.isEmpty)
-        XCTAssertNil(testError)
+        XCTAssertNil(repositories)
+        XCTAssertNil(testError)            
     }
 }

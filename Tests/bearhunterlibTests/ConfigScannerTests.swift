@@ -34,7 +34,7 @@ final class ConfigScannerTests: XCTestCase {
         let configFiles = locator.configFiles ?? []
 
         // when
-        let repositories = configFiles.flatMap(repositories(from:))
+        let repositories = configFiles.compactMap(repositories).flatMap { $0 }
 
         // then
         XCTAssertEqual(repositories.count, expectations[type])
@@ -46,7 +46,7 @@ final class ConfigScannerTests: XCTestCase {
         let configFiles = locator.configFiles ?? []
 
         // when
-        let repositories = configFiles.flatMap(repositories(from:))
+        let repositories = configFiles.compactMap(repositories).flatMap { $0 }
 
         // then
         XCTAssertTrue(repositories.isEmpty)
@@ -58,7 +58,7 @@ final class ConfigScannerTests: XCTestCase {
         let configFiles = locator.configFiles ?? []
 
         // when
-        let repositories = configFiles.flatMap(repositories(from:))
+        let repositories = configFiles.compactMap(repositories).flatMap { $0 }
 
         // then
         XCTAssertTrue(repositories.isEmpty)
@@ -67,7 +67,7 @@ final class ConfigScannerTests: XCTestCase {
 
 fileprivate extension ConfigScannerTests {
 
-    func repositories(from file: ConfigFile) -> Repositories {
+    func repositories(from file: ConfigFile) -> Repositories? {
         ConfigScanner(file: file).repositories
     }
 }

@@ -10,7 +10,7 @@ extension Array {
     }
 
     @inlinable
-    func set() -> Set<Element> where Element: Hashable {
-        Set(self)
+    func set() -> Set<Element>? where Element: Hashable {
+        isEmpty ? nil : Set(self)
     }
 }
