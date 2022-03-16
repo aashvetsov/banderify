@@ -1,4 +1,5 @@
 import CarthageKit
+
 extension CocoapodsScanningStrategy {
 
     struct Pod: Decodable {
