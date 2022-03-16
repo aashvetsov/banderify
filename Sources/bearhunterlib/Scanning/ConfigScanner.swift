@@ -1,12 +1,12 @@
 struct ConfigScanner {
 
     let file: ConfigFile
-    var repositories: Repositories? { strategy.scan(file) }
+    var repositories: Repositories? { strategy?.scan(file) }
 }
 
 fileprivate extension ConfigScanner {
 
-    var strategy: ConfigScanning.Type {
+    var strategy: ConfigScanning.Type? {
         switch file.type {
         case .spm: return SPMScanningStrategy.self
         case .xcodeproj: return XcodeProjScanningStrategy.self

@@ -5,15 +5,6 @@ import XCTest
 // swiftlint:disable implicitly_unwrapped_optional
 final class ConfigScannerTests: XCTestCase {
 
-    private var expectations: [DMType: Int] {[
-        .spm: 1,
-        .xcodeproj: 3,
-        .carthage: 3,
-        .gitSubmodules: 0, // TODO: change when implement corresponding scanner
-        .gitSubtree: 0, // TODO: change when implement corresponding scanner
-        .cocoapods: 24 // TODO: change when implement corresponding scanner
-    ]}
-
     private var type: DMType!
 
     override func invokeTest() {
@@ -37,7 +28,7 @@ final class ConfigScannerTests: XCTestCase {
         let repositories = configFiles.compactMap(repositories).flatMap { $0 }
 
         // then
-        XCTAssertEqual(repositories.count, expectations[type])
+        XCTAssertEqual(repositories.count, expectation(for: type))
     }
 
     func test_givenLocatorForNotExistingPath_whenScanRepositories_thenRepositoriesIsEmpty() {
@@ -62,6 +53,20 @@ final class ConfigScannerTests: XCTestCase {
 
         // then
         XCTAssertTrue(repositories.isEmpty)
+    }
+}
+
+fileprivate extension ConfigScannerTests {
+    
+    func expectation(for type: DMType) -> Int {
+        switch type {
+        case .spm: return 1
+        case .xcodeproj: return 3
+        case .carthage: return 3
+        case .gitSubmodules: return 0 // TODO: change when implement corresponding scanner
+        case .gitSubtree: return 0 // TODO: change when implement corresponding scanner
+        case .cocoapods: return 24
+        }
     }
 }
 
