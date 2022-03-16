@@ -26,14 +26,11 @@ final class BearhunterScanCommandNegativeTests: XCTestCase {
         super.tearDown()
     }
 
-    func test_givenInvalidArguments_whenCallCommandExecute_thenOutputIsNilErrorIsNotNil() {
+    func test_whenCallCommandExecuteWithInvalidArguments_thenOutputIsNilErrorIsNotNil() {
         var testError: Error?
 
-        // given
-        let testArguments = arguments
-
         // when
-        do { try BearhunterScanCommand.execute(with: testArguments) } catch { testError = error }
+        do { try BearhunterScanCommand.execute(with: arguments) } catch { testError = error }
 
         // then
         XCTAssertNil(BearhunterScanCommand.output)
