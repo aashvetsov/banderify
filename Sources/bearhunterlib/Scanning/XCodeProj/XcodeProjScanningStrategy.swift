@@ -12,16 +12,17 @@ extension XcodeProjScanningStrategy: ConfigScanning {
 
         let repositories = project.pbxproj.projects
             .flatMap(\.packages)
-            .compactMap(repository(from:))
+            .compactMap(Repository.init)
+            .set()
 
-        return Set(repositories)
+        return repositories
     }
 }
 
-fileprivate extension XcodeProjScanningStrategy {
+fileprivate extension Repository {
 
-    static func repository(from package: XCRemoteSwiftPackageReference) -> Repository? {
-        guard let url = package.repositoryURL else { return nil }
-        return Repository(name: package.name, url: url)
+    init?(_ package: XCRemoteSwiftPackageReference) {
+        guard let name = package.name else { return nil }
+        self.init(name: name, url: package.repositoryURL)
     }
 }

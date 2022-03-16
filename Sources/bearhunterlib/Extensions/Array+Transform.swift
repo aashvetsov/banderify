@@ -1,12 +1,16 @@
+import Foundation
+
 extension Array {
 
-    func appending(_ newElement: Element) -> Array {
-        appending([newElement])
+    @inlinable
+    func flatMap<SegmentOfResult>(
+        _ transform: (Element) throws -> SegmentOfResult?
+    ) rethrows -> [SegmentOfResult.Element] where SegmentOfResult: Sequence {
+        try compactMap(transform).flatMap { $0 }
     }
 
-    func appending(_ newElements: [Element]) -> Array {
-        var result = Array(self)
-        result.append(contentsOf: newElements)
-        return result
+    @inlinable
+    func set() -> Set<Element> where Element: Hashable {
+        Set(self)
     }
 }

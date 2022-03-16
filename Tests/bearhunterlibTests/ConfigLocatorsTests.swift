@@ -24,13 +24,13 @@ final class ConfigLocatorsTests: XCTestCase {
         let locator = ConfigLocator(directory: Bundle.allDMsPath, type: type)
 
         // when
-        let configFiles = locator.configFiles
+        guard let configFiles = locator.configFiles else { XCTFail("No configFiles found"); return }
 
         // then
         XCTAssertEqual(configFiles.count, 1)
     }
 
-    func test_givenLocatorForNotExistingPath_whenGetConfigFiles_thenConfigFilesIsEmpty() {
+    func test_givenLocatorForNotExistingPath_whenGetConfigFiles_thenConfigFilesIsNil() {
         // given
         let locator = ConfigLocator(directory: Bundle.notExistingPath, type: type)
 
@@ -38,10 +38,10 @@ final class ConfigLocatorsTests: XCTestCase {
         let configFiles = locator.configFiles
 
         // then
-        XCTAssertTrue(configFiles.isEmpty)
+        XCTAssertNil(configFiles)
     }
 
-    func test_givenLocatorForNoConfigFilesPath_whenGetConfigFiles_thenConfigFilesIsEmpty() {
+    func test_givenLocatorForNoConfigFilesPath_whenGetConfigFiles_thenConfigFilesIsNil() {
         // given
         let locator = ConfigLocator(directory: Bundle.noConfigFilesPath, type: type)
 
@@ -49,6 +49,6 @@ final class ConfigLocatorsTests: XCTestCase {
         let configFiles = locator.configFiles
 
         // then
-        XCTAssertTrue(configFiles.isEmpty)
+        XCTAssertNil(configFiles)
     }
 }

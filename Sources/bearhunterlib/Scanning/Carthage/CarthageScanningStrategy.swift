@@ -6,25 +6,31 @@ enum CarthageScanningStrategy {}
 extension CarthageScanningStrategy: ConfigScanning {
 
     static func scan(_ file: ConfigFile) -> Repositories {
-        let fileUrl = file.url.prefixedFileScheme
-        var cartfile: Cartfile?
-        switch Cartfile.from(file: fileUrl) {
-        case .success(let result): cartfile = result
-        default: break
-        }
-        guard let cartfile = cartfile else { return [] }
+        guard let cartfile = file.cartfile else { return [] }
 
         let repositories = cartfile.dependencies
             .map(\.key)
-            .compactMap(repository(from:))
+            .compactMap(Repository.init)
+            .set()
 
-        return Set(repositories)
+        return repositories
     }
 }
 
-fileprivate extension CarthageScanningStrategy {
+fileprivate extension ConfigFile {
 
-    static func repository(from dependency: Dependency) -> Repository? {
+    var cartfile: Cartfile? {
+        let fileUrl = url.prefixedFileScheme
+        switch Cartfile.from(file: fileUrl) {
+        case .success(let cartfile): return cartfile
+        default: return nil
+        }
+    }
+}
+
+fileprivate extension Repository {
+
+    init?(_ dependency: CarthageKit.Dependency) {
         var dependencyName, dependencyUrl: String?
         switch dependency {
         case let .gitHub(server, repository):
@@ -36,7 +42,7 @@ fileprivate extension CarthageScanningStrategy {
         default:
             return nil
         }
-        guard let url = dependencyUrl else { return nil }
-        return Repository(name: dependencyName, url: url)
+        guard let dependencyName = dependencyName else { return nil }
+        self.init(name: dependencyName, url: dependencyUrl)
     }
 }

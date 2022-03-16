@@ -7,24 +7,22 @@ extension SPMScanningStrategy: ConfigScanning {
 
     static func scan(_ file: ConfigFile) -> Repositories {
         guard
-            let jsonString = Shell.run(
+            let jsonOutput = Shell.run(
                 command: Command.swift,
                 with: Command.packageDumsArgs,
                 at: file.directory
             ),
-            let jsonData = jsonString.data(using: .utf8),
-            let package = try? JSONDecoder().decode(Package.self, from: jsonData),
-            let dependencies = package.dependencies
+            let dependencies = decode(Package.self, from: jsonOutput)?.dependencies
         else {
             return []
         }
 
         let repositories = dependencies
-            .compactMap(\.scm)
-            .flatMap { $0 }
-            .map { Repository(name: $0.identity, url: $0.location) }
+            .flatMap(\.scm)
+            .compactMap(Repository.init)
+            .set()
 
-        return Set(repositories)
+        return repositories
     }
 }
 
@@ -33,5 +31,14 @@ fileprivate extension SPMScanningStrategy {
     enum Command {
         static let swift = "swift"
         static let packageDumsArgs = ["package", "dump-package"]
+    }
+}
+
+fileprivate extension Repository {
+
+    typealias SCM = SPMScanningStrategy.Package.Dependency.SCM
+
+    init?(_ scm: SCM) {
+        self.init(name: scm.identity, url: scm.location)
     }
 }

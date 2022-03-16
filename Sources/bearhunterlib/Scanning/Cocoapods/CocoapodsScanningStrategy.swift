@@ -7,32 +7,37 @@ extension CocoapodsScanningStrategy: ConfigScanning {
     static func scan(_ file: ConfigFile) -> Repositories {
         guard
             let executable = podExecutable,
-            let jsonString = Shell.run(
+            let jsonOutput = Shell.run(
                 command: executable,
-                with: Command.podDumpArgs.appending(file.name),
+                with: PodExecutable.podDumpArgs + [file.name],
                 at: file.directory
             ),
-            let jsonData = jsonString.data(using: .utf8),
-            let pod = try? JSONDecoder.snake.decode(Pod.self, from: jsonData),
+            let pod = decode(Pod.self, from: jsonOutput, strategy: .convertFromSnakeCase),
             let targetDefinitions = pod.targetDefinitions
         else {
             return []
         }
 
-        let repositories: [Repository] = targetDefinitions
-            .compactMap(\.children)
-            .flatMap { $0 }
-            .compactMap(\.dependencies)
-            .flatMap { $0 }
-            .reduce(into: []) { result, dependencies in
-                result += dependencies.map { Repository(name: $0.key, url: "/test/url", version: $0.value.first) }
-            }
+        let repositories = targetDefinitions
+            .flatMap(\.children)
+            .flatMap(\.dependencies)
+            .flatMap(\.repositories)
+            .set()
 
-        return Set(repositories)
+        // TODO: get urls for repositories
+
+        return repositories
     }
 }
 
 fileprivate extension CocoapodsScanningStrategy {
+
+    enum PodExecutable: String, CaseIterable {
+        case gem = "/usr/local/bin/pod"
+        case homebrew = "/opt/homebrew/bin/pod"
+
+        static let podDumpArgs = ["ipc", "podfile-json"]
+    }
 
     static var podExecutable: String? {
         PodExecutable.allCases
@@ -41,23 +46,9 @@ fileprivate extension CocoapodsScanningStrategy {
     }
 }
 
-fileprivate extension CocoapodsScanningStrategy {
+fileprivate extension CocoapodsScanningStrategy.Pod.Dependency {
 
-    enum PodExecutable: String, CaseIterable {
-        case bundler = "/usr/local/bin/pod"
-        case homebrew = "/opt/homebrew/bin/pod"
-    }
-
-    enum Command {
-        static let podDumpArgs = ["ipc", "podfile-json"]
-    }
-}
-
-fileprivate extension JSONDecoder {
-
-    static var snake: JSONDecoder {
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        return decoder
+    var repositories: [Repository] {
+        compactMap { Repository(name: $0.key, version: $0.value.first) }
     }
 }

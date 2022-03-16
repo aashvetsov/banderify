@@ -1,7 +1,10 @@
 import CarthageKit
+
 extension CocoapodsScanningStrategy {
 
     struct Pod: Decodable {
+
+        typealias Dependency = [String: [String]]
 
         struct TargetDefinition: Decodable {
 
@@ -17,6 +20,4 @@ extension CocoapodsScanningStrategy {
 
         let sources: [String]?
     }
-
-    typealias Dependency = [String: [String]]
 }
