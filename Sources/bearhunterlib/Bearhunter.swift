@@ -39,10 +39,11 @@ fileprivate extension Bearhunter {
     static func scanRepositories(at files: ConfigFiles) -> Repositories? {
         print("Started analysis of config files".loginfo)
 
-        guard let repositories = files
-            .compactMap({ ConfigScanner(file: $0).repositories })
-            .flatMap({ $0 })
-            .set()
+        guard 
+            let repositories = files
+                .map(ConfigScanner.init)
+                .flatMap(\.repositories)
+                .set()
         else {
             print("Didn't detect any dependency".loginfo)
             return nil
