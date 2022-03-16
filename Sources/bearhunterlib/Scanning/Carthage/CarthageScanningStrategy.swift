@@ -54,7 +54,7 @@ fileprivate extension URL {
     var fileURL: URL {
         guard
             !absoluteString.contains(Conststants.fileScheme),
-            let url = URL(string: "\(Conststants.fileScheme)\(absoluteString)")
+            let url = URL(string: Conststants.fileScheme + absoluteString)
         else {
             return self
         }
