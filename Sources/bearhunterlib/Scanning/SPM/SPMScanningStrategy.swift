@@ -9,10 +9,7 @@ extension SPMScanningStrategy: ConfigScanning {
         guard
             let json = file.packageJSONDump,
             let package = decode(Package.self, from: json),
-            let repositories = package.dependencies?
-                .flatMap(\.scm)
-                .compactMap(Repository.init)
-                .set()
+            let repositories = package.repositories
         else {
             return nil
         }
@@ -34,6 +31,16 @@ fileprivate extension ConfigFile {
             with: Command.packageDumsArgs,
             at: directory
         )
+    }
+}
+
+fileprivate extension SPMScanningStrategy.Package {
+
+    var repositories: Repositories? {
+        dependencies?
+            .flatMap(\.scm)
+            .compactMap(Repository.init)
+            .set()
     }
 }
 

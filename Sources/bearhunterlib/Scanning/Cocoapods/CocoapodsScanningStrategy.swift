@@ -8,11 +8,7 @@ extension CocoapodsScanningStrategy: ConfigScanning {
         guard
             let json = file.podsJSONDump,
             let pods = decode(Pods.self, from: json, strategy: .convertFromSnakeCase),
-            let repositories = pods.targetDefinitions?
-                .flatMap(\.children)
-                .flatMap(\.dependencies)
-                .flatMap(\.repositories)
-                .set()
+            let repositories = pods.repositories
         else {
             return nil
         }
@@ -43,6 +39,17 @@ fileprivate extension ConfigFile {
             with: PodExecutable.ipcDumpArgs + [name],
             at: directory
         )
+    }
+}
+
+fileprivate extension CocoapodsScanningStrategy.Pods {
+
+    var repositories: Repositories? {
+        targetDefinitions?
+            .flatMap(\.children)
+            .flatMap(\.dependencies)
+            .flatMap(\.repositories)
+            .set()
     }
 }
 
