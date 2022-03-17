@@ -58,7 +58,7 @@
 		OBJ_978 /* ByEmailDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* ByEmailDetector.swift */; };
 		OBJ_979 /* SoftwareType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* SoftwareType.swift */; };
 		OBJ_980 /* SoftwareTypeDetecting.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* SoftwareTypeDetecting.swift */; };
-		OBJ_981 /* Collection+ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* Collection+ConsoleOutput.swift */; };
+		OBJ_981 /* Array+ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* Array+ConsoleOutput.swift */; };
 		OBJ_983 /* String+ConsoleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* String+ConsoleOutput.swift */; };
 		OBJ_984 /* ConfigLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* ConfigLocator.swift */; };
 		OBJ_985 /* FileDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* FileDescriptor.swift */; };
@@ -137,7 +137,7 @@
 		OBJ_18 /* ByEmailDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByEmailDetector.swift; sourceTree = "<group>"; };
 		OBJ_19 /* SoftwareType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftwareType.swift; sourceTree = "<group>"; };
 		OBJ_20 /* SoftwareTypeDetecting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftwareTypeDetecting.swift; sourceTree = "<group>"; };
-		OBJ_22 /* Collection+ConsoleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+ConsoleOutput.swift"; sourceTree = "<group>"; };
+		OBJ_22 /* Array+ConsoleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+ConsoleOutput.swift"; sourceTree = "<group>"; };
 		OBJ_24 /* String+ConsoleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ConsoleOutput.swift"; sourceTree = "<group>"; };
 		OBJ_26 /* ConfigLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigLocator.swift; sourceTree = "<group>"; };
 		OBJ_27 /* FileDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDescriptor.swift; sourceTree = "<group>"; };
@@ -313,7 +313,7 @@
 		OBJ_21 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_22 /* Collection+ConsoleOutput.swift */,
+				OBJ_22 /* Array+ConsoleOutput.swift */,
 				OBJ_24 /* String+ConsoleOutput.swift */,
 				2E80733C27DFD3E400CA69B4 /* Decode.swift */,
 				2EF88C1A27E14C640053A92C /* Array+Transform.swift */,
@@ -722,7 +722,7 @@
 				OBJ_978 /* ByEmailDetector.swift in Sources */,
 				OBJ_979 /* SoftwareType.swift in Sources */,
 				OBJ_980 /* SoftwareTypeDetecting.swift in Sources */,
-				OBJ_981 /* Collection+ConsoleOutput.swift in Sources */,
+				OBJ_981 /* Array+ConsoleOutput.swift in Sources */,
 				OBJ_983 /* String+ConsoleOutput.swift in Sources */,
 				OBJ_984 /* ConfigLocator.swift in Sources */,
 				2E8072F827DE65FA00CA69B4 /* Package.swift in Sources */,

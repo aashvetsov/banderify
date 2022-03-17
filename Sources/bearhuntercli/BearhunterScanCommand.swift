@@ -4,7 +4,7 @@ import bearhunterlib
 public struct BearhunterScanCommand {
 
     public typealias Output = Repositories
-    
+
     @Option(name: .shortAndLong, help: "Path to the directory with project")
     private var path: String?
 

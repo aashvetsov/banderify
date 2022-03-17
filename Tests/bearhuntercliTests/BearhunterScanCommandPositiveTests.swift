@@ -17,8 +17,7 @@ final class BearhunterScanCommandPositiveTests: XCTestCase {
         // then
         if let repositories = repositories {
             XCTAssertFalse(repositories.isEmpty)
-        }
-        else {
+        } else {
             XCTFail("Repositories not found")
         }
         XCTAssertNil(testError)
@@ -37,8 +36,7 @@ final class BearhunterScanCommandPositiveTests: XCTestCase {
         // then
         if let repositories = repositories {
             XCTAssertFalse(repositories.isEmpty)
-        }
-        else {
+        } else {
             XCTFail("Repositories not found")
         }
         XCTAssertNil(testError)

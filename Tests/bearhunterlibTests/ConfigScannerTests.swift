@@ -2,7 +2,7 @@
 import testsCommon
 import XCTest
 
-// swiftlint:disable implicitly_unwrapped_optional
+// swiftlint:disable implicitly_unwrapped_optional force_unwrapping
 final class ConfigScannerTests: XCTestCase {
 
     private var type: DMType!
@@ -25,15 +25,13 @@ final class ConfigScannerTests: XCTestCase {
         let configFiles = locator.configFiles
 
         // when
-        let repositories = configFiles?
-            .compactMap(repositories)
-            .flatMap { $0 }
+        let repositories = configFiles?.compactMap(repositories).flatMap { $0 }
 
         // then
         if let repositories = repositories {
-            XCTAssertEqual(repositories.count, expectation)            
+            XCTAssertEqual(repositories.count, expectation)
         } else {
-            XCTFail("No configFiles found")                        
+            XCTFail("No configFiles found")
         }
     }
 
@@ -43,8 +41,7 @@ final class ConfigScannerTests: XCTestCase {
         let configFiles = locator.configFiles
 
         // when
-        let repositories = configFiles?
-            .compactMap(repositories)
+        let repositories = configFiles?.compactMap(repositories)
 
         // then
         XCTAssertNil(repositories)
@@ -56,8 +53,7 @@ final class ConfigScannerTests: XCTestCase {
         let configFiles = locator.configFiles
 
         // when
-        let repositories = configFiles?
-            .compactMap(repositories)
+        let repositories = configFiles?.compactMap(repositories)
 
         // then
         XCTAssertNil(repositories)
@@ -65,7 +61,7 @@ final class ConfigScannerTests: XCTestCase {
 }
 
 fileprivate extension ConfigScannerTests {
-    
+
     var expectation: Int {
         switch type! {
         case .spm: return 1

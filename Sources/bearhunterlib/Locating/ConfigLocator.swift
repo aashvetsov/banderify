@@ -12,7 +12,7 @@ struct ConfigLocator {
         else {
             return nil
         }
-        
-        return files 
+
+        return files
     }
 }

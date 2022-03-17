@@ -17,7 +17,7 @@ struct ConfigFile: Identifiable, Hashable {
         type: DMType
     ) {
         self.id = id ?? name
-        
+
         self.type = type
         if let url = URL(string: "\(directory)/\(name)") {
             self.name = url.lastPathComponent

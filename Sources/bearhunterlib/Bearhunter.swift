@@ -20,7 +20,7 @@ fileprivate extension Bearhunter {
     static func locateConfigFiles(at path: String) -> ConfigFiles? {
         print("Started analysis of directory: \(path)".loginfo)
 
-        guard 
+        guard
             let files = DMType.allCases
                 .map({ ConfigLocator(directory: path, type: $0) })
                 .flatMap(\.configFiles)
@@ -39,7 +39,7 @@ fileprivate extension Bearhunter {
     static func scanRepositories(at files: ConfigFiles) -> Repositories? {
         print("Started analysis of config files".loginfo)
 
-        guard 
+        guard
             let repositories = files
                 .map(ConfigScanner.init)
                 .flatMap(\.repositories)
