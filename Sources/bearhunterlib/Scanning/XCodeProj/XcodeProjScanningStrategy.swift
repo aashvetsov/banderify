@@ -8,7 +8,8 @@ extension XcodeProjScanningStrategy: ConfigScanning {
     static func scan(_ file: ConfigFile) -> Repositories? {
         guard
             let project = try? XcodeProj(path: Path(file.url.absoluteString)),
-            let repositories = project.pbxproj.projects
+            let repositories = project.pbxproj
+                .projects
                 .flatMap(\.packages)
                 .compactMap(Repository.init)
                 .set()

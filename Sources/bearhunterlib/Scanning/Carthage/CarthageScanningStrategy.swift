@@ -7,7 +7,8 @@ extension CarthageScanningStrategy: ConfigScanning {
 
     static func scan(_ file: ConfigFile) -> Repositories? {
         guard
-            let repositories = file.cartfile?.dependencies
+            let repositories = file.cartfile?
+                .dependencies
                 .map(\.key)
                 .compactMap(Repository.init)
                 .set()
