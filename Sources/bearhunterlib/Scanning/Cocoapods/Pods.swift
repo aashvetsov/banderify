@@ -2,7 +2,7 @@ import CarthageKit
 
 extension CocoapodsScanningStrategy {
 
-    struct Pod: Decodable {
+    struct Pods: Decodable {
 
         typealias Dependency = [String: [String]]
 

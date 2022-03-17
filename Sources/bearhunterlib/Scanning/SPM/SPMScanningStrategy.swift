@@ -7,13 +7,9 @@ extension SPMScanningStrategy: ConfigScanning {
 
     static func scan(_ file: ConfigFile) -> Repositories? {
         guard
-            let jsonOutput = Shell.run(
-                command: Command.swift,
-                with: Command.packageDumsArgs,
-                at: file.directory
-            ),
-            let dependencies = decode(Package.self, from: jsonOutput)?.dependencies,
-            let repositories = dependencies
+            let json = file.packageJSONDump,
+            let package = decode(Package.self, from: json),
+            let repositories = package.dependencies?
                 .flatMap(\.scm)
                 .compactMap(Repository.init)
                 .set()
@@ -25,11 +21,19 @@ extension SPMScanningStrategy: ConfigScanning {
     }
 }
 
-fileprivate extension SPMScanningStrategy {
+fileprivate extension ConfigFile {
 
     enum Command {
         static let swift = "swift"
         static let packageDumsArgs = ["package", "dump-package"]
+    }
+
+    var packageJSONDump: String? {
+        Shell.run(
+            command: Command.swift,
+            with: Command.packageDumsArgs,
+            at: directory
+        )
     }
 }
 
