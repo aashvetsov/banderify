@@ -7,11 +7,8 @@ extension CarthageScanningStrategy: ConfigScanning {
 
     static func scan(_ file: ConfigFile) -> Repositories? {
         guard
-            let repositories = file.cartfile?
-                .dependencies
-                .map(\.key)
-                .compactMap(Repository.init)
-                .set()
+            let cartfile = file.cartfile,
+            let repositories = cartfile.repositories
         else {
             return nil
         }
@@ -27,6 +24,33 @@ fileprivate extension ConfigFile {
         case .success(let cartfile): return cartfile
         default: return nil
         }
+    }
+}
+
+fileprivate extension URL {
+
+    var fileURL: URL {
+        guard
+            !absoluteString.contains(Conststants.fileScheme),
+            let url = URL(string: Conststants.fileScheme + absoluteString)
+        else {
+            return self
+        }
+        return url
+    }
+
+    enum Conststants {
+        static let fileScheme = "file://"
+    }
+}
+
+fileprivate extension Cartfile {
+
+    var repositories: Repositories? {
+        dependencies
+            .map(\.key)
+            .compactMap(Repository.init)
+            .set()
     }
 }
 
@@ -46,22 +70,5 @@ fileprivate extension Repository {
         }
         guard let dependencyName = dependencyName else { return nil }
         self.init(name: dependencyName, url: dependencyUrl)
-    }
-}
-
-fileprivate extension URL {
-
-    var fileURL: URL {
-        guard
-            !absoluteString.contains(Conststants.fileScheme),
-            let url = URL(string: Conststants.fileScheme + absoluteString)
-        else {
-            return self
-        }
-        return url
-    }
-
-    enum Conststants {
-        static let fileScheme = "file://"
     }
 }
