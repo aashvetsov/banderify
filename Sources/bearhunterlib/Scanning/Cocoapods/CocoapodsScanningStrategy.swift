@@ -14,8 +14,6 @@ extension CocoapodsScanningStrategy: ConfigScanning {
             return nil
         }
 
-        // TODO: get urls for repositories
-
         return repositories
     }
 }
