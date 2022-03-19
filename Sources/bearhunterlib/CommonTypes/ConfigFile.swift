@@ -12,22 +12,19 @@ struct ConfigFile: Identifiable, Hashable {
 
     init?(
         id: String? = nil,
-        name: String,
-        directory: String,
+        url: URL,
         type: DMType
     ) {
-        self.id = id ?? name
-
-        self.type = type
-        if  let url = URL(string: "\(directory)/\(name)"),
-            let name = url.fileName,
+        if  let name = url.fileName,
             let directory = url.directory {
             self.name = name
             self.directory = directory
-            self.url = url
+            self.id = id ?? name
         } else {
             return nil
         }
+        self.url = url
+        self.type = type
     }
 }
 
