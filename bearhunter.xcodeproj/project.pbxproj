@@ -36,7 +36,7 @@
 		2ED50ED227E631670043AB46 /* PodExecutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED50ED127E631670043AB46 /* PodExecutable.swift */; };
 		2ED50ED427E638100043AB46 /* URL+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED50ED327E638100043AB46 /* URL+Parsing.swift */; };
 		2ED50ED627E63F2A0043AB46 /* Podspec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED50ED527E63F2A0043AB46 /* Podspec.swift */; };
-		2ED50ED827E64B7E0043AB46 /* PodscpecLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED50ED727E64B7E0043AB46 /* PodscpecLocator.swift */; };
+		2ED50ED827E64B7E0043AB46 /* PodspecLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED50ED727E64B7E0043AB46 /* PodspecLocator.swift */; };
 		2EDD1F2927DC9BA500D90C6E /* XcodeProj in Frameworks */ = {isa = PBXBuildFile; productRef = 2EDD1F2827DC9BA500D90C6E /* XcodeProj */; };
 		2EDD1F2C27DC9C5F00D90C6E /* CarthageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2EDD1F2B27DC9C5F00D90C6E /* CarthageKit */; };
 		2EDD1F2F27DC9C7F00D90C6E /* Rainbow in Frameworks */ = {isa = PBXBuildFile; productRef = 2EDD1F2E27DC9C7F00D90C6E /* Rainbow */; };
@@ -137,7 +137,7 @@
 		2ED50ED127E631670043AB46 /* PodExecutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodExecutable.swift; sourceTree = "<group>"; };
 		2ED50ED327E638100043AB46 /* URL+Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Parsing.swift"; sourceTree = "<group>"; };
 		2ED50ED527E63F2A0043AB46 /* Podspec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podspec.swift; sourceTree = "<group>"; };
-		2ED50ED727E64B7E0043AB46 /* PodscpecLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodscpecLocator.swift; sourceTree = "<group>"; };
+		2ED50ED727E64B7E0043AB46 /* PodspecLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodspecLocator.swift; sourceTree = "<group>"; };
 		2EF88C1A27E14C640053A92C /* Array+Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Transform.swift"; sourceTree = "<group>"; };
 		OBJ_10 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		OBJ_12 /* Bearhunter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearhunter.swift; sourceTree = "<group>"; };
@@ -243,7 +243,7 @@
 				OBJ_31 /* CocoapodsScanningStrategy.swift */,
 				2E8072F927DE662400CA69B4 /* Pods.swift */,
 				2ED50ED527E63F2A0043AB46 /* Podspec.swift */,
-				2ED50ED727E64B7E0043AB46 /* PodscpecLocator.swift */,
+				2ED50ED727E64B7E0043AB46 /* PodspecLocator.swift */,
 				2ED50ED127E631670043AB46 /* PodExecutable.swift */,
 			);
 			path = Cocoapods;
@@ -742,7 +742,7 @@
 				OBJ_983 /* String+ConsoleOutput.swift in Sources */,
 				2ED50ED627E63F2A0043AB46 /* Podspec.swift in Sources */,
 				OBJ_984 /* ConfigLocator.swift in Sources */,
-				2ED50ED827E64B7E0043AB46 /* PodscpecLocator.swift in Sources */,
+				2ED50ED827E64B7E0043AB46 /* PodspecLocator.swift in Sources */,
 				2E8072F827DE65FA00CA69B4 /* Package.swift in Sources */,
 				OBJ_985 /* FileDescriptor.swift in Sources */,
 				OBJ_986 /* FileFinder.swift in Sources */,
