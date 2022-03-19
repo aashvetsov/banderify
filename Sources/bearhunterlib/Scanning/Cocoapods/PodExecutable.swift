@@ -4,8 +4,8 @@ enum PodExecutable: String, CaseIterable {
     case gem = "/usr/local/bin/pod"
     case homebrew = "/opt/homebrew/bin/pod"
 
-    static let podsDumpArgs = ["ipc", "podfile-json"]
     static let installArgs = ["install", "--repo-update"]
+    static let podsDumpArgs = ["ipc", "podfile-json"]
     static let podspecDumpArgs = ["ipc", "spec"]
 }
 
