@@ -1,4 +1,5 @@
 import Foundation
+
 struct Podscpec: Decodable {
 
     typealias Source = [String: String]
