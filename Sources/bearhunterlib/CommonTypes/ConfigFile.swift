@@ -19,9 +19,11 @@ struct ConfigFile: Identifiable, Hashable {
         self.id = id ?? name
 
         self.type = type
-        if let url = URL(string: "\(directory)/\(name)") {
-            self.name = url.lastPathComponent
-            self.directory = url.deletingLastPathComponent().absoluteString
+        if  let url = URL(string: "\(directory)/\(name)"),
+            let name = url.fileName,
+            let directory = url.directory {
+            self.name = name
+            self.directory = directory
             self.url = url
         } else {
             return nil

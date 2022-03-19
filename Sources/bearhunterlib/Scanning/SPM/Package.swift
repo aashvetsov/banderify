@@ -1,18 +1,15 @@
-extension SPMScanningStrategy {
+struct Package: Decodable {
 
-    struct Package: Decodable {
+    struct Dependency: Decodable {
 
-        struct Dependency: Decodable {
+        struct SCM: Decodable {
 
-            struct SCM: Decodable {
-
-                let identity: String
-                let location: String
-            }
-
-            let scm: [SCM]?
+            let identity: String
+            let location: String
         }
 
-        let dependencies: [Dependency]?
+        let scm: [SCM]?
     }
+
+    let dependencies: [Dependency]?
 }

@@ -1,51 +1,57 @@
 import CarthageKit
 import Foundation
 
-extension CocoapodsScanningStrategy {
+struct Pods: Decodable {
 
-    struct Pods: Decodable {
+    typealias Dependency = [String: [String]]
 
-        typealias Dependency = [String: [String]]
+    struct TargetDefinition: Decodable {
 
-        struct TargetDefinition: Decodable {
+        struct TargetDefinitionChild: Decodable {
 
-            struct TargetDefinitionChild: Decodable {
-
-                let dependencies: [Dependency]?
-            }
-
-            let children: [TargetDefinitionChild]?
+            let dependencies: [Dependency]?
         }
 
-        let targetDefinitions: [TargetDefinition]?
-
-        let sources: [String]?
+        let children: [TargetDefinitionChild]?
     }
+
+    let targetDefinitions: [TargetDefinition]?
+
+    let sources: [String]?
 }
 
-extension CocoapodsScanningStrategy.Pods.Dependency {
+extension Pods.Dependency {
+
+    var name: String? { compactMap { $0.key }.first }
+
+    var url: String? {
+        guard let jsonString = podspecJSON else { return nil }
+        let podspec = decode(Podscpec.self, from: jsonString)
+        return podspec?.source.values.first
+    }
+
+    var version: String? { compactMap { $0.value.first }.first }
+}
+
+fileprivate extension Pods.Dependency {
 
     var podspecJSON: String? {
-        guard
-            let podspecURL = podspecURL,
-            let contents = try? String(contentsOf: podspecURL, encoding: .utf8)
-        else {
-            return nil
+        if  let podspecJSONURL = podspecJSONURL,
+            let json = try? String(contentsOf: podspecJSONURL, encoding: .utf8) {
+            return json
         }
 
-        return contents
-    }
-}
+        if  let podspecRubyURL = podspecRubyURL,
+            let json = PodExecutable.podspecJSONDump(for: podspecRubyURL) {
+            return json
+        }
 
-fileprivate extension CocoapodsScanningStrategy.Pods.Dependency {
-
-    var podspecURL: URL? {
-        podspecJSONURL ?? podspecRubyURL
+        return nil
     }
 
     var podspecRubyURL: URL? { url(for: Constants.podspec) }
 
-    var podspecJSONURL: URL? { url(for: Constants.podspecJSON) }
+    var podspecJSONURL: URL? { url(for: Constants.podspecJSON)?.fileURL }
 
     var reposDirectory: String? {
         // TODO: implement locator for this directory
@@ -64,7 +70,7 @@ fileprivate extension CocoapodsScanningStrategy.Pods.Dependency {
                     }
                 })
                 .max(by: <),
-            let url = URL(string: "\(reposDirectory)/\(file)")?.fileURL
+            let url = URL(string: "\(reposDirectory)/\(file)")
         else {
             return nil
         }
@@ -73,10 +79,11 @@ fileprivate extension CocoapodsScanningStrategy.Pods.Dependency {
     }
 }
 
-fileprivate extension CocoapodsScanningStrategy.Pods.Dependency {
+fileprivate extension Pods.Dependency {
 
     enum Constants {
-        static let podsRepoDirectory = "/Users/iuada0h5/.cocoapods/repos" // TODO: implement locator for this directory
+        // TODO: implement locator for this directory
+        static let podsRepoDirectory = "/Users/iuada0h5/.cocoapods/repos"
         static let podspec = ".podspec"
         static let podspecJSON = ".podspec.json"
     }

@@ -34,7 +34,7 @@ fileprivate extension ConfigFile {
     }
 }
 
-fileprivate extension SPMScanningStrategy.Package {
+fileprivate extension Package {
 
     var repositories: Repositories? {
         dependencies?
@@ -46,7 +46,7 @@ fileprivate extension SPMScanningStrategy.Package {
 
 fileprivate extension Repository {
 
-    typealias SCM = SPMScanningStrategy.Package.Dependency.SCM
+    typealias SCM = Package.Dependency.SCM
 
     init?(_ scm: SCM) {
         self.init(name: scm.identity, url: scm.location)

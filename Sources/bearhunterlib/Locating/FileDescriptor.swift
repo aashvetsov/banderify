@@ -6,7 +6,7 @@ struct FileDescriptor: Equatable {
     let ext: String?
 
     init?(string: String) {
-        guard let nameWithExt = URL(string: string)?.lastPathComponent else { return nil }
+        guard let nameWithExt = URL(string: string)?.fileName else { return nil }
 
         let components = nameWithExt.components(separatedBy: ".")
         name = components.count > 1 ? components.dropLast().joined(separator: ".") : components.first

@@ -46,7 +46,7 @@ fileprivate extension Repository {
             dependencyName = repository.name
             dependencyUrl = "\(server.url.absoluteString)/\(repository.owner)/\(repository.name)"
         case let .git(gitURL):
-            dependencyName = URL(string: gitURL.urlString)?.lastPathComponent.components(separatedBy: ".").first
+            dependencyName = URL(string: gitURL.urlString)?.fileName?.components(separatedBy: ".").first
             dependencyUrl = gitURL.urlString
         default:
             return nil
