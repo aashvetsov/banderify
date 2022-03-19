@@ -68,6 +68,7 @@ fileprivate extension CocoapodsScanningStrategy.Pods {
 fileprivate extension CocoapodsScanningStrategy.Pods.Dependency {
 
     var repositories: [Repository] {
-        map { Repository(name: $0.key, version: $0.value.first) }
+        let podspec = podspecJSON
+        return map { Repository(name: $0.key, version: $0.value.first) }
     }
 }

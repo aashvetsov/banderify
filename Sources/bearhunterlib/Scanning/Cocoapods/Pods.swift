@@ -25,7 +25,7 @@ extension CocoapodsScanningStrategy {
 
 extension CocoapodsScanningStrategy.Pods.Dependency {
 
-    var podspec: String? {
+    var podspecJSON: String? {
         guard
             let podspecURL = podspecURL,
             let contents = try? String(contentsOf: podspecURL, encoding: .utf8)
@@ -39,18 +39,26 @@ extension CocoapodsScanningStrategy.Pods.Dependency {
 
 fileprivate extension CocoapodsScanningStrategy.Pods.Dependency {
 
+    var podspecURL: URL? {
+        podspecJSONURL ?? podspecRubyURL
+    }
+
+    var podspecRubyURL: URL? { url(for: Constants.podspec) }
+
+    var podspecJSONURL: URL? { url(for: Constants.podspecJSON) }
+
     var reposDirectory: String? {
         // TODO: implement locator for this directory
         Constants.podsRepoDirectory
     }
 
-    var podspecURL: URL? {
+    func url(for fileExtension: String) -> URL? {
         guard
             let reposDirectory = reposDirectory,
             let file = self
                 .map(\.key)
                 .reduce(into: [String](), { result, dependencyName in
-                    if  let descriptor = FileDescriptor(string: dependencyName + Constants.podspec),
+                    if  let descriptor = FileDescriptor(string: dependencyName + fileExtension),
                         let files = FileFinder.existingFiles(by: descriptor, at: reposDirectory) {
                         result += files
                     }
@@ -70,6 +78,7 @@ fileprivate extension CocoapodsScanningStrategy.Pods.Dependency {
     enum Constants {
         static let podsRepoDirectory = "/Users/iuada0h5/.cocoapods/repos"
         static let podspec = ".podspec"
+        static let podspecJSON = ".podspec.json"
     }
 
     enum Command {
