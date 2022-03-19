@@ -76,4 +76,3 @@ fileprivate extension CocoapodsScanningStrategy.Pods.Dependency {
         static let home = "set -x; echo $HOME { set +x; } 2>/dev/null"
     }
 }
-
