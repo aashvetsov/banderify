@@ -76,12 +76,8 @@ fileprivate extension CocoapodsScanningStrategy.Pods.Dependency {
 fileprivate extension CocoapodsScanningStrategy.Pods.Dependency {
 
     enum Constants {
-        static let podsRepoDirectory = "/Users/iuada0h5/.cocoapods/repos"
+        static let podsRepoDirectory = "/Users/iuada0h5/.cocoapods/repos" // TODO: implement locator for this directory
         static let podspec = ".podspec"
         static let podspecJSON = ".podspec.json"
-    }
-
-    enum Command {
-        static let home = "set -x; echo $HOME { set +x; } 2>/dev/null"
     }
 }
