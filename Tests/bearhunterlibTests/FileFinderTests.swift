@@ -16,7 +16,10 @@ final class FileFinderTests: XCTestCase {
         ("test/project.xcodeproj", "project.xcodeproj", true),
         ("test/project.xcodeproj", ".xcodeproj", true),
         ("project.xcodeproj", "project.xcodeproj", true),
-        ("project.xcodeproj", ".xcodeproj", true)
+        ("project.xcodeproj", ".xcodeproj", true),
+        ("/Users/iuada0h5/.cocoapods/repos/qulix/1.0.0/ios_utils.podspec", "ios_utils.podspec", true),
+        ("/Users/iuada0h5/.cocoapods/repos/qulix/1.0.0/ios_ui.podspec", "ios_utils.podspec", false),
+        ("/Users/iuada0h5/.cocoapods/repos/qulix/1.0.0/ios_utils.podspec", ".podspec", true)
     ]
 
     private var configuration: Configuration!

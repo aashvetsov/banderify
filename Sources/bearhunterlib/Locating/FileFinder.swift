@@ -16,7 +16,7 @@ extension FileFinder {
         }
 
         let filtered = allFiles
-            .compactMap(\.fileName)
+            .compactMap(\.path)
             .filter { FileDescriptor(string: $0) =~ descriptor }
 
         return filtered.isEmpty ? nil : filtered
@@ -25,7 +25,5 @@ extension FileFinder {
 
 fileprivate extension String {
 
-    var fileName: String? {
-        URL(string: self)?.lastPathComponent
-    }
+    var path: String? { URL(string: self)?.absoluteString }
 }

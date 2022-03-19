@@ -6,8 +6,8 @@ extension Shell {
 
     static func run(
         command: String,
-        with arguments: [String]?,
-        at directory: String?
+        with arguments: [String]? = nil,
+        at directory: String? = nil
     ) -> String? {
         let runningDirectory = main.currentdirectory
         defer {

@@ -32,6 +32,7 @@
 		2EA9846927DCA55D00166E8A /* BearhunterScanCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* BearhunterScanCommand.swift */; };
 		2EA9846A27DCA55F00166E8A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* main.swift */; };
 		2EA9846F27DCA58800166E8A /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 2EA9846E27DCA58800166E8A /* ArgumentParser */; };
+		2ED50ED027E60BFB0043AB46 /* URL+Schemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED50ECF27E60BFB0043AB46 /* URL+Schemes.swift */; };
 		2EDD1F2927DC9BA500D90C6E /* XcodeProj in Frameworks */ = {isa = PBXBuildFile; productRef = 2EDD1F2827DC9BA500D90C6E /* XcodeProj */; };
 		2EDD1F2C27DC9C5F00D90C6E /* CarthageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2EDD1F2B27DC9C5F00D90C6E /* CarthageKit */; };
 		2EDD1F2F27DC9C7F00D90C6E /* Rainbow in Frameworks */ = {isa = PBXBuildFile; productRef = 2EDD1F2E27DC9C7F00D90C6E /* Rainbow */; };
@@ -128,6 +129,7 @@
 		2EA9845827DCA22700166E8A /* TestDoubles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestDoubles; sourceTree = "<group>"; };
 		2EA9845927DCA23300166E8A /* TestDoubles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestDoubles; sourceTree = "<group>"; };
 		2EA9846427DCA41000166E8A /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		2ED50ECF27E60BFB0043AB46 /* URL+Schemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Schemes.swift"; sourceTree = "<group>"; };
 		2EF88C1A27E14C640053A92C /* Array+Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Transform.swift"; sourceTree = "<group>"; };
 		OBJ_10 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		OBJ_12 /* Bearhunter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearhunter.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				OBJ_24 /* String+ConsoleOutput.swift */,
 				2E80733C27DFD3E400CA69B4 /* Decode.swift */,
 				2EF88C1A27E14C640053A92C /* Array+Transform.swift */,
+				2ED50ECF27E60BFB0043AB46 /* URL+Schemes.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -731,6 +734,7 @@
 				2EF88C1B27E14C640053A92C /* Array+Transform.swift in Sources */,
 				OBJ_987 /* CarthageScanningStrategy.swift in Sources */,
 				OBJ_988 /* CocoapodsScanningStrategy.swift in Sources */,
+				2ED50ED027E60BFB0043AB46 /* URL+Schemes.swift in Sources */,
 				OBJ_989 /* Repository.swift in Sources */,
 				OBJ_990 /* ConfigScanner.swift in Sources */,
 				OBJ_991 /* ConfigScanning.swift in Sources */,
