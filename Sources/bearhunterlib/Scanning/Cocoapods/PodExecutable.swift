@@ -15,6 +15,16 @@ extension PodExecutable {
         allCases.first(where: { FileManager.default.fileExists(atPath: $0.rawValue) })
     }
 
+    @discardableResult
+    static func install(at directory: String) -> String? {
+        guard let executable = installed else { return nil }
+        return Shell.run(
+            command: executable.rawValue,
+            with: PodExecutable.installArgs,
+            at: directory
+        )
+    }
+
     static func podsJSONDump(for url: URL) -> String? {
         guard
             let executable = installed,
