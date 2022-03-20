@@ -37,7 +37,7 @@ extension Pods.Dependency {
     var url: String? {
         guard
             let json = podspecLocator.json,
-            let podspec = decode(Podscpec.self, from: json)
+            let podspec = decode(Podspec.self, from: json)
         else {
             return nil
         }

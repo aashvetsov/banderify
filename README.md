@@ -21,6 +21,15 @@ make install
 
 ## Basic Usage
 
+In case if your project uses Cocoapods - run the following commands before bearhuntercli usage
+
+```shell
+cd <sourcecode folder>
+pod install --repo-update
+```
+
+For any other(s) dependency managers any extra steps are not required
+
 ```shell
 bearhuntercli -p <sourcecode folder>
 ```

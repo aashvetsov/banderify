@@ -1,6 +1,6 @@
 import Foundation
 
-struct Podscpec: Decodable {
+struct Podspec: Decodable {
 
     typealias Source = [String: String]
 
