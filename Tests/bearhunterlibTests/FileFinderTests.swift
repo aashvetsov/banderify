@@ -19,7 +19,8 @@ final class FileFinderTests: XCTestCase {
         ("project.xcodeproj", ".xcodeproj", true),
         ("/Users/user/.cocoapods/repos/qulix/1.0.0/ios_utils.podspec", "ios_utils.podspec", true),
         ("/Users/user/.cocoapods/repos/qulix/1.0.0/ios_ui.podspec", "ios_utils.podspec", false),
-        ("/Users/user/.cocoapods/repos/qulix/1.0.0/ios_utils.podspec", ".podspec", true)
+        ("/Users/user/.cocoapods/repos/qulix/1.0.0/ios_utils.podspec", ".podspec", true),
+        ("ConfigFile.swift", "Package.swift", false)
     ]
 
     private var configuration: Configuration!
