@@ -29,8 +29,8 @@ fileprivate extension PodspecLocator {
     var podspecJSONURL: URL? { url(for: Constants.podspecJSON)?.fileURL }
 
     var reposDirectory: String? {
-        // TODO: implement locator for this directory
-        Constants.podsRepoDirectory
+        guard let url = URL(string: Constants.podsRepoDirectory)?.noSchemeURL else { return nil }
+        return url.absoluteString
     }
 
     func url(for fileExtension: String) -> URL? {
@@ -57,8 +57,7 @@ fileprivate extension PodspecLocator {
 fileprivate extension PodspecLocator {
 
     enum Constants {
-        // TODO: implement locator for this directory
-        static let podsRepoDirectory = "/Users/iuada0h5/.cocoapods/repos"
+        static let podsRepoDirectory = "\(FileManager.default.homeDirectoryForCurrentUser).cocoapods/repos"
         static let podspec = ".podspec"
         static let podspecJSON = ".podspec.json"
     }
