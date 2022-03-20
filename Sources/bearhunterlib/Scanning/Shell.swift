@@ -4,6 +4,7 @@ enum Shell {}
 
 extension Shell {
 
+    @discardableResult
     static func run(
         command: String,
         with arguments: [String]? = nil,

@@ -4,12 +4,13 @@ import Foundation
 struct Pods: Decodable {
 
     typealias Dependency = [String: [String]]
+    typealias Dependencies = [Dependency]
 
     struct TargetDefinition: Decodable {
 
         struct TargetDefinitionChild: Decodable {
 
-            let dependencies: [Dependency]?
+            let dependencies: Dependencies?
         }
 
         let children: [TargetDefinitionChild]?
@@ -18,6 +19,15 @@ struct Pods: Decodable {
     let targetDefinitions: [TargetDefinition]?
 
     let sources: [String]?
+}
+
+extension Pods {
+
+    var dependencies: Dependencies? {
+        targetDefinitions?
+            .flatMap(\.children)
+            .flatMap(\.dependencies)
+    }
 }
 
 extension Pods.Dependency {

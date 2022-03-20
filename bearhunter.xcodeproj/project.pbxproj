@@ -6,21 +6,6 @@
 	objectVersion = 52;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		"bearhunter::bearhunterPackageTests::ProductTarget" /* bearhunterPackageTests */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = OBJ_879 /* Build configuration list for PBXAggregateTarget "bearhunterPackageTests" */;
-			buildPhases = (
-			);
-			dependencies = (
-				OBJ_882 /* PBXTargetDependency */,
-				OBJ_884 /* PBXTargetDependency */,
-			);
-			name = bearhunterPackageTests;
-			productName = bearhunterPackageTests;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		2E8072F027DDFD8D00CA69B4 /* SwiftShell in Frameworks */ = {isa = PBXBuildFile; productRef = 2E8072EF27DDFD8D00CA69B4 /* SwiftShell */; };
 		2E8072F827DE65FA00CA69B4 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8072F727DE65FA00CA69B4 /* Package.swift */; };
@@ -46,16 +31,12 @@
 		OBJ_1028 /* ConfigLocatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* ConfigLocatorsTests.swift */; };
 		OBJ_1029 /* ConfigScannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_50 /* ConfigScannerTests.swift */; };
 		OBJ_1030 /* FileFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_51 /* FileFinderTests.swift */; };
-		OBJ_1032 /* testsCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "bearhunter::testsCommon::Product" /* testsCommon.framework */; };
 		OBJ_1033 /* bearhunterlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "bearhunter::bearhunterlib::Product" /* bearhunterlib.framework */; };
-		OBJ_1072 /* Bundle+Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* Bundle+Resources.swift */; };
-		OBJ_1073 /* Bundle+TestPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* Bundle+TestPaths.swift */; };
 		OBJ_891 /* BearhunterScanCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* BearhunterScanCommand.swift */; };
 		OBJ_892 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* main.swift */; };
 		OBJ_896 /* bearhunterlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "bearhunter::bearhunterlib::Product" /* bearhunterlib.framework */; };
 		OBJ_931 /* BearhunterScanCommandNegativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* BearhunterScanCommandNegativeTests.swift */; };
 		OBJ_932 /* BearhunterScanCommandPositiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* BearhunterScanCommandPositiveTests.swift */; };
-		OBJ_950 /* testsCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "bearhunter::testsCommon::Product" /* testsCommon.framework */; };
 		OBJ_974 /* Bearhunter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Bearhunter.swift */; };
 		OBJ_975 /* ConfigFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* ConfigFile.swift */; };
 		OBJ_976 /* DMType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* DMType.swift */; };
@@ -87,40 +68,12 @@
 			remoteGlobalIDString = "bearhunter::bearhuntercli";
 			remoteInfo = bearhuntercli;
 		};
-		2EDD1F1027DC9A9E00D90C6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "bearhunter::testsCommon";
-			remoteInfo = testsCommon;
-		};
-		2EDD1F1127DC9A9E00D90C6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "bearhunter::testsCommon";
-			remoteInfo = testsCommon;
-		};
 		2EDD1F1227DC9A9E00D90C6E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "bearhunter::bearhunterlib";
 			remoteInfo = bearhunterlib;
-		};
-		2EDD1F2027DC9A9E00D90C6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "bearhunter::bearhunterlibTests";
-			remoteInfo = bearhunterlibTests;
-		};
-		2EDD1F2127DC9A9E00D90C6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "bearhunter::bearhuntercliTests";
-			remoteInfo = bearhuntercliTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -177,7 +130,6 @@
 		"bearhunter::bearhuntercliTests::Product" /* bearhuntercliTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = bearhuntercliTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		"bearhunter::bearhunterlib::Product" /* bearhunterlib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = bearhunterlib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"bearhunter::bearhunterlibTests::Product" /* bearhunterlibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = bearhunterlibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		"bearhunter::testsCommon::Product" /* testsCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = testsCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,15 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_1032 /* testsCommon.framework in Frameworks */,
 				OBJ_1033 /* bearhunterlib.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_1074 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 0;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +155,6 @@
 			buildActionMask = 0;
 			files = (
 				2EA9846F27DCA58800166E8A /* ArgumentParser in Frameworks */,
-				OBJ_950 /* testsCommon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +313,6 @@
 				"bearhunter::bearhuntercliTests::Product" /* bearhuntercliTests.xctest */,
 				"bearhunter::bearhunterlib::Product" /* bearhunterlib.framework */,
 				"bearhunter::bearhunterlibTests::Product" /* bearhunterlibTests.xctest */,
-				"bearhunter::testsCommon::Product" /* testsCommon.framework */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -464,29 +406,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		"bearhunter::SwiftPMPackageDescription" /* bearhunterPackageDescription */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_873 /* Build configuration list for PBXNativeTarget "bearhunterPackageDescription" */;
-			buildPhases = (
-				OBJ_876 /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = bearhunterPackageDescription;
-			packageProductDependencies = (
-			);
-			productName = bearhunterPackageDescription;
-			productType = "com.apple.product-type.framework";
-		};
 		"bearhunter::bearhuntercli" /* bearhuntercli */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = OBJ_887 /* Build configuration list for PBXNativeTarget "bearhuntercli" */;
 			buildPhases = (
+				2ED50EF027E6778C0043AB46 /* Resources */,
 				OBJ_890 /* Sources */,
 				OBJ_893 /* Frameworks */,
-				2EA9845627DCA01F00166E8A /* ShellScript */,
+				2EA9845627DCA01F00166E8A /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -504,16 +431,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = OBJ_927 /* Build configuration list for PBXNativeTarget "bearhuntercliTests" */;
 			buildPhases = (
+				2EA9846527DCA49800166E8A /* Resources */,
 				OBJ_930 /* Sources */,
 				OBJ_933 /* Frameworks */,
-				2EA9846527DCA49800166E8A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				2EA9846C27DCA58000166E8A /* PBXTargetDependency */,
 				OBJ_951 /* PBXTargetDependency */,
-				OBJ_968 /* PBXTargetDependency */,
 			);
 			name = bearhuntercliTests;
 			packageProductDependencies = (
@@ -527,9 +453,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = OBJ_970 /* Build configuration list for PBXNativeTarget "bearhunterlib" */;
 			buildPhases = (
+				2ED50EF227E677B00043AB46 /* Resources */,
 				OBJ_973 /* Sources */,
 				OBJ_996 /* Frameworks */,
-				2EA9845527DC9FF100166E8A /* ShellScript */,
+				2EA9845527DC9FF100166E8A /* RunSwiftlintScript */,
 			);
 			buildRules = (
 			);
@@ -550,36 +477,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = OBJ_1023 /* Build configuration list for PBXNativeTarget "bearhunterlibTests" */;
 			buildPhases = (
+				2EA9846727DCA4A700166E8A /* Resources */,
 				OBJ_1026 /* Sources */,
 				OBJ_1031 /* Frameworks */,
-				2EA9846727DCA4A700166E8A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_1047 /* PBXTargetDependency */,
 				OBJ_1048 /* PBXTargetDependency */,
 			);
 			name = bearhunterlibTests;
 			productName = bearhunterlibTests;
 			productReference = "bearhunter::bearhunterlibTests::Product" /* bearhunterlibTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		"bearhunter::testsCommon" /* testsCommon */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_1068 /* Build configuration list for PBXNativeTarget "testsCommon" */;
-			buildPhases = (
-				OBJ_1071 /* Sources */,
-				OBJ_1074 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = testsCommon;
-			productName = testsCommon;
-			productReference = "bearhunter::testsCommon::Product" /* testsCommon.framework */;
-			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -609,13 +519,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				"bearhunter::SwiftPMPackageDescription" /* bearhunterPackageDescription */,
-				"bearhunter::bearhunterPackageTests::ProductTarget" /* bearhunterPackageTests */,
 				"bearhunter::bearhuntercli" /* bearhuntercli */,
 				"bearhunter::bearhuntercliTests" /* bearhuntercliTests */,
 				"bearhunter::bearhunterlib" /* bearhunterlib */,
 				"bearhunter::bearhunterlibTests" /* bearhunterlibTests */,
-				"bearhunter::testsCommon" /* testsCommon */,
 			);
 		};
 /* End PBXProject section */
@@ -637,10 +544,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2ED50EF027E6778C0043AB46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2ED50EF227E677B00043AB46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2EA9845527DC9FF100166E8A /* ShellScript */ = {
+		2EA9845527DC9FF100166E8A /* RunSwiftlintScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -649,6 +570,7 @@
 			);
 			inputPaths = (
 			);
+			name = RunSwiftlintScript;
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -657,7 +579,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$PROJECT_DIR\"/scripts/lint.sh\n";
 		};
-		2EA9845627DCA01F00166E8A /* ShellScript */ = {
+		2EA9845627DCA01F00166E8A /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -666,6 +588,7 @@
 			);
 			inputPaths = (
 			);
+			name = Swiftlint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -685,22 +608,6 @@
 				OBJ_1028 /* ConfigLocatorsTests.swift in Sources */,
 				OBJ_1029 /* ConfigScannerTests.swift in Sources */,
 				OBJ_1030 /* FileFinderTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_1071 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_1072 /* Bundle+Resources.swift in Sources */,
-				OBJ_1073 /* Bundle+TestPaths.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_876 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -769,35 +676,15 @@
 			isa = PBXTargetDependency;
 			productRef = 2EA9846B27DCA58000166E8A /* ArgumentParser */;
 		};
-		OBJ_1047 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "bearhunter::testsCommon" /* testsCommon */;
-			targetProxy = 2EDD1F1127DC9A9E00D90C6E /* PBXContainerItemProxy */;
-		};
 		OBJ_1048 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "bearhunter::bearhunterlib" /* bearhunterlib */;
 			targetProxy = 2EDD1F1227DC9A9E00D90C6E /* PBXContainerItemProxy */;
 		};
-		OBJ_882 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "bearhunter::bearhunterlibTests" /* bearhunterlibTests */;
-			targetProxy = 2EDD1F2027DC9A9E00D90C6E /* PBXContainerItemProxy */;
-		};
-		OBJ_884 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "bearhunter::bearhuntercliTests" /* bearhuntercliTests */;
-			targetProxy = 2EDD1F2127DC9A9E00D90C6E /* PBXContainerItemProxy */;
-		};
 		OBJ_951 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "bearhunter::bearhuntercli" /* bearhuntercli */;
 			targetProxy = 2EDD1EFF27DC9A9E00D90C6E /* PBXContainerItemProxy */;
-		};
-		OBJ_968 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "bearhunter::testsCommon" /* testsCommon */;
-			targetProxy = 2EDD1F1027DC9A9E00D90C6E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -870,72 +757,6 @@
 			};
 			name = Release;
 		};
-		OBJ_1069 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CURRENT_PROJECT_VERSION = 1;
-				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = bearhunter.xcodeproj/testsCommon_Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = testsCommon;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 5.0;
-				TARGET_NAME = testsCommon;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		OBJ_1070 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CURRENT_PROJECT_VERSION = 1;
-				DRIVERKIT_DEPLOYMENT_TARGET = 19.0;
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = bearhunter.xcodeproj/testsCommon_Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = testsCommon;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 5.0;
-				TARGET_NAME = testsCommon;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
 		OBJ_3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -989,36 +810,6 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				USE_HEADERMAP = NO;
-			};
-			name = Release;
-		};
-		OBJ_874 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/ManifestAPI -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -package-description-version 5.5.0";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		OBJ_875 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/ManifestAPI -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -package-description-version 5.5.0";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		OBJ_880 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		OBJ_881 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
 			};
 			name = Release;
 		};
@@ -1242,38 +1033,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_1068 /* Build configuration list for PBXNativeTarget "testsCommon" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_1069 /* Debug */,
-				OBJ_1070 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		OBJ_2 /* Build configuration list for PBXProject "bearhunter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_3 /* Debug */,
 				OBJ_4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_873 /* Build configuration list for PBXNativeTarget "bearhunterPackageDescription" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_874 /* Debug */,
-				OBJ_875 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_879 /* Build configuration list for PBXAggregateTarget "bearhunterPackageTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_880 /* Debug */,
-				OBJ_881 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

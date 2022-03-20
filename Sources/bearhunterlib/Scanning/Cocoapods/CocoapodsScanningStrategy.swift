@@ -5,7 +5,6 @@ enum CocoapodsScanningStrategy {}
 extension CocoapodsScanningStrategy: ConfigScanning {
 
     static func scan(_ file: ConfigFile) -> Repositories? {
-        PodExecutable.install(at: file.directory)
         guard
             let json = PodExecutable.podsJSONDump(for: file.url),
             let pods = decode(Pods.self, from: json, strategy: .convertFromSnakeCase),
@@ -21,9 +20,7 @@ extension CocoapodsScanningStrategy: ConfigScanning {
 fileprivate extension Pods {
 
     var repositories: Repositories? {
-        targetDefinitions?
-            .flatMap(\.children)
-            .flatMap(\.dependencies)
+        dependencies?
             .compactMap(Repository.init)
             .set()
     }
