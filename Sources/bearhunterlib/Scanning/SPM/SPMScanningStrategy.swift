@@ -37,8 +37,7 @@ fileprivate extension ConfigFile {
 fileprivate extension Package {
 
     var repositories: Repositories? {
-        dependencies?
-            .flatMap(\.scm)
+        scms?
             .compactMap(Repository.init)
             .set()
     }

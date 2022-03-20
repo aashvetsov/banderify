@@ -13,3 +13,11 @@ struct Package: Decodable {
 
     let dependencies: [Dependency]?
 }
+
+extension Package {
+
+    var scms: [Dependency.SCM]? {
+        dependencies?
+            .flatMap(\.scm)
+    }
+}
