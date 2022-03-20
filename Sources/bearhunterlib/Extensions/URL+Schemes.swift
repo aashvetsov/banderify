@@ -3,11 +3,12 @@ import Foundation
 extension URL {
 
     var noSchemeURL: URL {
+        let marker = Conststants.schemeSuffix
+        let components = absoluteString.components(separatedBy: marker)
         guard
-            absoluteString.contains(Conststants.schemePrefix),
-            case let components = absoluteString.components(separatedBy: Conststants.schemePrefix),
             components.count > 1,
             let noSchemeString = components.last,
+            !noSchemeString.isEmpty,
             let url = URL(string: noSchemeString)
         else {
             return self
@@ -16,9 +17,10 @@ extension URL {
     }
 
     var fileURL: URL {
+        let scheme = Conststants.fileScheme
         guard
-            !absoluteString.contains(Conststants.fileScheme),
-            let url = URL(string: Conststants.fileScheme + absoluteString)
+            !absoluteString.contains(scheme),
+            let url = URL(string: scheme + absoluteString)
         else {
             return self
         }
@@ -26,7 +28,7 @@ extension URL {
     }
 
     enum Conststants {
-        static let fileScheme = "file://"
-        static let schemePrefix = "://"
+        static let schemeSuffix = "://"
+        static let fileScheme = "file\(schemeSuffix)"
     }
 }
