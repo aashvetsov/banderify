@@ -4,8 +4,8 @@ struct Package: Decodable {
 
         struct SCM: Decodable {
 
-            let identity: String
-            let location: String
+            let identity: String?
+            let location: String?
         }
 
         let scm: [SCM]?

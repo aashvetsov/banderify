@@ -44,8 +44,6 @@ extension Pods.Dependency {
 
         return podspec.url
     }
-
-    var version: String? { compactMap { $0.value.first }.first }
 }
 
 fileprivate extension Pods.Dependency {

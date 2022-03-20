@@ -48,6 +48,7 @@ fileprivate extension Repository {
     typealias SCM = Package.Dependency.SCM
 
     init?(_ scm: SCM) {
-        self.init(name: scm.identity, url: scm.location)
+        guard let name = scm.identity, let url = scm.location else { return nil }
+        self.init(name: name, url: url)
     }
 }

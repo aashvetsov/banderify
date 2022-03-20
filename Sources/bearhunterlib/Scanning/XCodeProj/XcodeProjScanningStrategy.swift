@@ -30,7 +30,7 @@ fileprivate extension XcodeProj {
 fileprivate extension Repository {
 
     init?(_ package: XCRemoteSwiftPackageReference) {
-        guard let name = package.name else { return nil }
-        self.init(name: name, url: package.repositoryURL)
+        guard let name = package.name, let url = package.repositoryURL else { return nil }
+        self.init(name: name, url: url)
     }
 }

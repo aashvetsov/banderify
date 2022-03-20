@@ -31,7 +31,7 @@ fileprivate extension Repository {
     typealias Dependency = Pods.Dependency
 
     init?(_ dependency: Dependency) {
-        guard let name = dependency.name else { return nil }
-        self.init(name: name, url: dependency.url, version: dependency.version)
+        guard let name = dependency.name, let url = dependency.url else { return nil }
+        self.init(name: name, url: url)
     }
 }

@@ -40,18 +40,18 @@ fileprivate extension Cartfile {
 fileprivate extension Repository {
 
     init?(_ dependency: CarthageKit.Dependency) {
-        var dependencyName, dependencyUrl: String?
+        var name, url: String?
         switch dependency {
         case let .gitHub(server, repository):
-            dependencyName = repository.name
-            dependencyUrl = "\(server.url.absoluteString)/\(repository.owner)/\(repository.name)"
+            name = repository.name
+            url = "\(server.url.absoluteString)/\(repository.owner)/\(repository.name)"
         case let .git(gitURL):
-            dependencyName = URL(string: gitURL.urlString)?.fileName?.components(separatedBy: ".").first
-            dependencyUrl = gitURL.urlString
+            name = URL(string: gitURL.urlString)?.fileName?.components(separatedBy: ".").first
+            url = gitURL.urlString
         default:
             return nil
         }
-        guard let dependencyName = dependencyName else { return nil }
-        self.init(name: dependencyName, url: dependencyUrl)
+        guard let name = name, let url = url else { return nil }
+        self.init(name: name, url: url)
     }
 }

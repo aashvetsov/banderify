@@ -50,7 +50,7 @@ fileprivate extension Bearhunter {
         }
 
         print("Detected dependencies:".loginfo)
-        print("\(repositories.compactMap(\.url).multilined.link)")
+        print("\(repositories.map(\.url).multilined.link)")
 
         return repositories
     }
