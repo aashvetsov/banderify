@@ -7,9 +7,9 @@ public struct Repository {
 extension Repository: Hashable {
 
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(url.gitSuffixIgnoring)                        
+        hasher.combine(url.gitSuffixIgnoring)
     }
-    
+
     public static func == (lhs: Repository, rhs: Repository) -> Bool {
         lhs.url.gitSuffixIgnoring == rhs.url.gitSuffixIgnoring
     }
